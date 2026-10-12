@@ -43,6 +43,7 @@ import Skills from './features/skills/Skills.jsx'
 import SkillTree from './features/skills/SkillTree.jsx'
 import Flows from './features/flows/Flows.jsx'
 import FlowPlayer from './features/flows/FlowPlayer.jsx'
+import Assessments from './features/assessments/Assessments.jsx'
 import StructuralBalance from './views/StructuralBalance.jsx'
 import ProgressPhotos from './views/ProgressPhotos.jsx'
 import { SettingsRoute } from './views/Settings.jsx'
@@ -227,6 +228,7 @@ function Shell() {
               <Route path="/skills/:id" element={<SkillTree />} />
               <Route path="/flows" element={<Flows />} />
               <Route path="/flow" element={<FlowPlayer />} />
+              <Route path="/assessments" element={<Assessments />} />
               <Route path="/structural-balance" element={<StructuralBalance />} />
               <Route path="/progress-photos" element={<ProgressPhotos />} />
               <Route path="/measurements" element={<Measurements />} />

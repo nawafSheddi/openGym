@@ -1,0 +1,28 @@
+/* Explore → Tests (flexibility assessments). Design-system tokens only (index.css). */
+
+.as-map { margin-bottom: 12px; }
+.as-map .bodymap { margin-top: 8px; }
+.as-legend { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 8px; }
+.as-ico { background: var(--acc-soft); color: var(--acc); }
+
+/* band chips, worst to best: red, orange, yellow, accent, amber (the skill colour = top tier) */
+.as-band { font-weight: 600; }
+.as-poor  { background: color-mix(in srgb, var(--red) 18%, transparent);    color: var(--red); }
+.as-fair  { background: color-mix(in srgb, var(--orange) 18%, transparent); color: var(--orange); }
+.as-good  { background: color-mix(in srgb, var(--yellow) 22%, transparent); color: var(--label); }
+.as-great { background: var(--acc-soft); color: var(--acc); }
+.as-elite { background: var(--skill-soft); color: var(--skill); }
+
+.as-steps { margin: 6px 0 12px; padding-inline-start: 18px; line-height: 1.45; color: var(--label-2); }
+.as-steps li + li { margin-top: 3px; }
+.as-bands { display: grid; gap: 6px; margin: 4px 0 8px; }
+.as-band-row { display: flex; align-items: center; gap: 10px; }
+.as-band-row .as-band { min-width: 64px; text-align: center; }
+
+.as-inputs { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.as-input { display: flex; align-items: center; gap: 8px; background: var(--surface-2); border-radius: var(--r); padding: 6px 10px; }
+.as-input-label { font-size: 13px; color: var(--label-2); min-width: 34px; }
+.as-input .num { flex: 1; min-width: 0; font-size: 20px; background: none; border: 0; text-align: end; }
+.as-unit { color: var(--label-2); font-size: 15px; }
+.as-sign { padding: 2px 9px; font-size: 15px; }
+.as-minus { font-size: 20px; color: var(--label); margin-inline-end: -6px; }
