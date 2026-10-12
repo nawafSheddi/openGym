@@ -1441,6 +1441,24 @@ export const PT_BR_OVERRIDES = {
   "It moves up the ladder by itself as you unlock each step.": "Sobe a escada sozinho conforme você desbloqueia cada passo.",
   "You moved up a skill ladder. Your next session uses the harder variation.": "Você subiu um degrau. A próxima sessão usa a variação mais difícil.",
   "You moved up {0} skill ladders. Your next sessions use the harder variations.": "Você subiu em {0} escadas. As próximas sessões usam as variações mais difíceis.",
+  // --- openBody: guided flows ---
+  "Mobility": "Mobilidade",
+  "Guided routines that run on their own: follow the timer, breathe, switch sides.": "Rotinas guiadas que avançam sozinhas: siga o timer, respire, troque de lado.",
+  "Resume flow": "Retomar rotina",
+  "Start flow": "Começar rotina",
+  "End this flow?": "Encerrar esta rotina?",
+  "Save and end": "Salvar e encerrar",
+  "Keep going": "Continuar",
+  "Flow complete": "Rotina concluída",
+  "Saved to your history.": "Salvo no seu histórico.",
+  "More flows": "Mais rotinas",
+  "No flow running.": "Nenhuma rotina em andamento.",
+  "{0} of {1}": "{0} de {1}",
+  "Left side": "Lado esquerdo",
+  "Right side": "Lado direito",
+  "Get ready": "Prepare-se",
+  "Hold": "Segure",
+  "Last one": "A última",
 }
 
 export default { ...pt, ...PT_BR_OVERRIDES }

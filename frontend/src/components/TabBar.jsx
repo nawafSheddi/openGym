@@ -33,7 +33,7 @@ export default function TabBar({ onStart }) {
   const cur = loc.pathname.split('/')[1] || 'home'
   // openBody: every Explore screen (exercises, workouts, skills, mobility, tests) lights the
   // Explore tab, whose key stays 'library' (DiscoverNav lists the sections).
-  const explore = cur === 'muscles' || DISCOVER_PATHS.includes('/' + cur)
+  const explore = cur === 'muscles' || cur === 'flow' || DISCOVER_PATHS.includes('/' + cur)
   const on = k => cur === k || (cur === 'history' && k === 'stats') || (cur === 'settings' && k === 'home') || (explore && k === 'library') || (cur === 'structural-balance' && k === 'stats')
 
   const running = !!S.active && cur !== 'workout' && !S.active.editingWorkoutId && !S.active.backfill && S.active.start > 0

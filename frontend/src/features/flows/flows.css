@@ -1,0 +1,43 @@
+/* Explore → Mobility (flow list) and the guided-flow player. Design-system tokens only. */
+
+.fl-ico { background: var(--acc-soft); color: var(--acc); }
+.fl-resume { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; color: var(--acc); cursor: pointer; }
+.fl-resume .tt { color: var(--label); font-weight: 600; }
+.fl-resume .ss { color: var(--label-2); font-size: 14px; }
+
+/* the player: one centred column that fits a phone screen without scrolling */
+.fl-player { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding-bottom: 12px; }
+.fl-top { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.fl-title .tt { font-weight: 600; }
+.fl-title .ss { color: var(--label-2); font-size: 13px; }
+.fl-bar { width: 100%; height: 4px; border-radius: 2px; background: var(--surface-3); overflow: hidden; }
+.fl-bar > span { display: block; height: 100%; background: var(--acc); transition: width var(--med) var(--ease); }
+.fl-media { width: min(170px, 46vw); }
+.fl-media .exmedia { border-radius: var(--r-lg); overflow: hidden; }
+.fl-name { margin: 2px 0 0; font-size: 22px; font-weight: 600; text-transform: capitalize; }
+.fl-side { font-size: 13px; font-weight: 600; color: var(--skill); text-transform: uppercase; letter-spacing: .06em; }
+
+/* countdown ring: accent while holding, amber while getting ready, grey when paused */
+.fl-ring { position: relative; width: 150px; height: 150px; margin: 2px 0; }
+.fl-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.fl-ring circle { fill: none; stroke-width: 8; }
+.fl-ring-bg { stroke: var(--surface-3); }
+.fl-ring-fg { stroke: var(--acc); stroke-linecap: round; transition: stroke-dashoffset .2s linear; }
+.fl-player.get-ready .fl-ring-fg { stroke: var(--skill); }
+.fl-player.paused .fl-ring-fg { stroke: var(--label-3); }
+.fl-count { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.fl-secs { font-size: 56px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+.fl-phase { font-size: 14px; color: var(--label-2); margin-top: 4px; }
+
+.fl-cue { display: flex; gap: 6px; align-items: flex-start; max-width: 340px; font-size: 15px; color: var(--label-2); text-align: start; }
+.fl-cue .icn { flex: none; margin-top: 3px; color: var(--skill); }
+.fl-next { min-height: 18px; }
+
+.fl-controls { display: flex; align-items: center; gap: 28px; margin-top: 6px; }
+.fl-ctl { width: 52px; height: 52px; font-size: 24px; }
+.fl-play { width: 76px; height: 76px; border-radius: 50%; background: var(--acc); color: var(--on-acc); font-size: 30px; display: grid; place-items: center; }
+.fl-play:active { transform: scale(.97); }
+
+/* finished */
+.fl-done { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 48px 8px; }
+.fl-done-ico { font-size: 64px; color: var(--acc); margin-bottom: 8px; }

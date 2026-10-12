@@ -13,7 +13,8 @@ import './discover.css'
 export const DISCOVER_SECTIONS = [
   { path: '/library', icon: 'dumbbell', label: () => t('Exercises') },
   { path: '/workouts', icon: 'list', label: () => t('Workouts') },
-  { path: '/skills', icon: 'logo', label: () => t('Skills') }
+  { path: '/skills', icon: 'logo', label: () => t('Skills') },
+  { path: '/flows', icon: 'stretch', label: () => t('Mobility') }
 ]
 
 /** The paths that count as "inside Explore" (the tab bar lights its Explore tab for these). */

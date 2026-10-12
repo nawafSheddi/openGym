@@ -41,6 +41,8 @@ import Muscles from './views/Muscles.jsx'
 import Workouts from './features/workouts/Workouts.jsx'
 import Skills from './features/skills/Skills.jsx'
 import SkillTree from './features/skills/SkillTree.jsx'
+import Flows from './features/flows/Flows.jsx'
+import FlowPlayer from './features/flows/FlowPlayer.jsx'
 import StructuralBalance from './views/StructuralBalance.jsx'
 import ProgressPhotos from './views/ProgressPhotos.jsx'
 import { SettingsRoute } from './views/Settings.jsx'
@@ -188,7 +190,9 @@ function Shell() {
   }, [inWorkout])
   // The chat owns the bottom of the screen as well: its composer sits where the tabs would be.
   // The first-launch card has no tabs either: they changed the route behind it.
-  const noTabs = inWorkout || loc.pathname === '/coach' || needsMobileOnboarding
+  // openBody: the guided-flow player (/flow) is full screen like a workout; its controls sit where
+  // the tab bar's Start button would.
+  const noTabs = inWorkout || loc.pathname === '/coach' || loc.pathname === '/flow' || needsMobileOnboarding
 
   const authed = user || isGuest
   if (!ready && !authed) return (
@@ -221,6 +225,8 @@ function Shell() {
               <Route path="/workouts" element={<Workouts />} />
               <Route path="/skills" element={<Skills />} />
               <Route path="/skills/:id" element={<SkillTree />} />
+              <Route path="/flows" element={<Flows />} />
+              <Route path="/flow" element={<FlowPlayer />} />
               <Route path="/structural-balance" element={<StructuralBalance />} />
               <Route path="/progress-photos" element={<ProgressPhotos />} />
               <Route path="/measurements" element={<Measurements />} />
