@@ -272,6 +272,9 @@ export function freshState() {
   s.equipProfiles = [caliProfile('Calisthenics')]
   s.activeEquipId = CALI_PROFILE_ID
   s.equipFilterOn = true
+  // openBody: the gym check-in card (QR at a gym's door) is off for new profiles; Settings still
+  // turns it on. DEF keeps it on, so an existing profile is not changed under it.
+  s.checkIn = false
   return s
 }
 

@@ -5,9 +5,10 @@ import { useUI } from '../store/useUI.js'
 import { DAYN, DAYS, weekOrder, weekStartOf, uid, exCount, routineCount, todayISO, fmtDate } from '../lib/format.js'
 import { t } from '../lib/i18n.js'
 import {
-  dayAssignSheet, starterPlanSheet, confirmSheet, menuSheet,
+  dayAssignSheet, confirmSheet, menuSheet,
   planHasRoutines, exportPlanFile, printWholePlan, importPlanFile,
 } from '../sheets.jsx'
+import { programsSheet } from '../features/programs/ProgramsSheet.jsx'
 import Icon from '../components/Icon.jsx'
 import { Button, Row, Section, Segmented } from '../components/ui.jsx'
 import SwipeRow from '../components/SwipeRow.jsx'
@@ -152,7 +153,7 @@ export default function Plan() {
         { icon: 'share', label: t('Export plan file'), sub: t('A small file a friend can import into their own openBody. Routines only, none of your workouts or weigh-ins.'), disabled: !has, onClick: exportPlanFile },
         { icon: 'note', label: t('Print / Save as PDF'), disabled: !has, onClick: printWholePlan },
         { icon: 'download', label: t('Import a plan file'), onClick: () => fileRef.current?.click() },
-        { icon: 'clipboard', label: t('Load starter plan'), onClick: starterPlanSheet },
+        { icon: 'clipboard', label: t('Choose a program'), onClick: programsSheet },
       ],
     })
   }
@@ -289,8 +290,8 @@ function Schedule({ S, update, nav, mode }) {
     </Section>
 
     {!S.routines.length && <div className="empty plan-empty">
-      <div className="ico"><Icon name="clipboard" /></div>{t('No routines yet.')}<br />{t('Make one, or grab the starter plan to get going.')}
-      <div style={{ marginTop: 12 }}><Button icon="clipboard" onClick={starterPlanSheet}>{t('Load starter plan')}</Button></div>
+      <div className="ico"><Icon name="clipboard" /></div>{t('No routines yet.')}<br />{t('Make one, or follow a ready-made program.')}
+      <div style={{ marginTop: 12 }}><Button icon="clipboard" onClick={programsSheet}>{t('Choose a program')}</Button></div>
     </div>}
 
     {/* A queue payload that arrived unusable: a fix-up, shown whichever way you train. Giving it
@@ -452,8 +453,8 @@ function Routines({ S, update, nav }) {
         })}</div>}
       <p className="sect-f">{edit ? t('Drag to reorder. Tap the minus to delete.') : t('Tap a routine to edit it. Reorder and delete are behind Edit.')}</p>
     </> : <>
-      <div className="empty"><div className="ico"><Icon name="clipboard" /></div>{t('No routines yet.')}<br />{t('Make one, or grab the starter plan to get going.')}</div>
-      <Button icon="clipboard" onClick={starterPlanSheet}>{t('Load starter plan')}</Button>
+      <div className="empty"><div className="ico"><Icon name="clipboard" /></div>{t('No routines yet.')}<br />{t('Make one, or follow a ready-made program.')}</div>
+      <Button icon="clipboard" onClick={programsSheet}>{t('Choose a program')}</Button>
     </>}
   </>
 }

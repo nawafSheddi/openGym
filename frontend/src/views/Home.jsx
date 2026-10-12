@@ -4,7 +4,9 @@ import { useStore } from '../store/useStore.js'
 import { effectiveRoutines, effectiveRoutineIds, nextTrainingDay, streakWeeks, lastBW, setsDoneActive } from '../lib/history.js'
 import { fmtNum, fmtDate, todayISO, isoOf, weekStartOf, weekDayOffset, DAYS, DAYN } from '../lib/format.js'
 import { t, tn, dateLocale } from '../lib/i18n.js'
-import { bwSheet, goalSheet, dayOverrideSheet, calendarSheet, startFlow, starterPlanSheet, bwDeltaColor, weighInsSheet } from '../sheets.jsx'
+import { bwSheet, goalSheet, dayOverrideSheet, calendarSheet, startFlow, bwDeltaColor, weighInsSheet } from '../sheets.jsx'
+import ProgramCard from '../features/programs/ProgramCard.jsx'
+import { programsSheet } from '../features/programs/ProgramsSheet.jsx'
 import LineChart from '../components/LineChart.jsx'
 import Icon from '../components/Icon.jsx'
 import QueueRow from '../components/QueueRow.jsx'
@@ -175,14 +177,18 @@ export default function Home() {
       </div>
     )}
 
+    {/* openBody: the program you follow — week, adherence, today's mobility flow, test day */}
+    {S.program && <ProgramCard />}
+
     {!S.routines.length && !S.active && (
       <div className="card">
         <div className="row" style={{ gap: 10, marginBottom: 6 }}>
           <span className="lrow-i"><Icon name="calendar" /></span>
           <div className="big" style={{ fontSize: 22 }}>{t('Welcome!')}</div>
         </div>
-        <div className="muted small" style={{ marginBottom: 12 }}>{t('Set up your weekly routine to get going, or grab a ready-made starter plan.')}</div>
-        <Button variant="primary" icon="clipboard" onClick={starterPlanSheet}>{t('Load starter plan')}</Button>
+        {/* openBody: built-in programs replace openGym's barbell starter plans */}
+        <div className="muted small" style={{ marginBottom: 12 }}>{t('Pick a ready-made program, or build your own weekly routine.')}</div>
+        <Button variant="primary" icon="clipboard" onClick={programsSheet}>{t('Choose a program')}</Button>
         <div style={{ height: 8 }} /><Button onClick={() => nav('/plan')}>{t('Build my own plan')}</Button>
       </div>
     )}

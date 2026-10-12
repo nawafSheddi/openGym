@@ -22,6 +22,11 @@ describe('calisthenics profile default', () => {
     expect(activeProfile(S).equipment).toEqual(CALI_EQUIPMENT)
   })
 
+  it('a fresh profile hides the gym check-in card; DEF keeps it for existing profiles', () => {
+    expect(freshState().checkIn).toBe(false)
+    expect(DEF.checkIn).toBe(true)
+  })
+
   it('every fresh state gets its own copy (no shared array between profiles)', () => {
     const a = freshState(), b = freshState()
     a.equipProfiles[0].equipment.push('barbell')
