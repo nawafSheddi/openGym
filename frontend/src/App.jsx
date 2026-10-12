@@ -39,6 +39,8 @@ import History from './views/History.jsx'
 import Library from './views/Library.jsx'
 import Muscles from './views/Muscles.jsx'
 import Workouts from './features/workouts/Workouts.jsx'
+import Skills from './features/skills/Skills.jsx'
+import SkillTree from './features/skills/SkillTree.jsx'
 import StructuralBalance from './views/StructuralBalance.jsx'
 import ProgressPhotos from './views/ProgressPhotos.jsx'
 import { SettingsRoute } from './views/Settings.jsx'
@@ -217,6 +219,8 @@ function Shell() {
               <Route path="/library" element={<Library />} />
               <Route path="/muscles" element={<Muscles />} />
               <Route path="/workouts" element={<Workouts />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/skills/:id" element={<SkillTree />} />
               <Route path="/structural-balance" element={<StructuralBalance />} />
               <Route path="/progress-photos" element={<ProgressPhotos />} />
               <Route path="/measurements" element={<Measurements />} />

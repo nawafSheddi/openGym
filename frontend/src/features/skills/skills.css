@@ -1,0 +1,34 @@
+/* Explore → Skills and the per-skill ladder. Design-system tokens only (index.css): the accent for
+   "where you are", --skill (amber) for what you've conquered. */
+
+/* progress bar on a skill card: share of the ladder behind you */
+.sk-bar { height: 4px; border-radius: 2px; background: var(--surface-3); margin-top: 7px; overflow: hidden; }
+.sk-bar > span { display: block; height: 100%; background: var(--acc); border-radius: inherit; transition: width var(--med) var(--ease); }
+.sk-bar.done > span { background: var(--skill); }
+.sk-crown { color: var(--skill); font-size: 18px; margin-inline-end: 4px; }
+
+/* the ladder: a vertical path of nodes joined by a line */
+.sk-path { list-style: none; margin: 0 0 16px; padding: 0; }
+.sk-node { position: relative; padding-inline-start: 40px; padding-bottom: 12px; }
+/* the connecting line, under the dots */
+.sk-node::before { content: ''; position: absolute; inset-inline-start: 13px; top: 28px; bottom: -2px; width: 2px; background: var(--surface-3); }
+.sk-node:last-child::before { display: none; }
+.sk-node.done::before { background: var(--skill); }
+.sk-dot {
+  position: absolute; inset-inline-start: 0; top: 14px; width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600;
+  background: var(--surface-3); color: var(--label-2);
+}
+.sk-node.done .sk-dot { background: var(--skill); color: #000; }
+:root[data-theme="light"] .sk-node.done .sk-dot { color: #fff; }
+.sk-node.current .sk-dot { background: var(--acc); color: var(--on-acc); box-shadow: 0 0 0 4px var(--acc-soft); }
+.sk-node.locked .sk-card { opacity: .62; }
+.sk-card { border-radius: var(--r-card); background: var(--surface); }
+.sk-node.current .sk-card { box-shadow: inset 0 0 0 1.5px var(--acc-line); }
+.sk-progress { color: var(--acc); font-weight: 600; }
+.sk-cue { display: flex; gap: 5px; align-items: flex-start; margin-top: 3px; }
+.sk-cue .icn { flex: none; margin-top: 2px; color: var(--skill); }
+.sk-claim { margin-top: 6px; font-size: 12px; padding: 3px 10px; }
+
+/* ladder page header: back button, then the title beside it (the base .hdr spreads its children) */
+.hdr.sk-hdr { justify-content: flex-start; gap: 10px; }

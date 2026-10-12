@@ -53,9 +53,17 @@ export function routineFromWorkout(w, id, exists = () => true) {
     name: w.name,
     emoji: iconOfWorkout(w),
     src: WORKOUT_SRC + w.id,
-    ex: w.ex.filter(e => exists(e.id)).map(e => ({ ...e, weight: 0 }))
+    ex: w.ex.filter(e => exists(e.id)).map(e => ({ ...e, weight: 0, prog: e.prog || defaultPolicy(e) }))
   }
 }
+
+/**
+ * The progression a calisthenics entry starts with when the content does not say: reps climb
+ * through their range before anything else changes (double progression), holds add seconds
+ * (time). The app's own default, linear, adds weight, which bodyweight work rarely has.
+ * Shared with program enrollment (lib/programs.js).
+ */
+export const defaultPolicy = e => (e.mode === 'time' ? 'time' : 'double')
 
 /** The routine this workout was saved as before, or null. */
 export function workoutRoutineOf(S, workoutId) {

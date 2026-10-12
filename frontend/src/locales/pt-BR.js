@@ -1423,6 +1423,24 @@ export const PT_BR_OVERRIDES = {
   "Any area": "Qualquer região",
   "{0} s": "{0} s",
   "“{0}” is in your plan": "“{0}” está no seu plano",
+  // --- openBody: skills ---
+  "Skills": "Skills",
+  "Step-by-step ladders, from the first variation to the full skill.": "Escadas passo a passo, da primeira variação à skill completa.",
+  "Mastered": "Dominada",
+  "Push": "Empurrar",
+  "Pull": "Puxar",
+  "Balance": "Equilíbrio",
+  "Practice: {0}": "Treino: {0}",
+  "To move on: {0}, in {1} sessions": "Para avançar: {0}, em {1} sessões",
+  "Best: {0}": "Melhor: {0}",
+  "{0} of {1} sessions": "{0} de {1} sessões",
+  "{0} reps": "{0} reps",
+  "I can already do this": "Já consigo fazer isso",
+  "Go by my log only": "Só pelo meu registro",
+  "Add to a routine": "Adicionar a uma rotina",
+  "It moves up the ladder by itself as you unlock each step.": "Sobe a escada sozinho conforme você desbloqueia cada passo.",
+  "You moved up a skill ladder. Your next session uses the harder variation.": "Você subiu um degrau. A próxima sessão usa a variação mais difícil.",
+  "You moved up {0} skill ladders. Your next sessions use the harder variations.": "Você subiu em {0} escadas. As próximas sessões usam as variações mais difíceis.",
 }
 
 export default { ...pt, ...PT_BR_OVERRIDES }

@@ -56,6 +56,7 @@ import { finishCompare, finishCardio } from './lib/finish-compare.js'
 import { workoutFit, fitFileName } from './lib/fit-export.js'
 import { joinSessionNoProg } from './lib/session-noprog.js'
 import { buildCombinedEntries, deriveSessionName } from './lib/session-merge.js'
+import { applyLadders } from './lib/ladder.js'
 import { workoutsOn, backfillStart, backfillEnd, completeBackfill, historyAsOf, sessionHistory } from './lib/backfill.js'
 import { moveWorkout, sameWorkout, startTimeOf, durationMinOf, setWorkoutDuration, rebuildPrHistory, MAX_DURATION_MIN, endsInFuture } from './lib/workout-date.js'
 import { editCompletedSession, editLeftEmpty, editedRecord, editChangesNothing } from './lib/session-edit.js'
@@ -2774,6 +2775,9 @@ export function startFlow(routineIds) {
   bwSheet({ required: true, onDone: bw => beginWorkout(routineIds, bw) })
 }
 export function beginWorkout(routineIds, bw) {
+  // openBody: laddered entries move to the variation the log says you're on before the session
+  // is built from them (lib/ladder.js). A no-op when nothing changed.
+  if (S().routines?.some(r => r.ex?.some(e => e.ladder))) update(s => { applyLadders(s) })
   const st = S()
   const { entries, routineIds: rids, routines } = buildCombinedEntries(st, routineIds)
   update(s => {
@@ -3362,6 +3366,7 @@ export function finishWorkoutSheet({ onDiscard } = {}) {
   })
 }
 function doFinishWorkout() {
+  let promoted = 0   // skill-ladder steps this session unlocked (set inside the update below)
   const st = S()
   const A = st.active
   if (!A) return
@@ -3410,7 +3415,11 @@ function doFinishWorkout() {
     // A rotation pass this app manages starts its next pass the moment the last session lands
     // (lib/rotation.js). A planner's queue is left alone: it completes and waits for its writer.
     refillAfter(s, w)
+    // openBody: a session that cleared a skill step moves the routine to the next variation now,
+    // so the Plan shows it straight away (lib/ladder.js).
+    promoted = applyLadders(s)
   })
+  if (promoted > 0) toast(tn('You moved up a skill ladder. Your next session uses the harder variation.', 'You moved up {0} skill ladders. Your next sessions use the harder variations.', promoted))
   useStore.getState().autoBackupNow()
   useUI.getState().stopRest()
   // A hold still counting (a plank left unchecked, then Finish early) goes with the workout, as

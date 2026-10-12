@@ -37,11 +37,17 @@ describe('routineFromWorkout', () => {
     const src = w({ ex: [{ id: '0001', sets: 3, reps: 8, repsMin: 5 }, { id: '0002', sets: 2, mode: 'time', sec: 30, side: true }] })
     const r = routineFromWorkout(src, 'r1')
     expect(r).toMatchObject({ id: 'r1', name: 'Core: Beginner', emoji: 'abs', src: WORKOUT_SRC + 'core-beginner' })
-    expect(r.ex[0]).toEqual({ id: '0001', sets: 3, reps: 8, repsMin: 5, weight: 0 })
-    expect(r.ex[1]).toEqual({ id: '0002', sets: 2, mode: 'time', sec: 30, side: true, weight: 0 })
+    // calisthenics defaults: reps climb a range (double progression), holds add time
+    expect(r.ex[0]).toEqual({ id: '0001', sets: 3, reps: 8, repsMin: 5, weight: 0, prog: 'double' })
+    expect(r.ex[1]).toEqual({ id: '0002', sets: 2, mode: 'time', sec: 30, side: true, weight: 0, prog: 'time' })
     r.ex[0].sets = 9
     expect(src.ex[0].sets).toBe(3)   // the catalogue content is never written through
   })
+  it('keeps a progression policy the content sets explicitly', () => {
+    const r = routineFromWorkout(w({ ex: [{ id: '0001', sets: 5, reps: 5, prog: 'linear' }] }), 'r3')
+    expect(r.ex[0].prog).toBe('linear')
+  })
+
   it('drops entries whose exercise does not exist instead of crashing a session later', () => {
     const r = routineFromWorkout(w({ ex: [{ id: 'missing-id', sets: 3, reps: 8 }, { id: '0001', sets: 3, reps: 8 }] }), 'r2', id => id === '0001')
     expect(r.ex.map(e => e.id)).toEqual(['0001'])

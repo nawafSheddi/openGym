@@ -58,10 +58,13 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   for (const [key, tr] of Object.entries(batch)) {
     for (const l of LANGS) {
       const v = tr[l]
-      if (typeof v !== 'string' || !v.trim()) problems.push(`"${key}": missing ${l}`)
+      // A plural key (the `other` string of a tn() call) may carry the language's plural forms
+      // as an object, e.g. ru/uk/pl { one, few, many } (i18n-plural.test.js requires them).
+      const forms = v && typeof v === 'object' ? Object.values(v) : [v]
+      if (!forms.length || forms.some(f => typeof f !== 'string' || !f.trim())) problems.push(`"${key}": missing ${l}`)
       // keep {0} placeholders intact, the same rule check-locales.mjs enforces
       const ph = s => (s.match(/\{\d+\}/g) || []).sort().join()
-      if (typeof v === 'string' && ph(v) !== ph(key)) problems.push(`"${key}": ${l} placeholders differ`)
+      if (forms.some(f => typeof f === 'string' && ph(f) !== ph(key))) problems.push(`"${key}": ${l} placeholders differ`)
       // refuse duplicates: a key already in a pack (JSON- or single-quoted) would be shadowed
       if (sources[l].includes(JSON.stringify(key) + ':') || sources[l].includes(`'${key.replace(/'/g, "\\'")}':`))
         problems.push(`"${key}": already in ${l}.js`)
