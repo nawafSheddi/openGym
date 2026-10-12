@@ -16,7 +16,9 @@
 // A grey goes further, so it never looks like a switched-off button (THEMES below, accent.test.js).
 import { ACCENTS, ACCENT_INK } from './format.js'
 
-export const DEFAULT_ACCENT = 'lime'
+// openBody's brand accent (a retuned teal preset, index.css). Was 'lime' (green) in openGym;
+// a profile that stored 'lime' keeps it, only new and unrecognised choices land here.
+export const DEFAULT_ACCENT = 'teal'
 export const CUSTOM = 'custom'
 
 const HEX = /^#[0-9a-f]{6}$/i

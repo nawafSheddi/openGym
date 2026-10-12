@@ -1,4 +1,4 @@
-// openGym icon set — hand-drawn on a 24×24 grid, stroke-based, single weight.
+// openBody icon set — hand-drawn on a 24×24 grid, stroke-based, single weight.
 //
 // Everything is one <svg> primitive with `currentColor`, so an icon inherits the
 // text colour and optical size of whatever it sits in. No emoji anywhere in the
@@ -21,6 +21,13 @@ const P = {
   // A real cog outline (8 teeth, generated on a circle) — an earlier version drew
   // radial rays and was indistinguishable from `sun` at tab-bar size.
   gear: <><path d="M20.48 10.59 20.48 13.41 18.58 13.72 17.87 15.43 19 17 17 19 15.43 17.87 13.72 18.58 13.41 20.48 10.59 20.48 10.28 18.58 8.57 17.87 7 19 5 17 6.13 15.43 5.42 13.72 3.52 13.41 3.52 10.59 5.42 10.28 6.13 8.57 5 7 7 5 8.57 6.13 10.28 5.42 10.59 3.52 13.41 3.52 13.72 5.42 15.43 6.13 17 5 19 7 17.87 8.57 18.58 10.28Z" /><circle cx="12" cy="12" r="3.1" /></>,
+
+  /* ---- brand ---- */
+  // openBody's mark: a straddle handstand. Hands on two short floor pads (y 20.5), arms a touch
+  // wider than the shoulder line, a solid head between them (the one filled shape, so the eye
+  // finds "head down" first), torso vertical and legs in a wide straddle so it reads as a body
+  // upside down at tab-bar size rather than a tripod or a bell.
+  logo: <><path d="M7.3 20.5h2.6M14.1 20.5h2.6M8.6 20.5l1.2-6.1h4.4l1.2 6.1M12 14.4V8.6M12 8.6 8.3 3.6M12 8.6l3.7-5" /><circle cx="12" cy="17.6" r="1.35" fill="currentColor" /></>,
 
   /* ---- training ---- */
   dumbbell: <><rect x="5.9" y="7.9" width="3.2" height="8.2" rx="1.3" /><rect x="14.9" y="7.9" width="3.2" height="8.2" rx="1.3" /><path d="M9.1 12h5.8M3.6 9.9v4.2M20.4 9.9v4.2" /></>,

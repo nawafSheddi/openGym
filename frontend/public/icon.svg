@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- openBody app icon: the handstand mark (components/Icon.jsx `logo`) in brand teal on the
+       deep teal-black brand background. Full-bleed square so it works as a maskable icon: the
+       mark sits inside the central 80% safe zone; platforms round the corners themselves.
+       icon-180.png / icon-512.png are rasterised from this file. -->
+  <rect width="512" height="512" fill="#0b1414"/>
+  <g transform="translate(256 262) scale(13.5) translate(-12 -12)" fill="none" stroke="#2dd4bf" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7.3 20.5h2.6M14.1 20.5h2.6M8.6 20.5l1.2-6.1h4.4l1.2 6.1M12 14.4V8.6M12 8.6 8.3 3.6M12 8.6l3.7-5"/>
+    <circle cx="12" cy="17.6" r="1.35" fill="#2dd4bf"/>
+  </g>
+</svg>

@@ -76,3 +76,26 @@ export function eqAvailable(equipment, ex) {
 export function newProfile(name) {
   return { id: 'eq' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6), name, equipment: [], accV: ACC_V }
 }
+
+// ---------------------------------------------------------------- openBody: calisthenics kit --
+// The built-in profile a new openBody user starts on (store/useStore.js freshState). It is an
+// ordinary equipment profile — editable, deletable, switchable in Settings → Equipment — so it
+// needs no special-casing anywhere the profile machinery already runs (library, picker, routine
+// warnings, starter-plan fitting). "Show all equipment" in the library still reaches everything.
+//
+// What is in it, and why:
+//   · body weight is always available anyway (ALWAYS_AVAILABLE) and is listed for clarity;
+//   · pull-up bar and bench: the two accessories most bodyweight work needs (chin-ups, dips on a
+//     bench, decline push-ups), read off exercise names by accessoriesOf;
+//   · band / resistance band / suspension trainer: assistance and ring/TRX work;
+//   · weighted: weighted pull-ups and dips with a belt or vest stay in (owner decision);
+//   · wheel roller: the ab wheel; roller and stability ball: mobility and prehab props.
+// Everything barbell, dumbbell, cable, kettlebell and machine is left out on purpose.
+export const CALI_PROFILE_ID = 'cali'
+export const CALI_EQUIPMENT = Object.freeze(['body weight', 'pull-up bar', 'bench', 'band', 'resistance band', 'suspension trainer', 'weighted', 'wheel roller', 'roller', 'stability ball'])
+
+/** A fresh Calisthenics profile object. `equipment` is a new array every call, so editing one
+ *  user's profile can never write through to the constant or to another state. */
+export function caliProfile(name) {
+  return { id: CALI_PROFILE_ID, name, equipment: [...CALI_EQUIPMENT], accV: ACC_V }
+}

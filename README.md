@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="openGym" width="720">
+<img src="assets/banner.png" alt="openBody" width="720">
 
 **A self-hosted gym and body-weight tracker you actually own.**
 
@@ -11,8 +11,8 @@ on your phone, synced across your devices, behind your own passkey login.
 [![Online](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Finvites%2Fe62jY6fwVb%3Fwith_counts%3Dtrue&query=%24.approximate_presence_count&suffix=%20online&label=&logo=discord&logoColor=white&color=3BA55C&style=for-the-badge)](https://discord.gg/e62jY6fwVb)
 [![GitHub stars](https://img.shields.io/github/stars/DuarteSantos8/openGym?style=for-the-badge&logo=github&logoColor=white&color=24292f)](https://github.com/DuarteSantos8/openGym/stargazers)
 
-<a href="https://trendshift.io/repositories/88268?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-88268" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/88268" alt="DuarteSantos8%2FopenGym | Trendshift" width="250" height="55"/></a>
-<a href="https://trendshift.io/repositories/88268?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-88268" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/88268/weekly?language=JavaScript" alt="DuarteSantos8%2FopenGym | Trendshift" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/88268?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-88268" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/88268" alt="DuarteSantos8%2FopenBody | Trendshift" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/88268?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-88268" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/88268/weekly?language=JavaScript" alt="DuarteSantos8%2FopenBody | Trendshift" width="250" height="55"/></a>
 
 [![Release](https://img.shields.io/github/v/release/DuarteSantos8/openGym?style=flat-square)](https://github.com/DuarteSantos8/openGym/releases)
 [![Downloads](https://img.shields.io/github/downloads/DuarteSantos8/openGym/total?style=flat-square&label=downloads)](https://github.com/DuarteSantos8/openGym/releases)
@@ -29,7 +29,7 @@ on your phone, synced across your devices, behind your own passkey login.
 [Changelog](CHANGELOG.md)
 
 <a href="https://buymeacoffee.com/duartesantos" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="45" width="163"></a>
-<a href="https://ko-fi.com/opengym" target="_blank"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support openGym on Ko-fi" height="45"></a>
+<a href="https://ko-fi.com/opengym" target="_blank"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support openBody on Ko-fi" height="45"></a>
 
 </div>
 
@@ -41,10 +41,10 @@ on your phone, synced across your devices, behind your own passkey login.
 </tr>
 </table>
 
-## Why openGym
+## Why openBody
 
 Most workout apps keep your data on their servers, push you towards a subscription, or vanish
-when the company does. openGym runs on your own box, keeps your data in a folder you control, and
+when the company does. openBody runs on your own box, keeps your data in a folder you control, and
 is yours to fork. It still behaves like a modern app: installable on the home screen, passkey
 sign-in, works offline, syncs between your phone and your laptop.
 
@@ -129,7 +129,7 @@ You need [Docker](https://docs.docker.com/get-docker/) with Compose.
 
 ```bash
 git clone https://github.com/DuarteSantos8/openGym
-cd openGym
+cd openBody
 cp .env.example .env
 docker compose pull      # prebuilt images, amd64 + arm64 (skip this to build from source)
 docker compose up -d
@@ -160,7 +160,7 @@ Traefik and nginx, and there are separate guides for
 | `NGINX_PORT` | Port the web container listens on inside the container | `80` |
 | `BACKEND` | Name of the API service that `/api` is proxied to | `api` |
 | `PORT` | Port the API listens on; the web container proxies to the same value | `3000` |
-| `RP_NAME` | Name shown in the passkey prompt | `openGym` |
+| `RP_NAME` | Name shown in the passkey prompt | `openBody` |
 | `SESSION_DAYS` | How long a sign-in lasts, in days | `90` |
 | `ADMIN_UIDS` | User ids that get the admin dashboard, comma-separated | *(none)* |
 | `FIRST_USER_ADMIN` | `1`: the first profile created on an empty instance becomes its admin | *(off)* |
@@ -190,7 +190,7 @@ on the phone, with native reminders and a rest countdown in the notification sha
 
 - **Android:** download the signed APK from the [latest release](https://github.com/DuarteSantos8/openGym/releases/latest)
   or the [website](https://opengym.ch). Each build sits next to its `.sha256`, and
-  the app checks for updates itself. openGym is deliberately not on the Play Store.
+  the app checks for updates itself. openBody is deliberately not on the Play Store.
 - **iPhone:** Apple doesn't allow installs outside the App Store. Self-host and add the PWA to your
   home screen from Safari, or build the native app onto your own device with Xcode.
 
@@ -305,9 +305,9 @@ exists because its CI builds the release artifacts: the signed APK, the multi-ar
 SBOMs. Nothing is merged there by hand. In the changelog, `!NN` refers to a GitLab merge request
 from the weeks in August and September 2026 when the project lived there.
 
-## How openGym is built
+## How openBody is built
 
-People have asked about this, so plainly: **openGym is developed with
+People have asked about this, so plainly: **openBody is developed with
 [Claude Code](https://claude.com/claude-code)**, Anthropic's coding agent. A large share of the
 code, tests and documentation is drafted in Claude Code sessions, and the repository carries a
 [`CLAUDE.md`](CLAUDE.md) with the project context those sessions start from.
@@ -329,7 +329,7 @@ the same way.
 
 ## Support
 
-openGym is free and stays free: AGPL, no paid tier, nothing held back for sponsors. If it replaced a
+openBody is free and stays free: AGPL, no paid tier, nothing held back for sponsors. If it replaced a
 paid tracker for you and you'd like to chip in, there's a coffee button below. A star, a bug report
 or a pull request helps just as much.
 
@@ -341,19 +341,19 @@ or a pull request helps just as much.
 
 ## License
 
-**openGym's own code** is licensed under the [GNU AGPL v3.0](LICENSE). You can self-host, use,
+**openBody's own code** is licensed under the [GNU AGPL v3.0](LICENSE). You can self-host, use,
 modify and share it; if you run a modified version as a network service, you have to offer that
 version's source under the same license.
 
 > [!IMPORTANT]
 > **The exercise media is not covered by that license.** The stills and animations are
-> © Aliaksandr Makatserchyk, [Gym visual](https://gymvisual.com/), licensed for use in openGym only:
+> © Aliaksandr Makatserchyk, [Gym visual](https://gymvisual.com/), licensed for use in openBody only:
 > 180 px in this repository and on self-hosted servers, larger only inside the app packages. A
 > non-commercial fork may keep them unmodified with the notice; anything else needs your own licence
-> from gymvisual.com. The exercise text in `catalogue/` is openGym's and open to contributions.
+> from gymvisual.com. The exercise text in `catalogue/` is openBody's and open to contributions.
 
 **Contributing:** pull requests are signed off once with the [Contributor License Agreement](CLA.md):
-you keep the copyright in your work, openGym may use and relicense it (so the app can stay in the
+you keep the copyright in your work, openBody may use and relicense it (so the app can stay in the
 App Store and Google Play long term), and every version released under the AGPL stays AGPL.
 
 Full third-party notices, including the body-diagram geometry, are in [NOTICE.md](NOTICE.md).
