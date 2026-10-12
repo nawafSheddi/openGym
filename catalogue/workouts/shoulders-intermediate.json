@@ -1,0 +1,47 @@
+{
+  "id": "shoulders-intermediate",
+  "name": "Shoulders: Intermediate",
+  "kind": "muscle",
+  "group": "shoulders",
+  "level": "intermediate",
+  "goal": "skill",
+  "minutes": 40,
+  "description": "Feet-raised pike push-ups, wall handstand holds and planche leans: the bridge between basic pressing and hand balancing.",
+  "ex": [
+    {
+      "id": "2831",
+      "sets": 4,
+      "reps": 8,
+      "repsMin": 5
+    },
+    {
+      "id": "6545",
+      "sets": 3,
+      "mode": "time",
+      "sec": 30
+    },
+    {
+      "id": "5234",
+      "sets": 3,
+      "reps": 5,
+      "repsMin": 3
+    },
+    {
+      "id": "3300",
+      "sets": 3,
+      "mode": "time",
+      "sec": 20
+    },
+    {
+      "id": "1442",
+      "sets": 3,
+      "mode": "time",
+      "sec": 30
+    },
+    {
+      "id": "5822",
+      "sets": 2,
+      "reps": 15
+    }
+  ]
+}

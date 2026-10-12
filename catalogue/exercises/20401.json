@@ -1,0 +1,23 @@
+{
+  "id": "20401",
+  "name": "arch hang",
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "lats",
+    "rhomboids",
+    "trapezius",
+    "grip muscles"
+  ],
+  "category": "calisthenics",
+  "description": "A hang from a bar where you pull the shoulder blades down and back and lift the chest toward the bar. It teaches the top half of a pull-up and strengthens the upper back.",
+  "instructions": [
+    "Hang from a bar with straight arms and a shoulder-width grip.",
+    "Pull your shoulder blades down and together without bending your elbows.",
+    "Lift your chest toward the bar so your upper back arches.",
+    "Hold for a breath at the top.",
+    "Lower back to a relaxed hang with control."
+  ],
+  "textSource": "opengym"
+}

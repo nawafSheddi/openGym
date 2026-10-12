@@ -1,0 +1,22 @@
+{
+  "id": "20013",
+  "name": "clutch flag",
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "target": "abs",
+  "secondaryMuscles": [
+    "obliques",
+    "shoulders",
+    "lats"
+  ],
+  "category": "isometric",
+  "description": "A sideways hold on a vertical pole where the lower elbow is wedged into the hip. It is an easier first taste of the human flag.",
+  "instructions": [
+    "Stand beside a sturdy vertical pole and hug it with your near arm at chest height.",
+    "Grip lower down with your other hand and press that elbow into your hip.",
+    "Lean into the pole and lift your feet so your body hangs sideways.",
+    "Squeeze your legs together and hold your body as level as you can.",
+    "Hold, then lower your feet and switch sides."
+  ],
+  "textSource": "opengym"
+}

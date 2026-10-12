@@ -1,0 +1,47 @@
+{
+  "id": "area-hamstrings-2",
+  "name": "Hamstrings: Strength & range",
+  "kind": "area",
+  "group": "hamstrings",
+  "level": "intermediate",
+  "goal": "strength",
+  "minutes": 20,
+  "description": "Good mornings, single-leg deadlifts, hamstring bridges, sliding curls and Nordic negatives, with pike lifts for active flexibility.",
+  "ex": [
+    {
+      "id": "5555",
+      "sets": 3,
+      "reps": 12
+    },
+    {
+      "id": "3928",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6,
+      "side": true
+    },
+    {
+      "id": "10904",
+      "sets": 3,
+      "reps": 12
+    },
+    {
+      "id": "3395",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6
+    },
+    {
+      "id": "7746",
+      "sets": 3,
+      "reps": 5,
+      "repsMin": 3
+    },
+    {
+      "id": "20407",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6
+    }
+  ]
+}

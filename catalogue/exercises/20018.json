@@ -1,0 +1,22 @@
+{
+  "id": "20018",
+  "name": "tuck l-sit",
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "target": "abs",
+  "secondaryMuscles": [
+    "triceps",
+    "hip flexors",
+    "shoulders"
+  ],
+  "category": "isometric",
+  "description": "A support hold with the hips and feet off the floor and the knees pulled toward the chest. It is the first fully lifted L-sit position.",
+  "instructions": [
+    "Sit on the floor or between parallettes with your hands beside your hips.",
+    "Bend your knees and pull them toward your chest.",
+    "Lock your arms and push down to lift your hips and feet.",
+    "Keep your shoulders pressed down and your back tall.",
+    "Hold, then lower with control."
+  ],
+  "textSource": "opengym"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "20405",
+  "name": "reverse nordic curl",
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "target": "quads",
+  "secondaryMuscles": [
+    "hip flexors",
+    "core"
+  ],
+  "category": "calisthenics",
+  "description": "A kneeling lean backward with a straight line from knees to head, controlled by the thighs. It strengthens the quads at long lengths and stretches the hip flexors.",
+  "instructions": [
+    "Kneel on a soft surface with your knees hip-width apart and toes pointed.",
+    "Squeeze your glutes so your hips stay straight.",
+    "Lean back slowly as one piece from your knees to your head.",
+    "Go only as far as you can still control.",
+    "Pull yourself back up with your thighs to the start."
+  ],
+  "textSource": "opengym"
+}

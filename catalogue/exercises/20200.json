@@ -1,0 +1,27 @@
+{
+  "id": "20200",
+  "name": "kneeling wrist rocks",
+  "bodyPart": "lower arms",
+  "equipment": "body weight",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "wrists",
+    "wrist flexors"
+  ],
+  "category": "mobility",
+  "description": "On hands and knees you rock your shoulders forward and back over flat palms. It eases the wrists into the bent-back position used in push-ups and handstands.",
+  "instructions": [
+    "Kneel on all fours with your hands under your shoulders and fingers pointing forward.",
+    "Spread your fingers wide and press the whole palm into the floor.",
+    "Keep your arms straight and slowly shift your shoulders forward past your hands.",
+    "Rock back until your shoulders are over or behind your wrists.",
+    "Keep the heels of your hands down the whole time and move in a pain-free range."
+  ],
+  "muscleMap": {
+    "primaries": [
+      "forearm"
+    ],
+    "secondaries": []
+  },
+  "textSource": "opengym"
+}

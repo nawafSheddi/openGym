@@ -1,0 +1,15 @@
+{
+  "areas": [
+    { "id": "neck", "name": "Neck", "muscles": ["trapezius"] },
+    { "id": "shoulders", "name": "Shoulders", "muscles": ["deltoids", "serratus", "trapezius"] },
+    { "id": "thoracic", "name": "Upper back & thoracic spine", "muscles": ["upper-back", "trapezius"] },
+    { "id": "lower-back", "name": "Lower back", "muscles": ["lower-back"] },
+    { "id": "hips", "name": "Hips & glutes", "muscles": ["gluteal", "hip-flexors"] },
+    { "id": "groin", "name": "Groin & adductors", "muscles": ["adductors"] },
+    { "id": "hamstrings", "name": "Hamstrings", "muscles": ["hamstring"] },
+    { "id": "hip-flexors-quads", "name": "Hip flexors & quads", "muscles": ["hip-flexors", "quadriceps"] },
+    { "id": "calves-ankles", "name": "Calves & ankles", "muscles": ["calves", "tibialis"] },
+    { "id": "wrists-forearms", "name": "Wrists & forearms", "muscles": ["forearm"] },
+    { "id": "core", "name": "Core", "muscles": ["abs", "obliques"] }
+  ]
+}

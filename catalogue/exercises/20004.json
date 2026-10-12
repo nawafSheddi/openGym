@@ -1,0 +1,22 @@
+{
+  "id": "20004",
+  "name": "advanced tuck back lever",
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "shoulders",
+    "biceps",
+    "core"
+  ],
+  "category": "isometric",
+  "description": "A back lever hold with the knees still bent but the hips opened so the back is flat. It is noticeably longer than the tuck.",
+  "instructions": [
+    "Get into a tuck back lever with straight arms.",
+    "Push your hips back until your back is flat and level.",
+    "Keep your knees bent at roughly a right angle.",
+    "Squeeze your glutes and keep your arms locked.",
+    "Hold, then tuck in and exit through the german hang."
+  ],
+  "textSource": "opengym"
+}

@@ -1,0 +1,137 @@
+{
+  "id": "mobility-30",
+  "name": "Mobility 30",
+  "level": "beginner",
+  "weeks": 4,
+  "description": "Thirty days of daily movement. A different guided flow every day of the week, plus three short active-mobility sessions that make the new range strong. Retest your flexibility every two weeks to see the change.",
+  "assessEveryWeeks": 2,
+  "routines": [
+    {
+      "key": "a",
+      "name": "Active mobility A",
+      "emoji": "stretch",
+      "ex": [
+        {
+          "id": "4555",
+          "sets": 2,
+          "reps": 10
+        },
+        {
+          "id": "1685",
+          "sets": 2,
+          "reps": 10
+        },
+        {
+          "id": "5025",
+          "sets": 2,
+          "reps": 10
+        },
+        {
+          "id": "3500",
+          "sets": 2,
+          "mode": "time",
+          "sec": 45
+        },
+        {
+          "id": "4580",
+          "sets": 2,
+          "reps": 10
+        },
+        {
+          "id": "0463",
+          "sets": 2,
+          "mode": "time",
+          "sec": 30
+        }
+      ]
+    },
+    {
+      "key": "b",
+      "name": "Active mobility B",
+      "emoji": "stretch",
+      "ex": [
+        {
+          "id": "10752",
+          "sets": 2,
+          "reps": 8
+        },
+        {
+          "id": "2569",
+          "sets": 2,
+          "reps": 6,
+          "side": true
+        },
+        {
+          "id": "8546",
+          "sets": 2,
+          "reps": 8
+        },
+        {
+          "id": "20408",
+          "sets": 2,
+          "reps": 10
+        },
+        {
+          "id": "3018",
+          "sets": 2,
+          "reps": 15
+        },
+        {
+          "id": "10859",
+          "sets": 2,
+          "reps": 15
+        },
+        {
+          "id": "20400",
+          "sets": 2,
+          "mode": "time",
+          "sec": 20
+        }
+      ]
+    }
+  ],
+  "schedule": [
+    [
+      1,
+      "a"
+    ],
+    [
+      3,
+      "b"
+    ],
+    [
+      5,
+      "a"
+    ]
+  ],
+  "flows": [
+    [
+      0,
+      "full-body-20"
+    ],
+    [
+      1,
+      "morning-flow"
+    ],
+    [
+      2,
+      "hip-opener"
+    ],
+    [
+      3,
+      "shoulder-thoracic"
+    ],
+    [
+      4,
+      "lower-back-relief"
+    ],
+    [
+      5,
+      "desk-reset"
+    ],
+    [
+      6,
+      "ankle-calf"
+    ]
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "bridge",
+  "name": "Bridge hands to heels",
+  "unit": "cm",
+  "better": "lower",
+  "sided": false,
+  "range": [
+    0,
+    100
+  ],
+  "areas": [
+    "thoracic",
+    "shoulders",
+    "hip-flexors-quads",
+    "lower-back"
+  ],
+  "instructions": [
+    "Warm up your shoulders and back, then lie on your back with your feet flat near your hips and your hands by your ears, fingers pointing toward your feet.",
+    "Press up into a full bridge with your arms as straight as you can make them.",
+    "Walk your hands toward your feet as far as you can while keeping your feet flat and hip-width apart.",
+    "Hold for 3 seconds, then have someone measure the straight-line distance along the floor from your wrist creases to the backs of your heels.",
+    "If you cannot press up off your head, skip the test and log 100."
+  ],
+  "bands": [
+    {
+      "label": "elite",
+      "below": 15
+    },
+    {
+      "label": "great",
+      "below": 30
+    },
+    {
+      "label": "good",
+      "below": 45
+    },
+    {
+      "label": "fair",
+      "below": 60
+    },
+    {
+      "label": "poor"
+    }
+  ]
+}

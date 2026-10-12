@@ -1,0 +1,43 @@
+{
+  "id": "back-advanced",
+  "name": "Back: Advanced",
+  "kind": "muscle",
+  "group": "back",
+  "level": "advanced",
+  "goal": "strength",
+  "minutes": 50,
+  "description": "Weighted pull-ups, archer pull-ups and front lever work for a back that can hold the body horizontal.",
+  "ex": [
+    {
+      "id": "0841",
+      "sets": 5,
+      "reps": 5,
+      "repsMin": 3
+    },
+    {
+      "id": "3293",
+      "sets": 3,
+      "reps": 5,
+      "repsMin": 3,
+      "side": true
+    },
+    {
+      "id": "9044",
+      "sets": 4,
+      "mode": "time",
+      "sec": 10
+    },
+    {
+      "id": "7251",
+      "sets": 3,
+      "reps": 5,
+      "repsMin": 3
+    },
+    {
+      "id": "1184",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 6
+    }
+  ]
+}

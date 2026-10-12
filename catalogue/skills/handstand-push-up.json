@@ -1,0 +1,98 @@
+{
+  "id": "handstand-push-up",
+  "name": "Handstand push-up",
+  "family": "push",
+  "description": "A full vertical press upside down against a wall. Pike push-ups move more weight onto the hands until the wall version is possible.",
+  "steps": [
+    {
+      "exId": "2921",
+      "label": "Pike push-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 8
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 12,
+        "sessions": 2
+      },
+      "cue": "Hips high, lower your head ahead of your hands."
+    },
+    {
+      "exId": "2831",
+      "label": "Elevated pike push-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 6
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 10,
+        "sessions": 2
+      },
+      "cue": "Get your hips over your hands as much as you can."
+    },
+    {
+      "exId": "3401",
+      "label": "Deficit elevated pike push-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 8,
+        "sessions": 2
+      },
+      "cue": "Lower your head below hand level with control."
+    },
+    {
+      "exId": "20010",
+      "label": "Wall handstand push-up negative",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 5,
+        "sessions": 2
+      },
+      "cue": "Take three to five seconds to lower every rep."
+    },
+    {
+      "exId": "0471",
+      "label": "Wall handstand push-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 8,
+        "sessions": 2
+      },
+      "cue": "Hands a short way from the wall, elbows angled slightly forward."
+    },
+    {
+      "exId": "3916",
+      "label": "Deficit wall handstand push-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 6,
+        "sessions": 3
+      },
+      "cue": "Lower your head below your hands and press to lockout."
+    }
+  ]
+}

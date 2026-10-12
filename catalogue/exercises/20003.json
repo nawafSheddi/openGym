@@ -1,0 +1,22 @@
+{
+  "id": "20003",
+  "name": "tuck back lever",
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "shoulders",
+    "biceps",
+    "core"
+  ],
+  "category": "isometric",
+  "description": "A face-down horizontal hold under a bar or rings with the knees pulled to the chest. It is the first static position of the back lever.",
+  "instructions": [
+    "Hang from rings or a bar and roll back into a german hang with your knees tucked.",
+    "Raise your hips until your back is level with the floor.",
+    "Keep your arms locked straight and your knees close to your chest.",
+    "Press your hands down to keep your shoulders from rolling forward.",
+    "Hold, then return to the german hang and roll back down."
+  ],
+  "textSource": "opengym"
+}

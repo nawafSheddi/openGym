@@ -1,0 +1,31 @@
+{
+  "id": "20211",
+  "name": "horse stance hold",
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "target": "adductors",
+  "secondaryMuscles": [
+    "quadriceps",
+    "glutes",
+    "groin"
+  ],
+  "category": "mobility",
+  "description": "A wide, low stance held with the knees pushed out over the toes. It builds strength in the inner thighs and hips at the range used for straddles.",
+  "instructions": [
+    "Stand with your feet about twice shoulder width apart and toes turned out slightly.",
+    "Sit your hips down until your thighs are near parallel to the floor.",
+    "Push your knees out so they stay in line with your toes.",
+    "Keep your chest up and your back straight.",
+    "Hold while breathing steadily, then stand up slowly."
+  ],
+  "muscleMap": {
+    "primaries": [
+      "adductors",
+      "quadriceps"
+    ],
+    "secondaries": [
+      "gluteal"
+    ]
+  },
+  "textSource": "opengym"
+}

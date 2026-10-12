@@ -1,0 +1,29 @@
+{
+  "id": "20201",
+  "name": "kneeling reverse wrist rocks",
+  "bodyPart": "lower arms",
+  "equipment": "body weight",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "wrist flexors",
+    "biceps"
+  ],
+  "category": "mobility",
+  "description": "A rocking forearm stretch with the palms down and fingers pointing back toward your knees. It lengthens the inside of the forearms and the front of the elbows.",
+  "instructions": [
+    "Kneel on all fours and turn your hands so the fingers point back toward your knees.",
+    "Press your palms flat with your elbow creases facing forward.",
+    "Keep your arms straight and slowly sit your hips back toward your heels.",
+    "Stop when you feel a stretch along the inner forearms, then rock forward again.",
+    "Lift the heels of your hands if the stretch is too strong."
+  ],
+  "muscleMap": {
+    "primaries": [
+      "forearm"
+    ],
+    "secondaries": [
+      "biceps"
+    ]
+  },
+  "textSource": "opengym"
+}

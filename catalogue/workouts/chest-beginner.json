@@ -1,0 +1,41 @@
+{
+  "id": "chest-beginner",
+  "name": "Chest: Beginner",
+  "kind": "muscle",
+  "group": "chest",
+  "level": "beginner",
+  "goal": "strength",
+  "minutes": 25,
+  "description": "Build a base for full push-ups with raised-hand and knee variations, slow lowerings and a plank to hold the body line.",
+  "ex": [
+    {
+      "id": "0493",
+      "sets": 3,
+      "reps": 12,
+      "repsMin": 8
+    },
+    {
+      "id": "1182",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6
+    },
+    {
+      "id": "5556",
+      "sets": 3,
+      "reps": 5,
+      "repsMin": 3
+    },
+    {
+      "id": "3021",
+      "sets": 2,
+      "reps": 10
+    },
+    {
+      "id": "0463",
+      "sets": 3,
+      "mode": "time",
+      "sec": 30
+    }
+  ]
+}

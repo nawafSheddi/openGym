@@ -1,0 +1,49 @@
+{
+  "id": "area-groin-1",
+  "name": "Groin: Mobility",
+  "kind": "area",
+  "group": "groin",
+  "level": "beginner",
+  "goal": "mobility",
+  "minutes": 15,
+  "description": "Butterfly, rocking frog, side lunge and wide-leg stretches to lengthen the adductors, with Cossack squats to use the new range.",
+  "ex": [
+    {
+      "id": "1494",
+      "sets": 2,
+      "mode": "time",
+      "sec": 45
+    },
+    {
+      "id": "2571",
+      "sets": 2,
+      "reps": 10
+    },
+    {
+      "id": "1899",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30,
+      "side": true
+    },
+    {
+      "id": "1902",
+      "sets": 2,
+      "mode": "time",
+      "sec": 45
+    },
+    {
+      "id": "1898",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30,
+      "side": true
+    },
+    {
+      "id": "2569",
+      "sets": 2,
+      "reps": 6,
+      "side": true
+    }
+  ]
+}

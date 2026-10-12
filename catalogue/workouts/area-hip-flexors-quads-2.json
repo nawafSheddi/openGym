@@ -1,0 +1,49 @@
+{
+  "id": "area-hip-flexors-quads-2",
+  "name": "Hip flexors & quads: Strength",
+  "kind": "area",
+  "group": "hip-flexors-quads",
+  "level": "intermediate",
+  "goal": "strength",
+  "minutes": 20,
+  "description": "Reverse Nordics, kneeling sissy squats, walking lunges, seated leg raises and a wall sit for knees and hip flexors that handle load.",
+  "ex": [
+    {
+      "id": "20405",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 5
+    },
+    {
+      "id": "4722",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6
+    },
+    {
+      "id": "1460",
+      "sets": 3,
+      "reps": 10,
+      "side": true
+    },
+    {
+      "id": "0689",
+      "sets": 3,
+      "reps": 12,
+      "repsMin": 8
+    },
+    {
+      "id": "7557",
+      "sets": 3,
+      "mode": "time",
+      "sec": 45
+    },
+    {
+      "id": "4557",
+      "sets": 2,
+      "mode": "time",
+      "sec": 45,
+      "side": true
+    }
+  ]
+}

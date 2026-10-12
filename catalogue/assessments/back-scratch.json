@@ -1,0 +1,44 @@
+{
+  "id": "back-scratch",
+  "name": "Back scratch",
+  "unit": "cm",
+  "better": "higher",
+  "sided": true,
+  "range": [
+    -40,
+    25
+  ],
+  "areas": [
+    "shoulders",
+    "thoracic"
+  ],
+  "instructions": [
+    "Stand tall. Reach one hand over the same shoulder and down your back, palm facing your back and fingers pointing down. Log the side by this top arm.",
+    "Reach the other hand behind your lower back, palm facing out, and slide it up toward the top hand.",
+    "Try to touch or overlap the middle fingers without gripping or pulling them together.",
+    "Have someone measure the distance between the tips of the middle fingers.",
+    "Record overlap as a positive number and a gap as a negative number. Fingertips just touching is 0.",
+    "Take the best of two tries, then switch arms."
+  ],
+  "bands": [
+    {
+      "label": "poor",
+      "below": -10
+    },
+    {
+      "label": "fair",
+      "below": 0
+    },
+    {
+      "label": "good",
+      "below": 5
+    },
+    {
+      "label": "great",
+      "below": 10
+    },
+    {
+      "label": "elite"
+    }
+  ]
+}

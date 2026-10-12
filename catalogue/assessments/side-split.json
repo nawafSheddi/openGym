@@ -1,0 +1,44 @@
+{
+  "id": "side-split",
+  "name": "Side split",
+  "unit": "cm",
+  "better": "lower",
+  "sided": false,
+  "range": [
+    0,
+    70
+  ],
+  "areas": [
+    "groin",
+    "hamstrings",
+    "hips"
+  ],
+  "instructions": [
+    "Warm up well, then slide your feet apart into a side (middle) split facing forward.",
+    "Keep both knees straight and point your toes or kneecaps up toward the ceiling, not forward.",
+    "Support yourself with your hands, but do not let your hips rest on anything.",
+    "Hold your lowest controlled position for 3 seconds.",
+    "Have someone measure the vertical distance from the floor to the lowest point of your pelvis (the crotch). Flat on the floor is 0."
+  ],
+  "bands": [
+    {
+      "label": "elite",
+      "below": 3
+    },
+    {
+      "label": "great",
+      "below": 10
+    },
+    {
+      "label": "good",
+      "below": 20
+    },
+    {
+      "label": "fair",
+      "below": 30
+    },
+    {
+      "label": "poor"
+    }
+  ]
+}

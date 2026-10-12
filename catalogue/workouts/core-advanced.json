@@ -1,0 +1,43 @@
+{
+  "id": "core-advanced",
+  "name": "Core: Advanced",
+  "kind": "muscle",
+  "group": "core",
+  "level": "advanced",
+  "goal": "strength",
+  "minutes": 35,
+  "description": "Dragon flag negatives, toes to bar, long L-sits, V-sits and straight-leg wipers for elite trunk strength.",
+  "ex": [
+    {
+      "id": "4982",
+      "sets": 4,
+      "reps": 5,
+      "repsMin": 3
+    },
+    {
+      "id": "3891",
+      "sets": 4,
+      "reps": 10,
+      "repsMin": 6
+    },
+    {
+      "id": "1402",
+      "sets": 4,
+      "mode": "time",
+      "sec": 30
+    },
+    {
+      "id": "1249",
+      "sets": 3,
+      "reps": 6,
+      "repsMin": 4,
+      "side": true
+    },
+    {
+      "id": "3420",
+      "sets": 3,
+      "mode": "time",
+      "sec": 15
+    }
+  ]
+}

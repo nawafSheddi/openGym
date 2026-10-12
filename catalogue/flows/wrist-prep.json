@@ -1,0 +1,64 @@
+{
+  "id": "wrist-prep",
+  "name": "Wrist prep",
+  "description": "Warms and loads the wrists and forearms before push-ups, handstands or any hand balancing. Fine to do before every session.",
+  "areas": [
+    "wrists-forearms"
+  ],
+  "level": "beginner",
+  "transitionSec": 5,
+  "items": [
+    {
+      "exId": "1428",
+      "sec": 45,
+      "cue": "Slow, full circles both ways."
+    },
+    {
+      "exId": "20200",
+      "sec": 60,
+      "cue": "Spread the fingers and keep the heels of the hands down."
+    },
+    {
+      "exId": "20204",
+      "sec": 45,
+      "cue": "Shift side to side, palms flat."
+    },
+    {
+      "exId": "20201",
+      "sec": 60,
+      "cue": "Fingers point back, sit back only to a mild stretch."
+    },
+    {
+      "exId": "0561",
+      "sec": 45,
+      "cue": "Hold still and breathe, palms flat."
+    },
+    {
+      "exId": "20202",
+      "sec": 45,
+      "cue": "Light pressure on the backs of the hands."
+    },
+    {
+      "exId": "20203",
+      "sec": 45,
+      "cue": "Fingers grip the floor, lift the palms with control."
+    },
+    {
+      "exId": "1850",
+      "sec": 30,
+      "side": true,
+      "cue": "Elbow straight, pull the fingers back gently."
+    },
+    {
+      "exId": "11383",
+      "sec": 30,
+      "side": true,
+      "cue": "Elbow straight, keep the stretch mild."
+    },
+    {
+      "exId": "5080",
+      "sec": 30,
+      "cue": "Turn the palms up and down, arms long."
+    }
+  ]
+}

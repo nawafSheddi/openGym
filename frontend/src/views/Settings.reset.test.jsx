@@ -157,6 +157,10 @@ describe('Settings — footer', () => {
   it('links the source code to its home on GitHub, on About & updates', () => {
     act(() => root.render(<Settings page="about" />))
     const link = [...host.querySelectorAll('a')].find(a => a.textContent === 'Source code')
-    expect(link.getAttribute('href')).toBe('https://github.com/DuarteSantos8/openGym')
+    // openBody: the AGPL source offered is the fork's (the modified version), not upstream's
+    expect(link.getAttribute('href')).toBe('https://github.com/nawafSheddi/openGym')
+    // and upstream openGym is credited beside it
+    const upstream = [...host.querySelectorAll('a')].find(a => a.textContent === 'openGym')
+    expect(upstream.getAttribute('href')).toBe('https://github.com/DuarteSantos8/openGym')
   })
 })

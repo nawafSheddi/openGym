@@ -1,0 +1,113 @@
+{
+  "id": "planche",
+  "name": "Planche",
+  "family": "push",
+  "description": "A straight-arm hold balanced on the hands with the body level above the floor. It takes long, patient wrist and shoulder conditioning.",
+  "steps": [
+    {
+      "exId": "20006",
+      "label": "Frog stand",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 10
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 30,
+        "sessions": 2
+      },
+      "cue": "Spread your fingers and lean forward until your feet float."
+    },
+    {
+      "exId": "3300",
+      "label": "Planche lean",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 10
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 20,
+        "sessions": 2
+      },
+      "cue": "Lean your shoulders past your wrists with your arms locked."
+    },
+    {
+      "exId": "3824",
+      "label": "Pseudo planche push-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 10,
+        "sessions": 2
+      },
+      "cue": "Keep the lean at the bottom; hands stay beside your waist."
+    },
+    {
+      "exId": "10989",
+      "label": "Tuck planche",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 12,
+        "sessions": 2
+      },
+      "cue": "Round your upper back and push the floor away."
+    },
+    {
+      "exId": "20007",
+      "label": "Advanced tuck planche",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 10,
+        "sessions": 2
+      },
+      "cue": "Flatten your back and lean further to balance."
+    },
+    {
+      "exId": "3298",
+      "label": "Straddle planche",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 8,
+        "sessions": 2
+      },
+      "cue": "Legs wide and straight, hips level with your shoulders."
+    },
+    {
+      "exId": "3299",
+      "label": "Full planche",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 6,
+        "sessions": 3
+      },
+      "cue": "Legs together, lean far, arms locked straight."
+    }
+  ]
+}

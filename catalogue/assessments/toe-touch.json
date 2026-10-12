@@ -1,0 +1,44 @@
+{
+  "id": "toe-touch",
+  "name": "Standing toe touch",
+  "unit": "cm",
+  "better": "higher",
+  "sided": false,
+  "range": [
+    -40,
+    40
+  ],
+  "areas": [
+    "hamstrings",
+    "lower-back"
+  ],
+  "instructions": [
+    "Warm up for a few minutes, then stand barefoot with your feet together. If you can already reach past your toes, stand on a sturdy step or box so you can go lower.",
+    "Keep both knees fully straight and fold forward slowly, reaching both hands down together with the middle fingers level.",
+    "Hold the lowest point for 2 seconds without bouncing.",
+    "Have someone measure the vertical distance from your middle fingertips to the level of your toes.",
+    "Record past the toes as a positive number and short of the toes as a negative number. Touching the toes is 0.",
+    "Take the best of two tries."
+  ],
+  "bands": [
+    {
+      "label": "poor",
+      "below": -10
+    },
+    {
+      "label": "fair",
+      "below": 0
+    },
+    {
+      "label": "good",
+      "below": 10
+    },
+    {
+      "label": "great",
+      "below": 20
+    },
+    {
+      "label": "elite"
+    }
+  ]
+}

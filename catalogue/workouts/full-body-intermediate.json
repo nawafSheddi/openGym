@@ -1,0 +1,56 @@
+{
+  "id": "full-body-intermediate",
+  "name": "Full body: Intermediate",
+  "kind": "muscle",
+  "group": "full-body",
+  "level": "intermediate",
+  "goal": "strength",
+  "minutes": 50,
+  "description": "Pull-ups, dips, push-ups and rows for the upper body, split squats and single-leg deadlifts for the legs, a hollow hold for the core.",
+  "ex": [
+    {
+      "id": "0652",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 5
+    },
+    {
+      "id": "3743",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 6,
+      "side": true
+    },
+    {
+      "id": "0251",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 5
+    },
+    {
+      "id": "3928",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 6,
+      "side": true
+    },
+    {
+      "id": "0499",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 8
+    },
+    {
+      "id": "0662",
+      "sets": 3,
+      "reps": 12,
+      "repsMin": 8
+    },
+    {
+      "id": "1246",
+      "sets": 3,
+      "mode": "time",
+      "sec": 30
+    }
+  ]
+}

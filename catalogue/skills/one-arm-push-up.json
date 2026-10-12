@@ -1,0 +1,98 @@
+{
+  "id": "one-arm-push-up",
+  "name": "One-arm push-up",
+  "family": "push",
+  "description": "A full push-up on one hand with the hips square to the floor. It is as much an anti-rotation core test as a pressing one.",
+  "steps": [
+    {
+      "exId": "0662",
+      "label": "Push-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 10
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 20,
+        "sessions": 2
+      },
+      "cue": "Body in one line, chest to the floor every rep."
+    },
+    {
+      "exId": "0283",
+      "label": "Diamond push-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 8
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 15,
+        "sessions": 2
+      },
+      "cue": "Elbows close to your sides on the way down."
+    },
+    {
+      "exId": "3294",
+      "label": "Archer push-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 10,
+        "sessions": 2
+      },
+      "cue": "Reps per side; the straight arm only guides."
+    },
+    {
+      "exId": "20022",
+      "label": "Incline one-arm push-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 8,
+        "sessions": 2
+      },
+      "cue": "Reps per arm; lower the surface as it gets easier."
+    },
+    {
+      "exId": "20023",
+      "label": "One-arm push-up negative",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 5,
+        "sessions": 2
+      },
+      "cue": "Reps per arm; lower for three to five seconds without twisting."
+    },
+    {
+      "exId": "0725",
+      "label": "One-arm push-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 1
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 5,
+        "sessions": 3
+      },
+      "cue": "Reps per arm; feet wide, hips square to the floor."
+    }
+  ]
+}

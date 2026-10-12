@@ -23,3 +23,8 @@ test('is idempotent', () => {
   const once = rebrandText('openGym and openGym')
   assert.equal(rebrandText(once), once)
 })
+
+test('never renames the licensee in media licence statements', () => {
+  assert.equal(rebrandText('licensed for use in openGym only'), 'licensed for use in openGym only')
+  assert.equal(rebrandText('Pictures licensed to openGym by Gym visual'), 'Pictures licensed to openGym by Gym visual')
+})

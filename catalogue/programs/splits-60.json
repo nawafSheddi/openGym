@@ -1,0 +1,153 @@
+{
+  "id": "splits-60",
+  "name": "Splits in 60 days",
+  "level": "intermediate",
+  "weeks": 9,
+  "description": "About sixty days of work toward the front and side splits. Split-prep and pancake flows run on most days, two strength sessions load the hips at long lengths, and one active flexibility session drills the end range. Retest every three weeks.",
+  "assessEveryWeeks": 3,
+  "routines": [
+    {
+      "key": "strength",
+      "name": "Split strength",
+      "emoji": "legs",
+      "ex": [
+        {
+          "id": "20405",
+          "sets": 3,
+          "reps": 8,
+          "repsMin": 5
+        },
+        {
+          "id": "3743",
+          "sets": 3,
+          "reps": 8,
+          "repsMin": 6,
+          "side": true
+        },
+        {
+          "id": "10904",
+          "sets": 3,
+          "reps": 12,
+          "repsMin": 8
+        },
+        {
+          "id": "20407",
+          "sets": 3,
+          "reps": 10,
+          "repsMin": 6
+        },
+        {
+          "id": "2569",
+          "sets": 3,
+          "reps": 8,
+          "repsMin": 5,
+          "side": true
+        },
+        {
+          "id": "20406",
+          "sets": 3,
+          "mode": "time",
+          "sec": 20,
+          "side": true
+        },
+        {
+          "id": "10906",
+          "sets": 3,
+          "mode": "time",
+          "sec": 30,
+          "side": true
+        }
+      ]
+    },
+    {
+      "key": "active",
+      "name": "Active flexibility",
+      "emoji": "stretch",
+      "ex": [
+        {
+          "id": "1563",
+          "sets": 2,
+          "reps": 10,
+          "side": true
+        },
+        {
+          "id": "3481",
+          "sets": 2,
+          "reps": 8,
+          "side": true
+        },
+        {
+          "id": "4557",
+          "sets": 2,
+          "mode": "time",
+          "sec": 60,
+          "side": true
+        },
+        {
+          "id": "0692",
+          "sets": 2,
+          "mode": "time",
+          "sec": 60,
+          "side": true
+        },
+        {
+          "id": "1902",
+          "sets": 2,
+          "mode": "time",
+          "sec": 60
+        },
+        {
+          "id": "10907",
+          "sets": 2,
+          "mode": "time",
+          "sec": 45,
+          "side": true
+        }
+      ]
+    }
+  ],
+  "schedule": [
+    [
+      2,
+      "strength"
+    ],
+    [
+      4,
+      "active"
+    ],
+    [
+      6,
+      "strength"
+    ]
+  ],
+  "flows": [
+    [
+      0,
+      "cool-down"
+    ],
+    [
+      1,
+      "splits-prep"
+    ],
+    [
+      2,
+      "hip-opener"
+    ],
+    [
+      3,
+      "splits-prep"
+    ],
+    [
+      4,
+      "pancake"
+    ],
+    [
+      5,
+      "splits-prep"
+    ],
+    [
+      6,
+      "pancake"
+    ]
+  ]
+}

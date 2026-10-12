@@ -1,0 +1,22 @@
+{
+  "id": "20001",
+  "name": "straddle front lever",
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "target": "abs",
+  "secondaryMuscles": [
+    "lats",
+    "core",
+    "shoulders"
+  ],
+  "category": "isometric",
+  "description": "A front lever hold with both legs straight and spread wide. Opening the legs shortens the lever compared to the full version.",
+  "instructions": [
+    "Hang from a bar with straight arms and depress your shoulders.",
+    "Lift into an advanced tuck, then extend both legs out into a wide V.",
+    "Keep your body horizontal from shoulders to hips.",
+    "Point your toes and squeeze your legs straight.",
+    "Hold, then tuck your knees and lower with control."
+  ],
+  "textSource": "opengym"
+}

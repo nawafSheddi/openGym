@@ -1,0 +1,46 @@
+{
+  "id": "area-shoulders-1",
+  "name": "Shoulders: Mobility",
+  "kind": "area",
+  "group": "shoulders",
+  "level": "beginner",
+  "goal": "mobility",
+  "minutes": 15,
+  "description": "Stick pass-throughs, wall slides and rotation drills to open the shoulders, then a relaxed hang to decompress.",
+  "ex": [
+    {
+      "id": "3905",
+      "sets": 2,
+      "reps": 10
+    },
+    {
+      "id": "4607",
+      "sets": 3,
+      "reps": 10
+    },
+    {
+      "id": "5025",
+      "sets": 2,
+      "reps": 10
+    },
+    {
+      "id": "2779",
+      "sets": 2,
+      "reps": 10,
+      "side": true
+    },
+    {
+      "id": "1990",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30,
+      "side": true
+    },
+    {
+      "id": "5055",
+      "sets": 3,
+      "mode": "time",
+      "sec": 20
+    }
+  ]
+}

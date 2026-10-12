@@ -1,0 +1,47 @@
+{
+  "id": "area-lower-back-1",
+  "name": "Lower back: Mobility",
+  "kind": "area",
+  "group": "lower-back",
+  "level": "beginner",
+  "goal": "mobility",
+  "minutes": 12,
+  "description": "Slow spinal flexion, extension and rotation: cat-cow, child's pose, sphinx, lumbar twists and bird dogs.",
+  "ex": [
+    {
+      "id": "4580",
+      "sets": 2,
+      "reps": 10
+    },
+    {
+      "id": "0945",
+      "sets": 2,
+      "mode": "time",
+      "sec": 45
+    },
+    {
+      "id": "1362",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30
+    },
+    {
+      "id": "2788",
+      "sets": 2,
+      "reps": 10,
+      "side": true
+    },
+    {
+      "id": "0690",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30
+    },
+    {
+      "id": "1241",
+      "sets": 2,
+      "reps": 8,
+      "side": true
+    }
+  ]
+}

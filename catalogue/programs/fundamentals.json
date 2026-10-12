@@ -1,0 +1,135 @@
+{
+  "id": "fundamentals",
+  "name": "Fundamentals",
+  "level": "beginner",
+  "weeks": 8,
+  "description": "Two full-body sessions alternated three times a week. You learn squat, hinge, push, pull and bracing patterns and build up to your first pull-up, dip and pike push-up. Two short flows on rest days keep you moving.",
+  "assessEveryWeeks": 4,
+  "routines": [
+    {
+      "key": "a",
+      "name": "Fundamentals A",
+      "emoji": "figureStrength",
+      "ex": [
+        {
+          "id": "1197",
+          "sets": 3,
+          "reps": 10,
+          "repsMin": 6
+        },
+        {
+          "id": "2300",
+          "sets": 3,
+          "reps": 8,
+          "repsMin": 5
+        },
+        {
+          "id": "0493",
+          "sets": 3,
+          "reps": 8,
+          "repsMin": 5
+        },
+        {
+          "id": "7385",
+          "sets": 3,
+          "reps": 5,
+          "repsMin": 3
+        },
+        {
+          "id": "2471",
+          "sets": 3,
+          "reps": 12,
+          "repsMin": 8
+        },
+        {
+          "id": "0463",
+          "sets": 3,
+          "mode": "time",
+          "sec": 30
+        }
+      ],
+      "ladders": {
+        "0": "pistol-squat",
+        "2": "one-arm-push-up"
+      }
+    },
+    {
+      "key": "b",
+      "name": "Fundamentals B",
+      "emoji": "figureStrength",
+      "ex": [
+        {
+          "id": "0781",
+          "sets": 3,
+          "reps": 8,
+          "repsMin": 5,
+          "side": true
+        },
+        {
+          "id": "0688",
+          "sets": 3,
+          "reps": 8,
+          "repsMin": 5
+        },
+        {
+          "id": "1442",
+          "sets": 3,
+          "mode": "time",
+          "sec": 20
+        },
+        {
+          "id": "5555",
+          "sets": 3,
+          "reps": 10,
+          "repsMin": 6
+        },
+        {
+          "id": "2921",
+          "sets": 3,
+          "reps": 8,
+          "repsMin": 5
+        },
+        {
+          "id": "1246",
+          "sets": 3,
+          "mode": "time",
+          "sec": 20
+        },
+        {
+          "id": "20006",
+          "sets": 3,
+          "mode": "time",
+          "sec": 15
+        }
+      ],
+      "ladders": {
+        "4": "handstand-push-up",
+        "6": "handstand"
+      }
+    }
+  ],
+  "schedule": [
+    [
+      1,
+      "a"
+    ],
+    [
+      3,
+      "b"
+    ],
+    [
+      5,
+      "a"
+    ]
+  ],
+  "flows": [
+    [
+      2,
+      "morning-flow"
+    ],
+    [
+      6,
+      "full-body-20"
+    ]
+  ]
+}

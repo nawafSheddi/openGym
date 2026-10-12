@@ -1,0 +1,69 @@
+{
+  "id": "desk-reset",
+  "name": "Desk reset",
+  "description": "A quick break for anyone who sits a lot. Starts on the chair for the neck and spine, then stands to open the chest, hips and legs.",
+  "areas": [
+    "neck",
+    "thoracic",
+    "shoulders",
+    "hip-flexors-quads",
+    "hamstrings"
+  ],
+  "level": "beginner",
+  "transitionSec": 5,
+  "items": [
+    {
+      "exId": "3149",
+      "sec": 30,
+      "cue": "Slide the chin straight back, eyes stay level."
+    },
+    {
+      "exId": "1403",
+      "sec": 30,
+      "side": true,
+      "cue": "Ear toward shoulder, opposite shoulder stays down."
+    },
+    {
+      "exId": "11095",
+      "sec": 45,
+      "cue": "Round and arch with your breath."
+    },
+    {
+      "exId": "8303",
+      "sec": 45,
+      "cue": "Sit tall, twist to each side in turn."
+    },
+    {
+      "exId": "8311",
+      "sec": 45,
+      "cue": "Bend side to side, hips stay planted."
+    },
+    {
+      "exId": "10463",
+      "sec": 30,
+      "cue": "Squeeze the shoulder blades and open the chest."
+    },
+    {
+      "exId": "7553",
+      "sec": 45,
+      "cue": "Elbows at shoulder height, lean through gently."
+    },
+    {
+      "exId": "1949",
+      "sec": 45,
+      "side": true,
+      "cue": "Tuck the pelvis and squeeze the back glute."
+    },
+    {
+      "exId": "1059",
+      "sec": 30,
+      "side": true,
+      "cue": "Knees together, hips pushed slightly forward."
+    },
+    {
+      "exId": "3630",
+      "sec": 45,
+      "cue": "Soft knees, let the head and arms hang."
+    }
+  ]
+}

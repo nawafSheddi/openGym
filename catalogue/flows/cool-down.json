@@ -1,0 +1,65 @@
+{
+  "id": "cool-down",
+  "name": "Cool-down",
+  "description": "Slow floor stretches and breathing to bring your heart rate down after training. Hold each position softly, there is nothing to push.",
+  "areas": [
+    "hamstrings",
+    "hips",
+    "lower-back",
+    "thoracic",
+    "groin"
+  ],
+  "level": "beginner",
+  "transitionSec": 5,
+  "items": [
+    {
+      "exId": "0945",
+      "sec": 60,
+      "cue": "Sink back and slow your breathing."
+    },
+    {
+      "exId": "1362",
+      "sec": 45,
+      "cue": "Rest on the forearms, relax the glutes."
+    },
+    {
+      "exId": "6761",
+      "sec": 60,
+      "side": true,
+      "cue": "Rest on the forearms and let the hip settle."
+    },
+    {
+      "exId": "1406",
+      "sec": 45,
+      "side": true,
+      "cue": "Keep the other leg relaxed, ease the leg closer on exhales."
+    },
+    {
+      "exId": "1939",
+      "sec": 45,
+      "side": true,
+      "cue": "Draw the knee toward the opposite shoulder."
+    },
+    {
+      "exId": "1491",
+      "sec": 45,
+      "side": true,
+      "cue": "Both shoulders stay heavy on the floor."
+    },
+    {
+      "exId": "1494",
+      "sec": 60,
+      "cue": "Soles together, let the knees fall open."
+    },
+    {
+      "exId": "4381",
+      "sec": 90,
+      "cue": "Legs rest on the wall, arms out, breathe slowly."
+    },
+    {
+      "exId": "5889",
+      "sec": 60,
+      "cue": "Let your whole body go heavy. Long, slow exhales."
+    }
+  ]
+}

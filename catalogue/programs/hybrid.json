@@ -1,0 +1,189 @@
+{
+  "id": "hybrid",
+  "name": "Hybrid strength & mobility",
+  "level": "intermediate",
+  "weeks": 8,
+  "description": "Three strength days and three mobility days. Monday trains the upper body, Wednesday the legs and core, Friday skills across the whole body. Tuesday, Thursday and Saturday are guided mobility flows, and Sunday is rest.",
+  "assessEveryWeeks": 4,
+  "routines": [
+    {
+      "key": "upper",
+      "name": "Upper strength",
+      "emoji": "pullup",
+      "ex": [
+        {
+          "id": "0652",
+          "sets": 4,
+          "reps": 8,
+          "repsMin": 5
+        },
+        {
+          "id": "0251",
+          "sets": 4,
+          "reps": 8,
+          "repsMin": 5
+        },
+        {
+          "id": "0499",
+          "sets": 3,
+          "reps": 10,
+          "repsMin": 8
+        },
+        {
+          "id": "2831",
+          "sets": 3,
+          "reps": 8,
+          "repsMin": 5
+        },
+        {
+          "id": "3294",
+          "sets": 3,
+          "reps": 6,
+          "repsMin": 4,
+          "side": true
+        },
+        {
+          "id": "1326",
+          "sets": 2,
+          "reps": 8,
+          "repsMin": 5
+        }
+      ],
+      "ladders": {
+        "3": "handstand-push-up",
+        "4": "one-arm-push-up"
+      }
+    },
+    {
+      "key": "lower",
+      "name": "Lower & core",
+      "emoji": "legs",
+      "ex": [
+        {
+          "id": "3743",
+          "sets": 4,
+          "reps": 8,
+          "repsMin": 6,
+          "side": true
+        },
+        {
+          "id": "3928",
+          "sets": 3,
+          "reps": 10,
+          "repsMin": 6,
+          "side": true
+        },
+        {
+          "id": "7746",
+          "sets": 3,
+          "reps": 5,
+          "repsMin": 3
+        },
+        {
+          "id": "2475",
+          "sets": 3,
+          "reps": 12,
+          "repsMin": 8,
+          "side": true
+        },
+        {
+          "id": "3712",
+          "sets": 3,
+          "reps": 15,
+          "repsMin": 10,
+          "side": true
+        },
+        {
+          "id": "0472",
+          "sets": 3,
+          "reps": 10,
+          "repsMin": 6
+        },
+        {
+          "id": "1246",
+          "sets": 3,
+          "mode": "time",
+          "sec": 30
+        }
+      ]
+    },
+    {
+      "key": "full",
+      "name": "Full-body skills",
+      "emoji": "figureStrength",
+      "ex": [
+        {
+          "id": "6545",
+          "sets": 4,
+          "mode": "time",
+          "sec": 30
+        },
+        {
+          "id": "9043",
+          "sets": 4,
+          "mode": "time",
+          "sec": 10
+        },
+        {
+          "id": "1762",
+          "sets": 3,
+          "reps": 6,
+          "repsMin": 4,
+          "side": true
+        },
+        {
+          "id": "2462",
+          "sets": 3,
+          "reps": 8,
+          "repsMin": 5
+        },
+        {
+          "id": "4770",
+          "sets": 3,
+          "reps": 10,
+          "repsMin": 8
+        },
+        {
+          "id": "1402",
+          "sets": 3,
+          "mode": "time",
+          "sec": 15
+        }
+      ],
+      "ladders": {
+        "0": "handstand",
+        "1": "front-lever",
+        "2": "pistol-squat",
+        "5": "l-sit"
+      }
+    }
+  ],
+  "schedule": [
+    [
+      1,
+      "upper"
+    ],
+    [
+      3,
+      "lower"
+    ],
+    [
+      5,
+      "full"
+    ]
+  ],
+  "flows": [
+    [
+      2,
+      "hip-opener"
+    ],
+    [
+      4,
+      "shoulder-thoracic"
+    ],
+    [
+      6,
+      "full-body-20"
+    ]
+  ]
+}

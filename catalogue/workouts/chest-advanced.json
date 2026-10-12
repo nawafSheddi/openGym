@@ -1,0 +1,43 @@
+{
+  "id": "chest-advanced",
+  "name": "Chest: Advanced",
+  "kind": "muscle",
+  "group": "chest",
+  "level": "advanced",
+  "goal": "strength",
+  "minutes": 45,
+  "description": "Heavy pressing for strong trainees: weighted dips, pseudo planche push-ups, one-arm push-ups and explosive clap push-ups.",
+  "ex": [
+    {
+      "id": "3313",
+      "sets": 4,
+      "reps": 6,
+      "repsMin": 4
+    },
+    {
+      "id": "3824",
+      "sets": 4,
+      "reps": 8,
+      "repsMin": 5
+    },
+    {
+      "id": "0725",
+      "sets": 3,
+      "reps": 5,
+      "repsMin": 3,
+      "side": true
+    },
+    {
+      "id": "1273",
+      "sets": 3,
+      "reps": 6,
+      "repsMin": 4
+    },
+    {
+      "id": "2462",
+      "sets": 2,
+      "reps": 10,
+      "repsMin": 6
+    }
+  ]
+}

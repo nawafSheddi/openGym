@@ -1,0 +1,22 @@
+{
+  "id": "20000",
+  "name": "one leg front lever",
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "target": "abs",
+  "secondaryMuscles": [
+    "lats",
+    "core",
+    "shoulders"
+  ],
+  "category": "isometric",
+  "description": "A front lever hold with one leg straight and the other tucked. It bridges the gap between the advanced tuck and the straddle.",
+  "instructions": [
+    "Hang from a bar with straight arms and pull your shoulder blades down.",
+    "Raise your body into an advanced tuck with a flat back.",
+    "Extend one leg straight out in line with your torso and keep the other knee bent.",
+    "Squeeze your glutes so your hips stay level with your shoulders.",
+    "Hold, then lower with control and switch the straight leg next set."
+  ],
+  "textSource": "opengym"
+}

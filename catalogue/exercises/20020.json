@@ -1,0 +1,22 @@
+{
+  "id": "20020",
+  "name": "one arm pull-up negative",
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "target": "lats",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms",
+    "core"
+  ],
+  "category": "calisthenics",
+  "description": "A slow lowering from the top of a pull-up using one arm only. It builds one-arm strength through the whole range.",
+  "instructions": [
+    "Pull up or step up so your chin is over the bar using both hands.",
+    "Let go with one hand and hold your chin above the bar.",
+    "Lower yourself as slowly as you can with one arm.",
+    "Keep your shoulder pulled down and your body from spinning.",
+    "Reach straight arms, then reset and switch arms."
+  ],
+  "textSource": "opengym"
+}

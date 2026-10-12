@@ -1,0 +1,23 @@
+{
+  "id": "20400",
+  "name": "arch body hold",
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "target": "spine",
+  "secondaryMuscles": [
+    "glutes",
+    "upper back",
+    "hamstrings"
+  ],
+  "category": "isometric",
+  "description": "A face-down hold with arms, chest and legs lifted off the floor, the mirror of the hollow hold. It builds the lower back, glutes and upper back.",
+  "instructions": [
+    "Lie on your stomach with your arms reaching overhead.",
+    "Squeeze your glutes and press your hips into the floor.",
+    "Lift your arms, chest and legs a few centimetres at the same time.",
+    "Keep your neck long and look at the floor just ahead of you.",
+    "Breathe steadily and hold the shape without bending your knees.",
+    "Lower everything together to finish."
+  ],
+  "textSource": "opengym"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "area-shoulders-2",
+  "name": "Shoulders: Strength & range",
+  "kind": "area",
+  "group": "shoulders",
+  "level": "intermediate",
+  "goal": "strength",
+  "minutes": 20,
+  "description": "Scapula push-ups and pulls, Y-T-W raises, German hangs, skin the cats and support holds: strength through the full shoulder range.",
+  "ex": [
+    {
+      "id": "3021",
+      "sets": 3,
+      "reps": 12
+    },
+    {
+      "id": "0688",
+      "sets": 3,
+      "reps": 10
+    },
+    {
+      "id": "8546",
+      "sets": 3,
+      "reps": 8
+    },
+    {
+      "id": "20002",
+      "sets": 3,
+      "mode": "time",
+      "sec": 15
+    },
+    {
+      "id": "3304",
+      "sets": 3,
+      "reps": 3,
+      "repsMin": 1
+    },
+    {
+      "id": "1442",
+      "sets": 3,
+      "mode": "time",
+      "sec": 20
+    }
+  ]
+}

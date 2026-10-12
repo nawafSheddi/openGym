@@ -1,0 +1,22 @@
+{
+  "id": "20019",
+  "name": "one leg l-sit",
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "target": "abs",
+  "secondaryMuscles": [
+    "triceps",
+    "hip flexors",
+    "shoulders"
+  ],
+  "category": "isometric",
+  "description": "An L-sit with one leg straight and the other tucked. It is a step between the tuck L-sit and the full hold.",
+  "instructions": [
+    "Get into a tuck L-sit with your arms locked.",
+    "Straighten one leg out in front of you at hip height.",
+    "Keep the other knee pulled in close to your chest.",
+    "Point the toes of the straight leg and keep the knee locked.",
+    "Hold, then switch which leg is straight on the next set."
+  ],
+  "textSource": "opengym"
+}

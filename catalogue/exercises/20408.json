@@ -1,0 +1,22 @@
+{
+  "id": "20408",
+  "name": "quadruped wrist rock",
+  "bodyPart": "lower arms",
+  "equipment": "body weight",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "wrist flexors",
+    "wrist extensors",
+    "wrists"
+  ],
+  "category": "mobility",
+  "description": "On hands and knees, you rock your shoulders forward and back over your hands. It warms up the wrists before push-ups and hand balancing.",
+  "instructions": [
+    "Kneel on all fours with your hands under your shoulders.",
+    "Spread your fingers and press your palms into the floor.",
+    "Shift your shoulders forward past your hands slowly.",
+    "Rock back until your hips move toward your heels.",
+    "Turn your hands to point sideways or backward for more stretch."
+  ],
+  "textSource": "opengym"
+}

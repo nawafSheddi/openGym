@@ -1,0 +1,22 @@
+{
+  "id": "20002",
+  "name": "german hang",
+  "bodyPart": "shoulders",
+  "equipment": "body weight",
+  "target": "delts",
+  "secondaryMuscles": [
+    "chest",
+    "biceps",
+    "upper back"
+  ],
+  "category": "mobility",
+  "description": "A hang from rings or a bar with the body rotated behind the arms so the shoulders open into deep extension. It prepares the shoulders and biceps for the back lever and skin the cat.",
+  "instructions": [
+    "Hang from rings or a low bar with your feet supported if you are new to it.",
+    "Tuck your knees and roll your hips back and up between your arms.",
+    "Keep turning until your hips drop behind you and your arms point up and back.",
+    "Let your shoulders open gradually and keep your arms straight.",
+    "Hold, then tuck again and roll back through to come out."
+  ],
+  "textSource": "opengym"
+}

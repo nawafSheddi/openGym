@@ -1,0 +1,50 @@
+{
+  "id": "area-hips-1",
+  "name": "Hips: Mobility",
+  "kind": "area",
+  "group": "hips",
+  "level": "beginner",
+  "goal": "mobility",
+  "minutes": 15,
+  "description": "90/90 switches and holds, pigeon, hip circles and a deep squat to open the hips in every direction.",
+  "ex": [
+    {
+      "id": "4555",
+      "sets": 2,
+      "reps": 10
+    },
+    {
+      "id": "10565",
+      "sets": 2,
+      "mode": "time",
+      "sec": 45,
+      "side": true
+    },
+    {
+      "id": "1943",
+      "sets": 2,
+      "mode": "time",
+      "sec": 45,
+      "side": true
+    },
+    {
+      "id": "3411",
+      "sets": 2,
+      "reps": 8,
+      "side": true
+    },
+    {
+      "id": "3500",
+      "sets": 2,
+      "mode": "time",
+      "sec": 45
+    },
+    {
+      "id": "1056",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30,
+      "side": true
+    }
+  ]
+}

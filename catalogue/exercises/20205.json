@@ -1,0 +1,32 @@
+{
+  "id": "20205",
+  "name": "straddle pancake pulses",
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "target": "adductors",
+  "secondaryMuscles": [
+    "hamstrings",
+    "hip flexors",
+    "lower back"
+  ],
+  "category": "mobility",
+  "description": "In a wide seated straddle you lean forward from the hips in small, controlled pulses. It works the hamstrings and inner thighs toward a deeper pancake fold.",
+  "instructions": [
+    "Sit with your legs spread wide, knees straight and kneecaps pointing up.",
+    "Sit tall and tilt your pelvis forward as if pushing your belly toward the floor.",
+    "Reach your hands forward and lean in a little further with each pulse.",
+    "Keep your back long instead of rounding to reach.",
+    "Pulse slowly and breathe, then sit back up to finish."
+  ],
+  "muscleMap": {
+    "primaries": [
+      "adductors",
+      "hamstring"
+    ],
+    "secondaries": [
+      "hip-flexors",
+      "lower-back"
+    ]
+  },
+  "textSource": "opengym"
+}

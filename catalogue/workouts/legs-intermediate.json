@@ -1,0 +1,53 @@
+{
+  "id": "legs-intermediate",
+  "name": "Legs: Intermediate",
+  "kind": "muscle",
+  "group": "legs",
+  "level": "intermediate",
+  "goal": "strength",
+  "minutes": 40,
+  "description": "Single-leg strength: Bulgarian split squats, single-leg deadlifts, Cossack squats, one-leg bridges and calf raises, plus jump squats for power.",
+  "ex": [
+    {
+      "id": "3743",
+      "sets": 4,
+      "reps": 10,
+      "repsMin": 6,
+      "side": true
+    },
+    {
+      "id": "3928",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6,
+      "side": true
+    },
+    {
+      "id": "2569",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 5,
+      "side": true
+    },
+    {
+      "id": "2474",
+      "sets": 3,
+      "reps": 12,
+      "repsMin": 8,
+      "side": true
+    },
+    {
+      "id": "1387",
+      "sets": 3,
+      "reps": 15,
+      "repsMin": 10,
+      "side": true
+    },
+    {
+      "id": "0514",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 5
+    }
+  ]
+}

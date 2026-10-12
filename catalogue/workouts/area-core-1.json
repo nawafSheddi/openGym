@@ -1,0 +1,48 @@
+{
+  "id": "area-core-1",
+  "name": "Core: Strength endurance",
+  "kind": "area",
+  "group": "core",
+  "level": "beginner",
+  "goal": "conditioning",
+  "minutes": 15,
+  "description": "Planks, side planks, dead bugs, bird dogs, hollow holds and mountain climbers for a core that lasts the whole session.",
+  "ex": [
+    {
+      "id": "0463",
+      "sets": 3,
+      "mode": "time",
+      "sec": 30
+    },
+    {
+      "id": "0715",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30,
+      "side": true
+    },
+    {
+      "id": "0276",
+      "sets": 3,
+      "reps": 10,
+      "side": true
+    },
+    {
+      "id": "1241",
+      "sets": 2,
+      "reps": 10,
+      "side": true
+    },
+    {
+      "id": "1246",
+      "sets": 3,
+      "mode": "time",
+      "sec": 20
+    },
+    {
+      "id": "0630",
+      "sets": 3,
+      "reps": 20
+    }
+  ]
+}

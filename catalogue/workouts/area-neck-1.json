@@ -1,0 +1,46 @@
+{
+  "id": "area-neck-1",
+  "name": "Neck: Mobility",
+  "kind": "area",
+  "group": "neck",
+  "level": "beginner",
+  "goal": "mobility",
+  "minutes": 10,
+  "description": "Gentle chin tucks, turns and side stretches with a light isometric hold. Good after a long day at a screen.",
+  "ex": [
+    {
+      "id": "3149",
+      "sets": 2,
+      "reps": 10
+    },
+    {
+      "id": "3441",
+      "sets": 2,
+      "reps": 10
+    },
+    {
+      "id": "10556",
+      "sets": 2,
+      "reps": 10
+    },
+    {
+      "id": "0713",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30,
+      "side": true
+    },
+    {
+      "id": "1837",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30
+    },
+    {
+      "id": "5145",
+      "sets": 3,
+      "mode": "time",
+      "sec": 10
+    }
+  ]
+}

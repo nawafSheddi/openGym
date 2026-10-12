@@ -1,0 +1,43 @@
+{
+  "id": "chest-intermediate",
+  "name": "Chest: Intermediate",
+  "kind": "muscle",
+  "group": "chest",
+  "level": "intermediate",
+  "goal": "strength",
+  "minutes": 40,
+  "description": "Full push-ups, feet-raised push-ups and bar dips, finished with archer push-ups that start loading one arm at a time.",
+  "ex": [
+    {
+      "id": "0662",
+      "sets": 4,
+      "reps": 12,
+      "repsMin": 8
+    },
+    {
+      "id": "0279",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6
+    },
+    {
+      "id": "0251",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 5
+    },
+    {
+      "id": "3294",
+      "sets": 3,
+      "reps": 6,
+      "repsMin": 4,
+      "side": true
+    },
+    {
+      "id": "0283",
+      "sets": 2,
+      "reps": 10,
+      "repsMin": 6
+    }
+  ]
+}

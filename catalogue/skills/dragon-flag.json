@@ -1,0 +1,98 @@
+{
+  "id": "dragon-flag",
+  "name": "Dragon flag",
+  "family": "core",
+  "description": "A straight-body lever on the shoulders, lowered and raised while holding a bench behind your head. A strong hollow body comes first.",
+  "steps": [
+    {
+      "exId": "1246",
+      "label": "Hollow body hold",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 20
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 45,
+        "sessions": 2
+      },
+      "cue": "Lower back pressed into the floor the whole time."
+    },
+    {
+      "exId": "1163",
+      "label": "Lying leg raise",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 10
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 15,
+        "sessions": 2
+      },
+      "cue": "Keep your lower back down as your legs lower."
+    },
+    {
+      "exId": "9319",
+      "label": "Tuck dragon flag negative",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 6,
+        "sessions": 2
+      },
+      "cue": "Lower slowly with your knees bent and hips straight."
+    },
+    {
+      "exId": "9322",
+      "label": "One leg dragon flag negative",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 6,
+        "sessions": 2
+      },
+      "cue": "Keep your hips in line; do not pike at the waist."
+    },
+    {
+      "exId": "4982",
+      "label": "Dragon flag negative",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 5,
+        "sessions": 2
+      },
+      "cue": "Take five seconds to lower your straight body."
+    },
+    {
+      "exId": "4058",
+      "label": "Full dragon flag",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 6,
+        "sessions": 3
+      },
+      "cue": "Weight on your upper back, body rigid up and down."
+    }
+  ]
+}

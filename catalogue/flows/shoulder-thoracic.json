@@ -1,0 +1,76 @@
+{
+  "id": "shoulder-thoracic",
+  "name": "Shoulders & upper back",
+  "description": "Opens the chest and upper back and gets the shoulder blades moving. Uses a broomstick or pipe and, at the end, a pull-up bar.",
+  "areas": [
+    "shoulders",
+    "thoracic"
+  ],
+  "level": "beginner",
+  "transitionSec": 5,
+  "items": [
+    {
+      "exId": "3905",
+      "sec": 30,
+      "cue": "Start small and grow the circles."
+    },
+    {
+      "exId": "4607",
+      "sec": 45,
+      "cue": "Wide grip, straight arms. Narrow the grip over the weeks."
+    },
+    {
+      "exId": "4580",
+      "sec": 45,
+      "cue": "Move with your breath, focus on the upper back."
+    },
+    {
+      "exId": "8052",
+      "sec": 45,
+      "side": true,
+      "cue": "Rotate from the mid back, hips stay still."
+    },
+    {
+      "exId": "4601",
+      "sec": 45,
+      "side": true,
+      "cue": "Knees stay stacked, eyes follow the hand."
+    },
+    {
+      "exId": "5897",
+      "sec": 60,
+      "cue": "Hips over knees, let the chest sink toward the floor."
+    },
+    {
+      "exId": "2945",
+      "sec": 45,
+      "cue": "Keep the low back, head and elbows touching the wall."
+    },
+    {
+      "exId": "1362",
+      "sec": 45,
+      "cue": "Push the floor away and lift the chest gently."
+    },
+    {
+      "exId": "8546",
+      "sec": 45,
+      "cue": "Thumbs up, squeeze the shoulder blades, move slowly."
+    },
+    {
+      "exId": "4553",
+      "sec": 30,
+      "side": true,
+      "cue": "Drive the hips up and reach over, look to the hand."
+    },
+    {
+      "exId": "7553",
+      "sec": 45,
+      "cue": "Elbows at shoulder height, lean through gently."
+    },
+    {
+      "exId": "5055",
+      "sec": 30,
+      "cue": "Relax the shoulders and let the body hang long."
+    }
+  ]
+}

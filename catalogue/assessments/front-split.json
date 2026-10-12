@@ -1,0 +1,44 @@
+{
+  "id": "front-split",
+  "name": "Front split",
+  "unit": "cm",
+  "better": "lower",
+  "sided": true,
+  "range": [
+    0,
+    60
+  ],
+  "areas": [
+    "hamstrings",
+    "hip-flexors-quads",
+    "hips"
+  ],
+  "instructions": [
+    "Warm up well, then slide into a front split with the chosen leg in front. Log the side by the front leg.",
+    "Keep both knees straight, the front toes pointing up and both hips facing forward.",
+    "Support yourself with your hands or blocks, but do not let your hips rest on anything.",
+    "Hold your lowest controlled position for 3 seconds.",
+    "Have someone measure the vertical distance from the floor to the lowest point of your pelvis (the crotch). Flat on the floor is 0."
+  ],
+  "bands": [
+    {
+      "label": "elite",
+      "below": 2
+    },
+    {
+      "label": "great",
+      "below": 8
+    },
+    {
+      "label": "good",
+      "below": 15
+    },
+    {
+      "label": "fair",
+      "below": 25
+    },
+    {
+      "label": "poor"
+    }
+  ]
+}

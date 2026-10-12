@@ -1,0 +1,23 @@
+{
+  "id": "20005",
+  "name": "straddle back lever",
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "target": "upper back",
+  "secondaryMuscles": [
+    "shoulders",
+    "biceps",
+    "core",
+    "lower back"
+  ],
+  "category": "isometric",
+  "description": "A back lever hold with both legs straight and spread wide. It is the last step before the full back lever.",
+  "instructions": [
+    "Get into an advanced tuck back lever.",
+    "Extend both legs out wide into a V while keeping your hips straight.",
+    "Hold your whole body level with the floor.",
+    "Keep your arms locked and your glutes tight so your lower back does not sag.",
+    "Hold, then tuck back in and exit with control."
+  ],
+  "textSource": "opengym"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "20209",
+  "name": "seated pike fold",
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "target": "hamstrings",
+  "secondaryMuscles": [
+    "lower back",
+    "calves"
+  ],
+  "category": "stretching",
+  "description": "Sitting with both legs straight together, you fold forward from the hips. It is the basic hamstring stretch for the pike and the toe touch.",
+  "instructions": [
+    "Sit on the floor with your legs straight and together in front of you.",
+    "Pull your toes toward you and press the backs of your knees down.",
+    "Sit tall, then hinge forward from your hips.",
+    "Reach for your shins, ankles or feet without forcing.",
+    "Hold and breathe, letting yourself sink a little on each exhale."
+  ],
+  "muscleMap": {
+    "primaries": [
+      "hamstring"
+    ],
+    "secondaries": [
+      "lower-back",
+      "calves"
+    ]
+  },
+  "textSource": "opengym"
+}

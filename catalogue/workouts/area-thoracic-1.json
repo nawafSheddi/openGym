@@ -1,0 +1,48 @@
+{
+  "id": "area-thoracic-1",
+  "name": "Upper back: Mobility",
+  "kind": "area",
+  "group": "thoracic",
+  "level": "beginner",
+  "goal": "mobility",
+  "minutes": 12,
+  "description": "Cat-cow, thread the needle, kneeling rotations and the world's greatest stretch to free up a stiff upper back.",
+  "ex": [
+    {
+      "id": "4580",
+      "sets": 2,
+      "reps": 10
+    },
+    {
+      "id": "5904",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30,
+      "side": true
+    },
+    {
+      "id": "1812",
+      "sets": 2,
+      "reps": 10,
+      "side": true
+    },
+    {
+      "id": "4553",
+      "sets": 2,
+      "reps": 5,
+      "side": true
+    },
+    {
+      "id": "4633",
+      "sets": 2,
+      "reps": 5,
+      "side": true
+    },
+    {
+      "id": "0945",
+      "sets": 2,
+      "mode": "time",
+      "sec": 45
+    }
+  ]
+}

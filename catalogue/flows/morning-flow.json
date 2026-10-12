@@ -1,0 +1,74 @@
+{
+  "id": "morning-flow",
+  "name": "Morning flow",
+  "description": "A gentle 10 minute wake-up that moves the spine, hips and shoulders through their full range. No equipment, easy enough to do every day.",
+  "areas": [
+    "thoracic",
+    "lower-back",
+    "hips",
+    "hamstrings",
+    "shoulders"
+  ],
+  "level": "beginner",
+  "transitionSec": 5,
+  "items": [
+    {
+      "exId": "4580",
+      "sec": 60,
+      "cue": "Move with your breath: inhale to arch, exhale to round."
+    },
+    {
+      "exId": "5904",
+      "sec": 30,
+      "side": true,
+      "cue": "Let the shoulder melt down, hips stay over knees."
+    },
+    {
+      "exId": "3469",
+      "sec": 45,
+      "cue": "Pedal your heels and push the floor away."
+    },
+    {
+      "exId": "4633",
+      "sec": 45,
+      "side": true,
+      "cue": "Sink the hips, then rotate and follow your hand."
+    },
+    {
+      "exId": "3500",
+      "sec": 60,
+      "cue": "Heels down, elbows nudge the knees out."
+    },
+    {
+      "exId": "10752",
+      "sec": 45,
+      "cue": "No weight. Roll down one vertebra at a time."
+    },
+    {
+      "exId": "1482",
+      "sec": 30,
+      "cue": "Shoulders away from ears, lift only as high as is easy."
+    },
+    {
+      "exId": "0945",
+      "sec": 45,
+      "cue": "Sink the hips back and breathe into your back."
+    },
+    {
+      "exId": "3253",
+      "sec": 30,
+      "side": true,
+      "cue": "Reach long through the fingertips, do not lean forward."
+    },
+    {
+      "exId": "4286",
+      "sec": 30,
+      "cue": "Big slow circles, change direction halfway."
+    },
+    {
+      "exId": "3905",
+      "sec": 30,
+      "cue": "Start small and grow the circles."
+    }
+  ]
+}

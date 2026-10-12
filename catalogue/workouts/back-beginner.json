@@ -1,0 +1,47 @@
+{
+  "id": "back-beginner",
+  "name": "Back: Beginner",
+  "kind": "muscle",
+  "group": "back",
+  "level": "beginner",
+  "goal": "strength",
+  "minutes": 30,
+  "description": "The road to your first pull-up: shoulder-blade pulls, arch hangs, bent-knee rows and slow negatives, plus back extensions.",
+  "ex": [
+    {
+      "id": "0688",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 5
+    },
+    {
+      "id": "20401",
+      "sets": 3,
+      "mode": "time",
+      "sec": 15
+    },
+    {
+      "id": "2300",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6
+    },
+    {
+      "id": "7385",
+      "sets": 3,
+      "reps": 4,
+      "repsMin": 2
+    },
+    {
+      "id": "3436",
+      "sets": 2,
+      "reps": 12
+    },
+    {
+      "id": "5055",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30
+    }
+  ]
+}

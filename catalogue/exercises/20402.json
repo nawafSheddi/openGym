@@ -1,0 +1,21 @@
+{
+  "id": "20402",
+  "name": "negative dip",
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders"
+  ],
+  "category": "calisthenics",
+  "description": "A slow lowering from the top of a dip, stepping or jumping back up each rep. It builds the strength for full dips on parallel bars.",
+  "instructions": [
+    "Jump or step into a straight-arm support on parallel bars.",
+    "Lean slightly forward and keep your shoulders pulled down.",
+    "Bend your elbows and lower yourself over three to five seconds.",
+    "Stop when your shoulders are just below your elbows.",
+    "Put your feet down, return to the top and repeat."
+  ],
+  "textSource": "opengym"
+}

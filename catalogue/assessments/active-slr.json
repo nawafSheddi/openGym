@@ -1,0 +1,44 @@
+{
+  "id": "active-slr",
+  "name": "Active straight leg raise",
+  "unit": "deg",
+  "better": "higher",
+  "sided": true,
+  "range": [
+    0,
+    130
+  ],
+  "areas": [
+    "hamstrings",
+    "hips"
+  ],
+  "instructions": [
+    "Lie on your back with both legs straight and your arms by your sides.",
+    "Keep the other leg pressed flat on the floor with its toes pointing up.",
+    "Pull the toes of the test leg toward you and lift it as high as you can using only your own muscles, with the knee locked.",
+    "Hold the top for 2 seconds while a partner or a phone inclinometer on your shin reads the angle between the leg and the floor (vertical is 90).",
+    "Do not use your hands or let the other leg lift or bend.",
+    "Repeat for the other leg."
+  ],
+  "bands": [
+    {
+      "label": "poor",
+      "below": 60
+    },
+    {
+      "label": "fair",
+      "below": 70
+    },
+    {
+      "label": "good",
+      "below": 80
+    },
+    {
+      "label": "great",
+      "below": 90
+    },
+    {
+      "label": "elite"
+    }
+  ]
+}

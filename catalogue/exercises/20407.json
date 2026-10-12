@@ -1,0 +1,21 @@
+{
+  "id": "20407",
+  "name": "seated pike compression lift",
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "target": "abs",
+  "secondaryMuscles": [
+    "hip flexors",
+    "quadriceps"
+  ],
+  "category": "calisthenics",
+  "description": "Seated with straight legs, you place your hands beside your knees and lift both heels off the floor. It trains the hip flexors and abs for L-sits and press handstands.",
+  "instructions": [
+    "Sit tall with your legs straight and together.",
+    "Place your hands flat on the floor beside your knees or shins.",
+    "Lean your chest toward your thighs and keep your knees locked.",
+    "Lift both heels a few centimetres off the floor.",
+    "Hold for a moment, then lower with control."
+  ],
+  "textSource": "opengym"
+}

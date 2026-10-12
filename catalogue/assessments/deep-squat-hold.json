@@ -1,0 +1,45 @@
+{
+  "id": "deep-squat-hold",
+  "name": "Deep squat hold",
+  "unit": "s",
+  "better": "higher",
+  "sided": false,
+  "range": [
+    0,
+    600
+  ],
+  "areas": [
+    "hips",
+    "calves-ankles",
+    "groin",
+    "lower-back"
+  ],
+  "instructions": [
+    "Stand barefoot with your feet about hip to shoulder width apart and toes turned out a little.",
+    "Sink into the deepest squat you can, hips below your knees and both heels flat on the floor.",
+    "Do not hold on to anything. Your arms can rest on your knees or reach forward.",
+    "Start a timer and stay in the bottom as long as you stay relaxed and your heels stay down.",
+    "Stop the timer when you stand up, lift a heel, sit down or need a hand for support."
+  ],
+  "bands": [
+    {
+      "label": "poor",
+      "below": 30
+    },
+    {
+      "label": "fair",
+      "below": 60
+    },
+    {
+      "label": "good",
+      "below": 120
+    },
+    {
+      "label": "great",
+      "below": 300
+    },
+    {
+      "label": "elite"
+    }
+  ]
+}

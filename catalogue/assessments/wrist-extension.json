@@ -1,0 +1,43 @@
+{
+  "id": "wrist-extension",
+  "name": "Weight-bearing wrist extension",
+  "unit": "deg",
+  "better": "higher",
+  "sided": true,
+  "range": [
+    40,
+    140
+  ],
+  "areas": [
+    "wrists-forearms"
+  ],
+  "instructions": [
+    "Kneel on the floor and place the test hand flat in front of you with fingers pointing forward and the elbow straight.",
+    "Keeping the whole palm and the heel of the hand on the floor, slowly lean your shoulder forward over your fingers as far as you can.",
+    "Hold the end position for 2 seconds. Stop where the heel of the hand starts to lift.",
+    "Lay a phone inclinometer along your forearm and read how many degrees it tilts away from straight up.",
+    "Your score is 90 plus that tilt if your shoulder is in front of your hand (toward the fingers), or 90 minus the tilt if it is behind. A vertical forearm scores 90.",
+    "Repeat for the other wrist."
+  ],
+  "bands": [
+    {
+      "label": "poor",
+      "below": 80
+    },
+    {
+      "label": "fair",
+      "below": 90
+    },
+    {
+      "label": "good",
+      "below": 100
+    },
+    {
+      "label": "great",
+      "below": 110
+    },
+    {
+      "label": "elite"
+    }
+  ]
+}

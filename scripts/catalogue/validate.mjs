@@ -8,6 +8,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+// openBody content checks. Circular with this file (it reads MUSCLES from here), which is safe:
+// nothing in it runs at module load, only inside checkContent/loadContent.
+import { checkContent, loadContent } from './validate-content.mjs'
 
 const list = s => s.split(',').map(x => x.trim()).filter(Boolean)
 
@@ -102,6 +105,11 @@ export function validateCatalogue(dir) {
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const dir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../catalogue')
   const { exercises, problems } = validateCatalogue(dir)
+  // openBody content (skills, workouts, flows, assessments, programs, areas): validate-content.mjs
+  const loaded = loadContent(dir)
+  const checked = checkContent(loaded.content, exercises)
+  problems.push(...loaded.problems, ...checked.problems)
   if (problems.length) { console.error(problems.join('\n')); console.error(`\n${problems.length} problem(s)`); process.exit(1) }
-  console.log(`catalogue OK: ${exercises.length} entries`)
+  const c = checked.content
+  console.log(`catalogue OK: ${exercises.length} entries; content: ${c.skills.length} skills, ${c.workouts.length} workouts, ${c.flows.length} flows, ${c.assessments.length} assessments, ${c.programs.length} programs, ${c.areas.length} areas`)
 }

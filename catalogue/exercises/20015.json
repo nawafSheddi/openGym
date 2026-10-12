@@ -1,0 +1,23 @@
+{
+  "id": "20015",
+  "name": "tuck human flag",
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "target": "abs",
+  "secondaryMuscles": [
+    "obliques",
+    "shoulders",
+    "lats",
+    "core"
+  ],
+  "category": "isometric",
+  "description": "A human flag hold with the knees pulled in, which shortens the lever. It is the first true horizontal flag position.",
+  "instructions": [
+    "Take your flag grip on a vertical pole with both arms straight.",
+    "Kick up into the vertical flag position.",
+    "Tuck your knees and lower your hips until your torso is level.",
+    "Push hard with the bottom arm and pull with the top arm.",
+    "Hold, then lower your feet with control and switch sides."
+  ],
+  "textSource": "opengym"
+}

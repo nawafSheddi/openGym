@@ -1,0 +1,22 @@
+{
+  "id": "20023",
+  "name": "one arm push-up negative",
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders",
+    "core"
+  ],
+  "category": "calisthenics",
+  "description": "The lowering half of a one-arm push-up on the floor. It builds strength in the bottom range before you can press the full rep.",
+  "instructions": [
+    "Set up in a plank with your feet wide and one hand under your chest.",
+    "Put your other hand behind your back.",
+    "Lower your chest slowly toward the floor, taking three to five seconds.",
+    "Keep your hips square and do not let your body twist.",
+    "Drop to your knees at the bottom, reset and repeat."
+  ],
+  "textSource": "opengym"
+}

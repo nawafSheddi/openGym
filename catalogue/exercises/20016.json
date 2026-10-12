@@ -1,0 +1,23 @@
+{
+  "id": "20016",
+  "name": "straddle human flag",
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "target": "abs",
+  "secondaryMuscles": [
+    "obliques",
+    "shoulders",
+    "lats",
+    "core"
+  ],
+  "category": "isometric",
+  "description": "A human flag with the legs straight and spread wide. The straddle makes the full flag lever a little shorter.",
+  "instructions": [
+    "Take your flag grip and kick up into a vertical or tuck flag.",
+    "Extend both legs out into a wide straddle.",
+    "Hold your body sideways and level with the floor.",
+    "Keep both arms locked and your shoulders pushed away from your ears.",
+    "Hold, then bring your legs together and lower with control."
+  ],
+  "textSource": "opengym"
+}

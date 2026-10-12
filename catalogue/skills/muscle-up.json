@@ -1,0 +1,98 @@
+{
+  "id": "muscle-up",
+  "name": "Muscle-up",
+  "family": "pull",
+  "description": "A pull above a bar that turns into a dip on top of it. High pulling, straight-bar pressing and the transition are trained separately before joining them.",
+  "steps": [
+    {
+      "exId": "0652",
+      "label": "Pull-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 6
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 10,
+        "sessions": 2
+      },
+      "cue": "Full hang at the bottom, chin over the bar at the top."
+    },
+    {
+      "exId": "2462",
+      "label": "Straight bar dip",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 6
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 10,
+        "sessions": 2
+      },
+      "cue": "Lean over the bar and lock your arms at the top."
+    },
+    {
+      "exId": "20011",
+      "label": "Chest to bar pull-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 6,
+        "sessions": 2
+      },
+      "cue": "Pull your elbows down behind you until your chest meets the bar."
+    },
+    {
+      "exId": "5801",
+      "label": "Band assisted muscle-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 5,
+        "sessions": 2
+      },
+      "cue": "Keep the bar close and lean your chest over it early."
+    },
+    {
+      "exId": "20012",
+      "label": "Muscle-up negative",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 2
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 4,
+        "sessions": 2
+      },
+      "cue": "Take five seconds or more through the transition."
+    },
+    {
+      "exId": "0631",
+      "label": "Strict muscle-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 1
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 3,
+        "sessions": 3
+      },
+      "cue": "Pull to your lower chest, then roll your wrists over fast."
+    }
+  ]
+}

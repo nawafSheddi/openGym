@@ -1,0 +1,107 @@
+{
+  "id": "full-body-20",
+  "name": "Full body 20",
+  "description": "A 20 minute head-to-toe routine covering spine, hips, hamstrings, adductors, ankles and shoulders. A solid stand-alone mobility session.",
+  "areas": [
+    "thoracic",
+    "lower-back",
+    "hips",
+    "groin",
+    "hamstrings",
+    "hip-flexors-quads",
+    "calves-ankles",
+    "shoulders"
+  ],
+  "level": "intermediate",
+  "transitionSec": 5,
+  "items": [
+    {
+      "exId": "4580",
+      "sec": 45,
+      "cue": "Move with your breath: inhale to arch, exhale to round."
+    },
+    {
+      "exId": "3469",
+      "sec": 45,
+      "cue": "Pedal your heels and push the floor away."
+    },
+    {
+      "exId": "4633",
+      "sec": 45,
+      "side": true,
+      "cue": "Sink the hips, then rotate and follow your hand."
+    },
+    {
+      "exId": "4557",
+      "sec": 60,
+      "side": true,
+      "cue": "Squeeze the back glute and lift the chest slowly."
+    },
+    {
+      "exId": "10907",
+      "sec": 45,
+      "side": true,
+      "cue": "Flex the front foot, hinge with a flat back."
+    },
+    {
+      "exId": "6560",
+      "sec": 60,
+      "side": true,
+      "cue": "Sit tall and hinge over the front shin."
+    },
+    {
+      "exId": "6761",
+      "sec": 60,
+      "side": true,
+      "cue": "Keep the hips square, rest on the forearms if you can."
+    },
+    {
+      "exId": "1494",
+      "sec": 45,
+      "cue": "Soles together, sit tall and let the knees drop."
+    },
+    {
+      "exId": "0958",
+      "sec": 60,
+      "cue": "Kneecaps up, fold from the hips."
+    },
+    {
+      "exId": "10752",
+      "sec": 60,
+      "cue": "No weight or very light. Roll down slowly, roll up slowly."
+    },
+    {
+      "exId": "3500",
+      "sec": 60,
+      "cue": "Heels down, elbows nudge the knees out."
+    },
+    {
+      "exId": "2936",
+      "sec": 30,
+      "side": true,
+      "cue": "Knee over toes, heel planted."
+    },
+    {
+      "exId": "8052",
+      "sec": 30,
+      "side": true,
+      "cue": "Rotate from the mid back, hips stay still."
+    },
+    {
+      "exId": "5897",
+      "sec": 45,
+      "cue": "Hips over knees, let the chest sink."
+    },
+    {
+      "exId": "1491",
+      "sec": 45,
+      "side": true,
+      "cue": "Both shoulders stay heavy on the floor."
+    },
+    {
+      "exId": "0945",
+      "sec": 60,
+      "cue": "Sink back and slow your breathing."
+    }
+  ]
+}

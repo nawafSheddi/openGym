@@ -1,0 +1,69 @@
+{
+  "id": "hip-opener",
+  "name": "Hip opener",
+  "description": "A floor routine for stiff hips that works rotation, the hip flexors and the inner thighs. Good after a day of sitting or before squats.",
+  "areas": [
+    "hips",
+    "groin",
+    "hip-flexors-quads"
+  ],
+  "level": "beginner",
+  "transitionSec": 5,
+  "items": [
+    {
+      "exId": "4286",
+      "sec": 45,
+      "cue": "Loosen up with big, slow circles both ways."
+    },
+    {
+      "exId": "6560",
+      "sec": 60,
+      "side": true,
+      "cue": "Sit tall and hinge over the front shin."
+    },
+    {
+      "exId": "4608",
+      "sec": 60,
+      "cue": "Switch knees side to side slowly, use your hands if needed."
+    },
+    {
+      "exId": "0560",
+      "sec": 45,
+      "side": true,
+      "cue": "Tuck the pelvis and squeeze the back glute."
+    },
+    {
+      "exId": "5892",
+      "sec": 45,
+      "side": true,
+      "cue": "Both hands inside the front foot, let the hips sink."
+    },
+    {
+      "exId": "6761",
+      "sec": 60,
+      "side": true,
+      "cue": "Keep the hips square and rest on your forearms if you can."
+    },
+    {
+      "exId": "6292",
+      "sec": 60,
+      "cue": "Knees wide, ankles in line with knees, push the hips back gently."
+    },
+    {
+      "exId": "1494",
+      "sec": 60,
+      "cue": "Soles together, sit tall and let the knees drop."
+    },
+    {
+      "exId": "5917",
+      "sec": 45,
+      "cue": "Pull the knees toward the armpits and rock gently."
+    },
+    {
+      "exId": "1939",
+      "sec": 45,
+      "side": true,
+      "cue": "Draw the knee toward the opposite shoulder."
+    }
+  ]
+}

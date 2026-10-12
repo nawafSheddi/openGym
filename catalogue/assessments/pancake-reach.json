@@ -1,0 +1,45 @@
+{
+  "id": "pancake-reach",
+  "name": "Pancake reach",
+  "unit": "cm",
+  "better": "higher",
+  "sided": false,
+  "range": [
+    -30,
+    90
+  ],
+  "areas": [
+    "groin",
+    "hamstrings",
+    "lower-back"
+  ],
+  "instructions": [
+    "Warm up, then sit on the floor with your legs as wide as you can while both knees stay straight and kneecaps point up. Use the same width every time you retest.",
+    "Lay a tape measure on the floor along your midline, with 0 on the imaginary line joining your two heels.",
+    "Place one hand on top of the other and fold forward from your hips, sliding your fingertips along the tape.",
+    "Hold the farthest point for 2 seconds with knees still straight.",
+    "Record fingertips past the heel line as a positive number and behind it as a negative number.",
+    "Take the best of two tries."
+  ],
+  "bands": [
+    {
+      "label": "poor",
+      "below": 0
+    },
+    {
+      "label": "fair",
+      "below": 15
+    },
+    {
+      "label": "good",
+      "below": 30
+    },
+    {
+      "label": "great",
+      "below": 45
+    },
+    {
+      "label": "elite"
+    }
+  ]
+}

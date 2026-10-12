@@ -1,0 +1,45 @@
+{
+  "id": "area-thoracic-2",
+  "name": "Upper back: Strength & range",
+  "kind": "area",
+  "group": "thoracic",
+  "level": "intermediate",
+  "goal": "mobility",
+  "minutes": 18,
+  "description": "Arch holds and prone raises to own the extended position, lying rotations and a bridge to push the range further.",
+  "ex": [
+    {
+      "id": "20400",
+      "sets": 3,
+      "mode": "time",
+      "sec": 20
+    },
+    {
+      "id": "3225",
+      "sets": 3,
+      "reps": 12
+    },
+    {
+      "id": "5822",
+      "sets": 3,
+      "reps": 12
+    },
+    {
+      "id": "3414",
+      "sets": 2,
+      "reps": 10,
+      "side": true
+    },
+    {
+      "id": "1493",
+      "sets": 3,
+      "mode": "time",
+      "sec": 15
+    },
+    {
+      "id": "4177",
+      "sets": 2,
+      "reps": 10
+    }
+  ]
+}

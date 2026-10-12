@@ -27,6 +27,15 @@ const catalogueMedia = {
       if (!prefix) return next()
       const [dir, ext] = dirs[prefix]
       const name = decodeURIComponent(req.url.slice(prefix.length).split('?')[0])
+      // openBody: open media for exercises it added (catalogue/media-open/, scripts/catalogue/
+      // media-fields.mjs) is served under both still/ and clip/, like nginx does in the image.
+      const open = /^\d{4,5}\.(svg|png|jpg|webp)$/.exec(name)
+      const openFile = open && join(root, '../media-open', name)
+      if (openFile && existsSync(openFile)) {
+        const types = { svg: 'image/svg+xml', png: 'image/png', jpg: 'image/jpeg', webp: 'image/webp' }
+        res.setHeader('Content-Type', types[open[1]])
+        return res.end(readFileSync(openFile))
+      }
       const file = join(root, dir, name)
       if (!/^\d{4,5}\.(webp|mp4)$/.test(name) || !name.endsWith(ext) || !existsSync(file)) { res.statusCode = 404; return res.end() }
       res.setHeader('Content-Type', ext === '.mp4' ? 'video/mp4' : 'image/webp')

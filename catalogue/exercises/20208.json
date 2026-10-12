@@ -1,0 +1,32 @@
+{
+  "id": "20208",
+  "name": "seated straddle side bend",
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "target": "adductors",
+  "secondaryMuscles": [
+    "hamstrings",
+    "obliques",
+    "lats"
+  ],
+  "category": "stretching",
+  "description": "From a wide seated straddle you bend sideways over one leg with the top arm reaching overhead. It stretches the inner thighs, hamstrings and the side of the trunk.",
+  "instructions": [
+    "Sit with your legs spread wide and your knees pointing up.",
+    "Turn your chest to face forward and keep both sit bones on the floor.",
+    "Reach one arm overhead and bend sideways toward the opposite leg.",
+    "Rest your lower hand on the floor or on your leg.",
+    "Hold and breathe, then switch sides."
+  ],
+  "muscleMap": {
+    "primaries": [
+      "adductors",
+      "obliques"
+    ],
+    "secondaries": [
+      "hamstring",
+      "upper-back"
+    ]
+  },
+  "textSource": "opengym"
+}

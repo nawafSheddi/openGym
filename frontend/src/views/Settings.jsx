@@ -7,6 +7,7 @@ import { speedUnitOf } from '../lib/speed.js'
 import { formulaOf, FORMULA_NAMES } from '../lib/onerm.js'
 import { copyText } from '../lib/clipboard.js'
 import { useUI } from '../store/useUI.js'
+import { BRAND } from '../config/brand.js'
 import { ACCENTS, ACCENT_NAMES, todayISO, localTZ, weekStartOf, MONDAY, SUNDAY, fmtPlate } from '../lib/format.js'
 import { inventoryFor, ownsPlates } from '../lib/plates.js'
 import { dumbbellsOf } from '../lib/dumbbells.js'
@@ -833,10 +834,13 @@ export default function Settings({ page = null, find = null, via = null }) {
           which build you are running, or whether an update actually installed. */}
       <div className="dim small sp-version">
         openBody v{__APP_VERSION__} · {t('free & open source (AGPL v3)')}<br />
-        <a href="https://github.com/DuarteSantos8/openGym" target="_blank" rel="noopener">{t('Source code')}</a><br />
+        {/* AGPL: the source offered must be this modified version's, i.e. the fork; upstream is
+            credited alongside (product names, not translated). */}
+        <a href={`https://github.com/${BRAND.repo}`} target="_blank" rel="noopener">{t('Source code')}</a>
+        {' · '}based on <a href={`https://github.com/${BRAND.upstream}`} target="_blank" rel="noopener">openGym</a><br />
         {/* Attribution the media licence asks for word for word (agreement §8c), so it is not translated */}
         Exercise media © Aliaksandr Makatserchyk, <a href="https://gymvisual.com/" target="_blank" rel="noopener">Gym visual</a>, gymvisual.com.
-        Media licensed for use in openBody only; see <a href="https://github.com/DuarteSantos8/openGym/blob/main/NOTICE.md" target="_blank" rel="noopener">NOTICE.md</a>
+        Media licensed for use in openGym only; see <a href="https://github.com/DuarteSantos8/openGym/blob/main/NOTICE.md" target="_blank" rel="noopener">NOTICE.md</a>
       </div>
     </>,
 

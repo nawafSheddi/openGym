@@ -1,0 +1,49 @@
+{
+  "id": "area-core-2",
+  "name": "Core: Endurance circuit",
+  "kind": "area",
+  "group": "core",
+  "level": "intermediate",
+  "goal": "conditioning",
+  "minutes": 20,
+  "description": "Hollow rocks, arch holds, body saws, wipers, V-sits and side plank crunches: a demanding circuit for front, back and sides.",
+  "ex": [
+    {
+      "id": "5649",
+      "sets": 3,
+      "reps": 15,
+      "repsMin": 10
+    },
+    {
+      "id": "20400",
+      "sets": 3,
+      "mode": "time",
+      "sec": 30
+    },
+    {
+      "id": "4384",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6
+    },
+    {
+      "id": "1249",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 5,
+      "side": true
+    },
+    {
+      "id": "3420",
+      "sets": 3,
+      "mode": "time",
+      "sec": 15
+    },
+    {
+      "id": "3503",
+      "sets": 2,
+      "reps": 10,
+      "side": true
+    }
+  ]
+}

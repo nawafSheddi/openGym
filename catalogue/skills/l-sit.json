@@ -1,0 +1,98 @@
+{
+  "id": "l-sit",
+  "name": "L-sit",
+  "family": "core",
+  "description": "A support hold on straight arms with the legs held straight out in front. It combines shoulder depression with hip compression strength.",
+  "steps": [
+    {
+      "exId": "1442",
+      "label": "Support hold",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 15
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 30,
+        "sessions": 2
+      },
+      "cue": "Arms locked, shoulders pushed down away from your ears."
+    },
+    {
+      "exId": "20017",
+      "label": "Foot supported L-sit",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 15
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 30,
+        "sessions": 2
+      },
+      "cue": "Lift your hips while your heels stay on the floor."
+    },
+    {
+      "exId": "20018",
+      "label": "Tuck L-sit",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 10
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 20,
+        "sessions": 2
+      },
+      "cue": "Pull your knees up and keep pushing the floor away."
+    },
+    {
+      "exId": "20019",
+      "label": "One leg L-sit",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 8
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 15,
+        "sessions": 2
+      },
+      "cue": "Switch the straight leg each set and lock that knee."
+    },
+    {
+      "exId": "1402",
+      "label": "L-sit on parallettes",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 10
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 20,
+        "sessions": 2
+      },
+      "cue": "Legs straight and together at hip height."
+    },
+    {
+      "exId": "3419",
+      "label": "L-sit on the floor",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 10
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 30,
+        "sessions": 3
+      },
+      "cue": "Push down hard and lift your heels clear of the floor."
+    }
+  ]
+}

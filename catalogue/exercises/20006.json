@@ -1,0 +1,22 @@
+{
+  "id": "20006",
+  "name": "frog stand",
+  "bodyPart": "shoulders",
+  "equipment": "body weight",
+  "target": "delts",
+  "secondaryMuscles": [
+    "wrists",
+    "triceps",
+    "core"
+  ],
+  "category": "calisthenics",
+  "description": "A hand balance with the knees resting on the outside of bent elbows and the feet off the floor. It builds the wrist strength and forward lean that the planche and handstand rely on.",
+  "instructions": [
+    "Squat down and place your hands flat on the floor shoulder width apart, fingers spread.",
+    "Bend your elbows slightly and rest your knees on the outside of them.",
+    "Lean your shoulders forward over your hands until your feet get light.",
+    "Lift your feet off the floor and find the balance point in your fingertips.",
+    "Hold with your gaze slightly forward, then lower your feet with control."
+  ],
+  "textSource": "opengym"
+}

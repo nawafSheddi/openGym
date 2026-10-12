@@ -1,0 +1,98 @@
+{
+  "id": "one-arm-pull-up",
+  "name": "One-arm pull-up",
+  "family": "pull",
+  "description": "A full pull-up on one arm from a dead hang. It needs a large base of two-arm strength, then uneven and one-arm loading.",
+  "steps": [
+    {
+      "exId": "0652",
+      "label": "Pull-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 8
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 12,
+        "sessions": 2
+      },
+      "cue": "Strict reps from a full hang, no kipping."
+    },
+    {
+      "exId": "1357",
+      "label": "One-arm hang",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 10
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 20,
+        "sessions": 2
+      },
+      "cue": "Per arm; keep the shoulder active and the body from spinning."
+    },
+    {
+      "exId": "3293",
+      "label": "Archer pull-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 6,
+        "sessions": 2
+      },
+      "cue": "Reps per side; keep the guiding arm as straight as you can."
+    },
+    {
+      "exId": "20020",
+      "label": "One-arm pull-up negative",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 2
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 4,
+        "sessions": 2
+      },
+      "cue": "Reps per arm; lower for five to eight seconds."
+    },
+    {
+      "exId": "20021",
+      "label": "Towel assisted one-arm pull-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 2
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 4,
+        "sessions": 2
+      },
+      "cue": "Reps per arm; grip the towel lower as you get stronger."
+    },
+    {
+      "exId": "0638",
+      "label": "One-arm pull-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 1
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 2,
+        "sessions": 3
+      },
+      "cue": "Reps per arm; brace hard so you do not spin."
+    }
+  ]
+}

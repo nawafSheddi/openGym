@@ -1,0 +1,67 @@
+{
+  "id": "ankle-calf",
+  "name": "Ankles & calves",
+  "description": "Mobility and strength for the ankles, calves and shins. Helps with deep squats, pistols and running.",
+  "areas": [
+    "calves-ankles"
+  ],
+  "level": "beginner",
+  "transitionSec": 5,
+  "items": [
+    {
+      "exId": "1368",
+      "sec": 30,
+      "side": true,
+      "cue": "Slow, full circles both ways."
+    },
+    {
+      "exId": "10547",
+      "sec": 30,
+      "side": true,
+      "cue": "Rock from heel to toes, hold a wall for balance."
+    },
+    {
+      "exId": "1377",
+      "sec": 45,
+      "side": true,
+      "cue": "Back heel down, back knee straight."
+    },
+    {
+      "exId": "11649",
+      "sec": 45,
+      "side": true,
+      "cue": "Bend the back knee, heel stays down."
+    },
+    {
+      "exId": "2936",
+      "sec": 45,
+      "side": true,
+      "cue": "Drive the knee forward over the toes, heel planted."
+    },
+    {
+      "exId": "1891",
+      "sec": 45,
+      "cue": "Toes tucked, sit back gently."
+    },
+    {
+      "exId": "1960",
+      "sec": 45,
+      "cue": "Tops of the feet down, lean back only as far as is comfortable."
+    },
+    {
+      "exId": "9803",
+      "sec": 45,
+      "cue": "Lift the toes high, lower slowly."
+    },
+    {
+      "exId": "3018",
+      "sec": 45,
+      "cue": "Full range, pause at the top, lower slowly."
+    },
+    {
+      "exId": "0951",
+      "sec": 60,
+      "cue": "Heels down, sink and breathe."
+    }
+  ]
+}

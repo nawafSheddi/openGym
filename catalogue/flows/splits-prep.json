@@ -1,0 +1,72 @@
+{
+  "id": "splits-prep",
+  "name": "Splits prep",
+  "description": "Dynamic swings, then hip flexor, hamstring and adductor holds that build toward front and side splits. Use blocks or a chair for support.",
+  "areas": [
+    "hamstrings",
+    "hip-flexors-quads",
+    "hips",
+    "groin"
+  ],
+  "level": "intermediate",
+  "transitionSec": 5,
+  "items": [
+    {
+      "exId": "1563",
+      "sec": 30,
+      "side": true,
+      "cue": "Swing, do not kick. Let each swing go a little higher."
+    },
+    {
+      "exId": "4630",
+      "sec": 30,
+      "side": true,
+      "cue": "Swing across and out, keep the standing leg tall."
+    },
+    {
+      "exId": "20207",
+      "sec": 45,
+      "cue": "Bend one knee, straighten the other, keep the rhythm slow."
+    },
+    {
+      "exId": "0560",
+      "sec": 45,
+      "side": true,
+      "cue": "Tuck the pelvis and squeeze the back glute."
+    },
+    {
+      "exId": "4557",
+      "sec": 60,
+      "side": true,
+      "cue": "Squeeze the glute of the back leg and lift your chest slowly."
+    },
+    {
+      "exId": "10907",
+      "sec": 60,
+      "side": true,
+      "cue": "Flex the front foot, hips square, hinge with a flat back."
+    },
+    {
+      "exId": "5892",
+      "sec": 45,
+      "side": true,
+      "cue": "Sink the hips low, keep the back knee down if needed."
+    },
+    {
+      "exId": "20206",
+      "sec": 60,
+      "side": true,
+      "cue": "Hands on blocks, hips square. Stop at a strong but calm stretch."
+    },
+    {
+      "exId": "2571",
+      "sec": 45,
+      "cue": "Rock slowly back and forth, knees wide."
+    },
+    {
+      "exId": "3458",
+      "sec": 60,
+      "cue": "Toes up, weight in your hands. Go only as low as you control."
+    }
+  ]
+}

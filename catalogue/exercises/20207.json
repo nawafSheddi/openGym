@@ -1,0 +1,30 @@
+{
+  "id": "20207",
+  "name": "standing elephant walk",
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "target": "hamstrings",
+  "secondaryMuscles": [
+    "calves",
+    "lower back"
+  ],
+  "category": "mobility",
+  "description": "A standing forward fold where you bend one knee and straighten the other in turn. It warms up the hamstrings gently before deeper stretching.",
+  "instructions": [
+    "Stand with your feet hip-width apart and fold forward from your hips.",
+    "Place your hands on the floor, on blocks or on your shins.",
+    "Bend one knee while you straighten the other leg.",
+    "Switch sides in a slow walking rhythm.",
+    "Keep your weight over the balls of your feet and your neck relaxed."
+  ],
+  "muscleMap": {
+    "primaries": [
+      "hamstring"
+    ],
+    "secondaries": [
+      "calves",
+      "lower-back"
+    ]
+  },
+  "textSource": "opengym"
+}

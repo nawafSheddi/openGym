@@ -1,0 +1,43 @@
+{
+  "id": "arms-advanced",
+  "name": "Arms: Advanced",
+  "kind": "muscle",
+  "group": "arms",
+  "level": "advanced",
+  "goal": "strength",
+  "minutes": 45,
+  "description": "Weighted chin-ups and dips, archer pulls and impossible dips: heavy, low-rep work for strong elbows and big arms.",
+  "ex": [
+    {
+      "id": "4102",
+      "sets": 4,
+      "reps": 6,
+      "repsMin": 4
+    },
+    {
+      "id": "1755",
+      "sets": 4,
+      "reps": 6,
+      "repsMin": 4
+    },
+    {
+      "id": "3293",
+      "sets": 3,
+      "reps": 5,
+      "repsMin": 3,
+      "side": true
+    },
+    {
+      "id": "3289",
+      "sets": 3,
+      "reps": 6,
+      "repsMin": 4
+    },
+    {
+      "id": "4983",
+      "sets": 3,
+      "mode": "time",
+      "sec": 15
+    }
+  ]
+}

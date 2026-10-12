@@ -1,0 +1,22 @@
+{
+  "id": "20022",
+  "name": "incline one arm push-up",
+  "bodyPart": "chest",
+  "equipment": "body weight",
+  "target": "pectorals",
+  "secondaryMuscles": [
+    "triceps",
+    "shoulders",
+    "core"
+  ],
+  "category": "calisthenics",
+  "description": "A one-arm push-up with the hand on a bench or box. Raising the hand makes the movement easier while you learn to resist rotation.",
+  "instructions": [
+    "Place one hand on a bench or sturdy box and your feet wider than your hips.",
+    "Put your other hand behind your back.",
+    "Keep your body in a straight line and your hips square to the floor.",
+    "Lower your chest toward the bench with control.",
+    "Press back up without twisting, then switch arms after your reps."
+  ],
+  "textSource": "opengym"
+}

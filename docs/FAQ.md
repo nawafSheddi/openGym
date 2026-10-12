@@ -99,7 +99,7 @@ an exercise and something measured. See [DATA_IMPORTS.md](DATA_IMPORTS.md).
 
 ### Can I reuse the exercise images in my own project?
 
-No. They are © Aliaksandr Makatserchyk, Gym visual, licensed for use in openBody only and not covered
+No. They are © Aliaksandr Makatserchyk, Gym visual, licensed for use in openGym only and not covered
 by openBody's license. Anything outside openBody needs your own licence from
 [gymvisual.com](https://gymvisual.com/). Details in [NOTICE.md](../NOTICE.md). The exercise text in
 [catalogue/](../catalogue/README.md) is a different story: that's openBody's, and fixes are welcome.

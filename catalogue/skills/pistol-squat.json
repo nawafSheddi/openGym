@@ -1,0 +1,98 @@
+{
+  "id": "pistol-squat",
+  "name": "Pistol squat",
+  "family": "legs",
+  "description": "A full-depth squat on one leg with the other held straight out in front. Supported and box versions build the strength and balance first.",
+  "steps": [
+    {
+      "exId": "1197",
+      "label": "Bodyweight squat",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 12
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 20,
+        "sessions": 2
+      },
+      "cue": "Sit deep with your heels down and chest up."
+    },
+    {
+      "exId": "3743",
+      "label": "Bulgarian split squat",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 6
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 10,
+        "sessions": 2
+      },
+      "cue": "Reps per leg; keep your front knee tracking over your toes."
+    },
+    {
+      "exId": "1762",
+      "label": "Assisted pistol squat",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 8,
+        "sessions": 2
+      },
+      "cue": "Reps per leg; use the support only as much as you need."
+    },
+    {
+      "exId": "2984",
+      "label": "Pistol squat to box",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 8,
+        "sessions": 2
+      },
+      "cue": "Reps per leg; touch the box lightly, do not sit and rest."
+    },
+    {
+      "exId": "3493",
+      "label": "Pistol squat to low box",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 8,
+        "sessions": 2
+      },
+      "cue": "Reps per leg; reach your arms forward to balance."
+    },
+    {
+      "exId": "1759",
+      "label": "Full pistol squat",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 6,
+        "sessions": 3
+      },
+      "cue": "Reps per leg; heel stays down all the way to the bottom."
+    }
+  ]
+}

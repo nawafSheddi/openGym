@@ -1,0 +1,22 @@
+{
+  "id": "20406",
+  "name": "copenhagen side plank",
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "target": "adductors",
+  "secondaryMuscles": [
+    "obliques",
+    "core",
+    "inner thighs"
+  ],
+  "category": "isometric",
+  "description": "A side plank with the top leg resting on a bench and the bottom leg hanging free. It builds strong inner thighs and side core.",
+  "instructions": [
+    "Lie on your side next to a bench with your forearm under your shoulder.",
+    "Place the inside of your top foot or knee on the bench.",
+    "Lift your hips until your body forms a straight line.",
+    "Keep the bottom leg off the floor if you can.",
+    "Hold for the set time, then switch sides."
+  ],
+  "textSource": "opengym"
+}

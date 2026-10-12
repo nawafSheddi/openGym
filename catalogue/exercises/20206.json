@@ -1,0 +1,33 @@
+{
+  "id": "20206",
+  "name": "front split hold",
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "target": "hamstrings",
+  "secondaryMuscles": [
+    "hip flexors",
+    "quadriceps",
+    "glutes"
+  ],
+  "category": "stretching",
+  "description": "A held front split, one leg reaching forward and the other back. It stretches the hamstrings of the front leg and the hip flexors of the back leg.",
+  "instructions": [
+    "Kneel and extend one leg straight in front of you with the heel on the floor.",
+    "Place your hands or two blocks on either side of your hips for support.",
+    "Slide the front heel forward and the back knee back as far as you can control.",
+    "Keep both hips facing forward and the back leg straight behind you.",
+    "Hold and breathe, taking weight through your hands as needed.",
+    "Come out slowly by bending the front knee."
+  ],
+  "muscleMap": {
+    "primaries": [
+      "hamstring",
+      "hip-flexors"
+    ],
+    "secondaries": [
+      "quadriceps",
+      "gluteal"
+    ]
+  },
+  "textSource": "opengym"
+}

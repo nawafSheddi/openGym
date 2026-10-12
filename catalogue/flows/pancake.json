@@ -1,0 +1,66 @@
+{
+  "id": "pancake",
+  "name": "Pancake",
+  "description": "A straddle-focused session that mixes active work with long passive holds, building toward folding your chest to the floor with legs wide.",
+  "areas": [
+    "groin",
+    "hamstrings",
+    "lower-back",
+    "hips"
+  ],
+  "level": "intermediate",
+  "transitionSec": 5,
+  "items": [
+    {
+      "exId": "1494",
+      "sec": 60,
+      "cue": "Soles together, sit tall and let the knees drop."
+    },
+    {
+      "exId": "2571",
+      "sec": 60,
+      "cue": "Rock slowly, knees wide, keep the back long."
+    },
+    {
+      "exId": "2569",
+      "sec": 45,
+      "cue": "Sink side to side, chest up, heel down on the bent leg."
+    },
+    {
+      "exId": "20211",
+      "sec": 45,
+      "cue": "Knees out over the toes, sit low and stay tall."
+    },
+    {
+      "exId": "20209",
+      "sec": 60,
+      "cue": "Tilt the pelvis forward, do not chase the toes with a round back."
+    },
+    {
+      "exId": "1902",
+      "sec": 60,
+      "cue": "Sit tall, hinge from the hips, kneecaps up."
+    },
+    {
+      "exId": "20208",
+      "sec": 45,
+      "side": true,
+      "cue": "Chest faces forward, reach up and over."
+    },
+    {
+      "exId": "20205",
+      "sec": 45,
+      "cue": "Small pulses, belly toward the floor, back long."
+    },
+    {
+      "exId": "0958",
+      "sec": 90,
+      "cue": "Relax into it. Sink a little on each exhale."
+    },
+    {
+      "exId": "20210",
+      "sec": 120,
+      "cue": "Let gravity open the legs, lower back stays down."
+    }
+  ]
+}

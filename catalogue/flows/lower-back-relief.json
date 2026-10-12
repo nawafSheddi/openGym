@@ -1,0 +1,74 @@
+{
+  "id": "lower-back-relief",
+  "name": "Lower back relief",
+  "description": "Gentle movement and support work for a stiff lower back. Stay in a pain-free range, and see a professional if pain is sharp or spreads down a leg.",
+  "areas": [
+    "lower-back",
+    "hips",
+    "core",
+    "hip-flexors-quads"
+  ],
+  "level": "beginner",
+  "transitionSec": 5,
+  "items": [
+    {
+      "exId": "3147",
+      "sec": 45,
+      "cue": "Small rocks of the pelvis, flatten then lift the low back."
+    },
+    {
+      "exId": "1810",
+      "sec": 30,
+      "side": true,
+      "cue": "Hug the knee in, other leg relaxed."
+    },
+    {
+      "exId": "1491",
+      "sec": 45,
+      "side": true,
+      "cue": "Let the knee fall across, shoulders stay down."
+    },
+    {
+      "exId": "1939",
+      "sec": 45,
+      "side": true,
+      "cue": "Draw the knee toward the opposite shoulder."
+    },
+    {
+      "exId": "4580",
+      "sec": 60,
+      "cue": "Slow and small, only the range that feels good."
+    },
+    {
+      "exId": "0945",
+      "sec": 60,
+      "cue": "Knees wide, sink back and breathe into the low back."
+    },
+    {
+      "exId": "1362",
+      "sec": 45,
+      "cue": "Rest on the forearms, glutes relaxed."
+    },
+    {
+      "exId": "1241",
+      "sec": 60,
+      "cue": "Reach long, hips level, alternate sides slowly."
+    },
+    {
+      "exId": "2471",
+      "sec": 45,
+      "cue": "Squeeze the glutes, ribs down, no arching."
+    },
+    {
+      "exId": "0560",
+      "sec": 45,
+      "side": true,
+      "cue": "Tuck the pelvis to feel the front of the hip."
+    },
+    {
+      "exId": "4381",
+      "sec": 60,
+      "cue": "Let the back rest flat and breathe."
+    }
+  ]
+}

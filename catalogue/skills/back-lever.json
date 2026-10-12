@@ -1,0 +1,98 @@
+{
+  "id": "back-lever",
+  "name": "Back lever",
+  "family": "pull",
+  "description": "A face-down horizontal hold under a bar or rings with the arms behind you. Shoulder mobility comes first, then the lever is lengthened step by step.",
+  "steps": [
+    {
+      "exId": "20002",
+      "label": "German hang",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 15
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 30,
+        "sessions": 2
+      },
+      "cue": "Go only as deep as stays pain free; never bounce."
+    },
+    {
+      "exId": "3304",
+      "label": "Skin the cat",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 6,
+        "sessions": 2
+      },
+      "cue": "Move slowly through the bottom and keep your arms straight."
+    },
+    {
+      "exId": "20003",
+      "label": "Tuck back lever",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 8
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 15,
+        "sessions": 2
+      },
+      "cue": "Press your hands down so your shoulders stay level."
+    },
+    {
+      "exId": "20004",
+      "label": "Advanced tuck back lever",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 6
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 12,
+        "sessions": 2
+      },
+      "cue": "Push your hips back until your back is flat."
+    },
+    {
+      "exId": "20005",
+      "label": "Straddle back lever",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 10,
+        "sessions": 2
+      },
+      "cue": "Squeeze your glutes so your lower back does not sag."
+    },
+    {
+      "exId": "3297",
+      "label": "Full back lever",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 10,
+        "sessions": 3
+      },
+      "cue": "Legs together, body straight, arms locked."
+    }
+  ]
+}

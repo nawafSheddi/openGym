@@ -1,0 +1,98 @@
+{
+  "id": "human-flag",
+  "name": "Human flag",
+  "family": "core",
+  "description": "A sideways hold on a vertical pole with the body level, pulling with the top arm and pushing with the bottom one. Holds are trained on both sides.",
+  "steps": [
+    {
+      "exId": "0715",
+      "label": "Side plank",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 30
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 45,
+        "sessions": 2
+      },
+      "cue": "Per side; hips high and body in one line."
+    },
+    {
+      "exId": "20013",
+      "label": "Clutch flag",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 10,
+        "sessions": 2
+      },
+      "cue": "Per side; wedge the elbow firmly into your hip."
+    },
+    {
+      "exId": "20014",
+      "label": "Vertical flag",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 15,
+        "sessions": 2
+      },
+      "cue": "Per side; pull with the top arm, push with the bottom arm."
+    },
+    {
+      "exId": "20015",
+      "label": "Tuck flag",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 8,
+        "sessions": 2
+      },
+      "cue": "Per side; face sideways, not at the floor or sky."
+    },
+    {
+      "exId": "20016",
+      "label": "Straddle flag",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 8,
+        "sessions": 2
+      },
+      "cue": "Per side; keep the bottom arm locked as the legs open."
+    },
+    {
+      "exId": "3303",
+      "label": "Full human flag",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 8,
+        "sessions": 3
+      },
+      "cue": "Per side; legs together and level with your shoulders."
+    }
+  ]
+}

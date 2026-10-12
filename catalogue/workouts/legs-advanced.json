@@ -1,0 +1,51 @@
+{
+  "id": "legs-advanced",
+  "name": "Legs: Advanced",
+  "kind": "muscle",
+  "group": "legs",
+  "level": "advanced",
+  "goal": "strength",
+  "minutes": 45,
+  "description": "Pistol squats, shrimp squats, Nordic curls, sissy squats and reverse Nordics: the hardest leg work you can do without a barbell.",
+  "ex": [
+    {
+      "id": "1759",
+      "sets": 4,
+      "reps": 5,
+      "repsMin": 3,
+      "side": true
+    },
+    {
+      "id": "3366",
+      "sets": 3,
+      "reps": 6,
+      "repsMin": 3,
+      "side": true
+    },
+    {
+      "id": "7746",
+      "sets": 3,
+      "reps": 5,
+      "repsMin": 3
+    },
+    {
+      "id": "1489",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6
+    },
+    {
+      "id": "20405",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 5
+    },
+    {
+      "id": "3712",
+      "sets": 3,
+      "reps": 15,
+      "repsMin": 10,
+      "side": true
+    }
+  ]
+}

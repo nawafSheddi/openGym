@@ -1,0 +1,22 @@
+{
+  "id": "20017",
+  "name": "foot supported l-sit",
+  "bodyPart": "waist",
+  "equipment": "body weight",
+  "target": "abs",
+  "secondaryMuscles": [
+    "triceps",
+    "hip flexors",
+    "shoulders"
+  ],
+  "category": "isometric",
+  "description": "An L-sit where the heels stay on the floor while the arms lift the hips. It builds the arm lockout and shoulder depression for the full hold.",
+  "instructions": [
+    "Sit with your legs straight in front of you and your hands beside your hips.",
+    "Lock your arms and push down to lift your hips off the floor.",
+    "Leave your heels resting on the floor.",
+    "Press your shoulders down away from your ears.",
+    "Hold, then lower your hips gently."
+  ],
+  "textSource": "opengym"
+}

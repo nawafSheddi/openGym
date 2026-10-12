@@ -1,0 +1,42 @@
+{
+  "id": "arms-beginner",
+  "name": "Arms: Beginner",
+  "kind": "muscle",
+  "group": "arms",
+  "level": "beginner",
+  "goal": "strength",
+  "minutes": 25,
+  "description": "Bodyweight arm work with no extra kit: knee diamond push-ups and bench dips for triceps, underhand rows and chin-up negatives for biceps.",
+  "ex": [
+    {
+      "id": "1174",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6
+    },
+    {
+      "id": "0129",
+      "sets": 3,
+      "reps": 12,
+      "repsMin": 8
+    },
+    {
+      "id": "1223",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6
+    },
+    {
+      "id": "4725",
+      "sets": 3,
+      "reps": 4,
+      "repsMin": 2
+    },
+    {
+      "id": "0815",
+      "sets": 2,
+      "reps": 12,
+      "repsMin": 8
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "full-body-beginner",
+  "name": "Full body: Beginner",
+  "kind": "muscle",
+  "group": "full-body",
+  "level": "beginner",
+  "goal": "strength",
+  "minutes": 35,
+  "description": "One session that covers squat, push, pull, hinge and brace. A sound first workout two or three times a week.",
+  "ex": [
+    {
+      "id": "1197",
+      "sets": 3,
+      "reps": 12,
+      "repsMin": 8
+    },
+    {
+      "id": "0493",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6
+    },
+    {
+      "id": "2300",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6
+    },
+    {
+      "id": "2471",
+      "sets": 3,
+      "reps": 12,
+      "repsMin": 8
+    },
+    {
+      "id": "0463",
+      "sets": 3,
+      "mode": "time",
+      "sec": 30
+    },
+    {
+      "id": "0276",
+      "sets": 2,
+      "reps": 10,
+      "repsMin": 6,
+      "side": true
+    }
+  ]
+}

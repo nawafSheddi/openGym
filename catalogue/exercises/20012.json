@@ -1,0 +1,22 @@
+{
+  "id": "20012",
+  "name": "muscle up negative",
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "target": "lats",
+  "secondaryMuscles": [
+    "triceps",
+    "chest",
+    "biceps"
+  ],
+  "category": "calisthenics",
+  "description": "A slow lowering from the top of a bar muscle-up through the transition into a hang. It teaches the path the full rep takes.",
+  "instructions": [
+    "Jump or step up into the support position above the bar with straight arms.",
+    "Lower slowly into the bottom of a dip, keeping the bar close to your body.",
+    "Lean your chest forward over the bar as you pass through the transition.",
+    "Keep lowering until you are under the bar in a pull-up position.",
+    "Finish at straight arms, taking five seconds or more in total."
+  ],
+  "textSource": "opengym"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "knee-to-wall",
+  "name": "Knee to wall",
+  "unit": "cm",
+  "better": "higher",
+  "sided": true,
+  "range": [
+    0,
+    25
+  ],
+  "areas": [
+    "calves-ankles"
+  ],
+  "instructions": [
+    "Stand barefoot facing a wall and place the test foot with the big toe on a tape measure that runs straight away from the wall.",
+    "Step the other foot back for balance. Keep the test heel flat on the floor the whole time.",
+    "Bend the front knee forward toward the wall, keeping the knee in line with the second toe.",
+    "Slide the foot back a little at a time until the knee only just touches the wall with the heel still down.",
+    "Record the distance from the wall to the tip of your big toe.",
+    "Repeat for the other ankle."
+  ],
+  "bands": [
+    {
+      "label": "poor",
+      "below": 5
+    },
+    {
+      "label": "fair",
+      "below": 10
+    },
+    {
+      "label": "good",
+      "below": 13
+    },
+    {
+      "label": "great",
+      "below": 16
+    },
+    {
+      "label": "elite"
+    }
+  ]
+}

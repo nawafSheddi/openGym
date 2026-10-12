@@ -1,0 +1,53 @@
+{
+  "id": "area-calves-ankles-1",
+  "name": "Calves & ankles: Mobility & strength",
+  "kind": "area",
+  "group": "calves-ankles",
+  "level": "beginner",
+  "goal": "mobility",
+  "minutes": 12,
+  "description": "Ankle circles and flexion drills, calf and Achilles stretches, then calf and tibialis raises to make the new range strong.",
+  "ex": [
+    {
+      "id": "1368",
+      "sets": 2,
+      "reps": 10,
+      "side": true
+    },
+    {
+      "id": "2761",
+      "sets": 2,
+      "reps": 10
+    },
+    {
+      "id": "1377",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30,
+      "side": true
+    },
+    {
+      "id": "10563",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30,
+      "side": true
+    },
+    {
+      "id": "1893",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30
+    },
+    {
+      "id": "3018",
+      "sets": 3,
+      "reps": 15
+    },
+    {
+      "id": "10859",
+      "sets": 3,
+      "reps": 15
+    }
+  ]
+}

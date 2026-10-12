@@ -1,0 +1,98 @@
+{
+  "id": "front-lever",
+  "name": "Front lever",
+  "family": "pull",
+  "description": "A horizontal hold under a bar, face up, with straight arms and a straight body. It is built by lengthening the lever one step at a time.",
+  "steps": [
+    {
+      "exId": "0688",
+      "label": "Scapular pulls",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 8
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 12,
+        "sessions": 2
+      },
+      "cue": "Pull your shoulder blades down without bending your arms."
+    },
+    {
+      "exId": "9043",
+      "label": "Tuck front lever",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 8
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 15,
+        "sessions": 2
+      },
+      "cue": "Keep your arms locked and your hips level with your shoulders."
+    },
+    {
+      "exId": "9044",
+      "label": "Advanced tuck front lever",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 6
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 12,
+        "sessions": 2
+      },
+      "cue": "Flatten your back; go back a step if your lower back arches."
+    },
+    {
+      "exId": "20000",
+      "label": "One leg front lever",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 10,
+        "sessions": 2
+      },
+      "cue": "Switch the straight leg each set and keep your hips from dropping."
+    },
+    {
+      "exId": "20001",
+      "label": "Straddle front lever",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 10,
+        "sessions": 2
+      },
+      "cue": "Open the legs wide and squeeze your glutes to stay flat."
+    },
+    {
+      "exId": "9045",
+      "label": "Full front lever",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 8,
+        "sessions": 3
+      },
+      "cue": "Legs together, body in one straight line."
+    }
+  ]
+}

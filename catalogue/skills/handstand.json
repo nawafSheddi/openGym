@@ -1,0 +1,98 @@
+{
+  "id": "handstand",
+  "name": "Handstand",
+  "family": "balance",
+  "description": "A straight, stacked balance on the hands. Wall work builds the line and endurance, then freestanding practice builds the balance.",
+  "steps": [
+    {
+      "exId": "5234",
+      "label": "Wall walk",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 3
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 5,
+        "sessions": 2
+      },
+      "cue": "Walk up only as far as you can keep your body straight."
+    },
+    {
+      "exId": "6545",
+      "label": "Back to wall handstand",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 20
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 45,
+        "sessions": 2
+      },
+      "cue": "Push tall through your shoulders and squeeze your legs."
+    },
+    {
+      "exId": "20008",
+      "label": "Chest to wall handstand",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 20
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 60,
+        "sessions": 2
+      },
+      "cue": "Hands close to the wall, ribs tucked, toes light on the wall."
+    },
+    {
+      "exId": "10998",
+      "label": "Wall handstand, one leg off",
+      "mode": "time",
+      "target": {
+        "sets": 3,
+        "sec": 10
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 20,
+        "sessions": 2
+      },
+      "cue": "Balance through your fingers as the leg leaves the wall."
+    },
+    {
+      "exId": "20009",
+      "label": "Handstand kick-up",
+      "mode": "reps",
+      "target": {
+        "sets": 3,
+        "reps": 5
+      },
+      "unlock": {
+        "sets": 3,
+        "reps": 8,
+        "sessions": 2
+      },
+      "cue": "Count a rep only when you balance for three seconds."
+    },
+    {
+      "exId": "3302",
+      "label": "Freestanding handstand",
+      "mode": "time",
+      "target": {
+        "sets": 5,
+        "sec": 10
+      },
+      "unlock": {
+        "sets": 3,
+        "sec": 30,
+        "sessions": 3
+      },
+      "cue": "Fix small drifts with your fingers and heels of your hands."
+    }
+  ]
+}

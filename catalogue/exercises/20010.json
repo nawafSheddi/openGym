@@ -1,0 +1,22 @@
+{
+  "id": "20010",
+  "name": "wall handstand push-up negative",
+  "bodyPart": "shoulders",
+  "equipment": "body weight",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "upper back",
+    "core"
+  ],
+  "category": "calisthenics",
+  "description": "The lowering half of a wall handstand push-up, done slowly. It builds the strength to press the full rep.",
+  "instructions": [
+    "Kick up into a handstand with your heels on the wall and a cushion under your head.",
+    "Brace your core and keep your elbows angled slightly forward.",
+    "Bend your arms and lower your head slowly toward the floor.",
+    "Take three to five seconds to reach the bottom.",
+    "Touch your head lightly, then bring your feet down and reset."
+  ],
+  "textSource": "opengym"
+}

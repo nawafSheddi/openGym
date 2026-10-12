@@ -1,0 +1,27 @@
+{
+  "id": "20202",
+  "name": "kneeling back of hand wrist stretch",
+  "bodyPart": "lower arms",
+  "equipment": "body weight",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "wrist extensors",
+    "wrists"
+  ],
+  "category": "stretching",
+  "description": "A kneeling stretch with the backs of the hands on the floor. It opens the top of the wrists and the forearm extensors.",
+  "instructions": [
+    "Kneel on all fours and place the backs of your hands on the floor, fingers pointing toward your knees.",
+    "Keep your hands under your shoulders and your arms straight.",
+    "Slowly shift your hips back until you feel the top of the wrists stretch.",
+    "Keep the pressure light and breathe slowly.",
+    "Shift forward to release."
+  ],
+  "muscleMap": {
+    "primaries": [
+      "forearm"
+    ],
+    "secondaries": []
+  },
+  "textSource": "opengym"
+}

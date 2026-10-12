@@ -1,0 +1,44 @@
+{
+  "id": "shoulder-flexion",
+  "name": "Shoulder flexion",
+  "unit": "deg",
+  "better": "higher",
+  "sided": true,
+  "range": [
+    90,
+    180
+  ],
+  "areas": [
+    "shoulders",
+    "thoracic"
+  ],
+  "instructions": [
+    "Lie on your back on the floor with your knees bent and feet flat.",
+    "Press your lower back flat into the floor and keep it there for the whole test.",
+    "With your thumb pointing up and elbow straight, raise one arm forward and overhead as far as it goes toward the floor behind you.",
+    "Place a phone inclinometer along your upper arm and read the angle from your side: arm by your hip is 0, straight up is 90, flat on the floor beside your ear is 180.",
+    "If your back arches, your ribs flare or your elbow bends, stop at the point just before it happens and read the angle there.",
+    "Repeat for the other arm."
+  ],
+  "bands": [
+    {
+      "label": "poor",
+      "below": 150
+    },
+    {
+      "label": "fair",
+      "below": 165
+    },
+    {
+      "label": "good",
+      "below": 175
+    },
+    {
+      "label": "great",
+      "below": 180
+    },
+    {
+      "label": "elite"
+    }
+  ]
+}

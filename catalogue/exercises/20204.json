@@ -1,0 +1,27 @@
+{
+  "id": "20204",
+  "name": "kneeling side to side wrist rocks",
+  "bodyPart": "lower arms",
+  "equipment": "body weight",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "wrists",
+    "wrist flexors"
+  ],
+  "category": "mobility",
+  "description": "Hands flat with the fingers turned out to the sides, you shift your weight left and right. It moves the wrists through side bending under light load.",
+  "instructions": [
+    "Kneel on all fours and turn your hands so the fingers point out to the sides.",
+    "Press your palms flat and keep your arms straight.",
+    "Shift your body slowly toward one hand, then toward the other.",
+    "Keep the heels of your hands on the floor.",
+    "Move only as far as feels comfortable."
+  ],
+  "muscleMap": {
+    "primaries": [
+      "forearm"
+    ],
+    "secondaries": []
+  },
+  "textSource": "opengym"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "20021",
+  "name": "towel assisted one arm pull-up",
+  "bodyPart": "back",
+  "equipment": "body weight",
+  "target": "lats",
+  "secondaryMuscles": [
+    "biceps",
+    "forearms",
+    "core"
+  ],
+  "category": "calisthenics",
+  "description": "A one-arm pull-up where the free hand holds a towel hung over the bar for a little help. Gripping the towel lower gives less help.",
+  "instructions": [
+    "Hang a towel over the bar next to your working hand.",
+    "Grip the bar with one hand and the towel with the other.",
+    "Pull up mostly with the bar arm, using the towel hand only as needed.",
+    "Bring your chin over the bar and lower with control.",
+    "Finish your reps, then switch arms."
+  ],
+  "textSource": "opengym"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "20008",
+  "name": "chest to wall handstand",
+  "bodyPart": "shoulders",
+  "equipment": "body weight",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "core",
+    "wrists"
+  ],
+  "category": "isometric",
+  "description": "A handstand facing the wall with the toes lightly touching it. It trains a straight stacked line and shoulder endurance.",
+  "instructions": [
+    "Start in a plank with your feet against the wall.",
+    "Walk your feet up the wall and your hands toward it until your chest nearly touches it.",
+    "Lock your arms and push tall through your shoulders.",
+    "Squeeze your legs together and keep your ribs tucked.",
+    "Hold, then walk your hands out and your feet down."
+  ],
+  "textSource": "opengym"
+}

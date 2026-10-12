@@ -991,6 +991,103 @@
    "obliques"
   ]
  },
+ "20200": {
+  "primaries": [
+   "forearm"
+  ],
+  "secondaries": []
+ },
+ "20201": {
+  "primaries": [
+   "forearm"
+  ],
+  "secondaries": [
+   "biceps"
+  ]
+ },
+ "20202": {
+  "primaries": [
+   "forearm"
+  ],
+  "secondaries": []
+ },
+ "20203": {
+  "primaries": [
+   "forearm"
+  ],
+  "secondaries": []
+ },
+ "20204": {
+  "primaries": [
+   "forearm"
+  ],
+  "secondaries": []
+ },
+ "20205": {
+  "primaries": [
+   "adductors",
+   "hamstring"
+  ],
+  "secondaries": [
+   "hip-flexors",
+   "lower-back"
+  ]
+ },
+ "20206": {
+  "primaries": [
+   "hamstring",
+   "hip-flexors"
+  ],
+  "secondaries": [
+   "quadriceps",
+   "gluteal"
+  ]
+ },
+ "20207": {
+  "primaries": [
+   "hamstring"
+  ],
+  "secondaries": [
+   "calves",
+   "lower-back"
+  ]
+ },
+ "20208": {
+  "primaries": [
+   "adductors",
+   "obliques"
+  ],
+  "secondaries": [
+   "hamstring",
+   "upper-back"
+  ]
+ },
+ "20209": {
+  "primaries": [
+   "hamstring"
+  ],
+  "secondaries": [
+   "lower-back",
+   "calves"
+  ]
+ },
+ "20210": {
+  "primaries": [
+   "adductors"
+  ],
+  "secondaries": [
+   "hamstring"
+  ]
+ },
+ "20211": {
+  "primaries": [
+   "adductors",
+   "quadriceps"
+  ],
+  "secondaries": [
+   "gluteal"
+  ]
+ },
  "0007": {
   "primaries": [
    "upper-back"

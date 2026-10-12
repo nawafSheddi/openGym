@@ -1,0 +1,42 @@
+{
+  "id": "arms-intermediate",
+  "name": "Arms: Intermediate",
+  "kind": "muscle",
+  "group": "arms",
+  "level": "intermediate",
+  "goal": "strength",
+  "minutes": 35,
+  "description": "Chin-ups and close-grip chin-ups for the biceps, diamond push-ups, bar dips and kneeling extensions for the triceps.",
+  "ex": [
+    {
+      "id": "1326",
+      "sets": 4,
+      "reps": 8,
+      "repsMin": 5
+    },
+    {
+      "id": "0814",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6
+    },
+    {
+      "id": "1327",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 5
+    },
+    {
+      "id": "0283",
+      "sets": 3,
+      "reps": 12,
+      "repsMin": 8
+    },
+    {
+      "id": "1771",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6
+    }
+  ]
+}

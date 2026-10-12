@@ -1,0 +1,53 @@
+{
+  "id": "area-hip-flexors-quads-1",
+  "name": "Hip flexors & quads: Mobility",
+  "kind": "area",
+  "group": "hip-flexors-quads",
+  "level": "beginner",
+  "goal": "mobility",
+  "minutes": 15,
+  "description": "Kneeling hip flexor stretch, couch stretch, low lunges and split squat holds. Undo hours of sitting.",
+  "ex": [
+    {
+      "id": "1053",
+      "sets": 2,
+      "mode": "time",
+      "sec": 45,
+      "side": true
+    },
+    {
+      "id": "4557",
+      "sets": 2,
+      "mode": "time",
+      "sec": 45,
+      "side": true
+    },
+    {
+      "id": "6007",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30,
+      "side": true
+    },
+    {
+      "id": "0613",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30,
+      "side": true
+    },
+    {
+      "id": "3481",
+      "sets": 2,
+      "reps": 8,
+      "side": true
+    },
+    {
+      "id": "10906",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30,
+      "side": true
+    }
+  ]
+}

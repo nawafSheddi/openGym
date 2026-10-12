@@ -1,0 +1,41 @@
+{
+  "id": "shoulders-advanced",
+  "name": "Shoulders: Advanced",
+  "kind": "muscle",
+  "group": "shoulders",
+  "level": "advanced",
+  "goal": "skill",
+  "minutes": 50,
+  "description": "Handstand push-ups, free handstand practice and tuck planche holds for shoulders that support the whole body.",
+  "ex": [
+    {
+      "id": "3302",
+      "sets": 5,
+      "mode": "time",
+      "sec": 20
+    },
+    {
+      "id": "0471",
+      "sets": 4,
+      "reps": 5,
+      "repsMin": 3
+    },
+    {
+      "id": "10989",
+      "sets": 4,
+      "mode": "time",
+      "sec": 10
+    },
+    {
+      "id": "3824",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 5
+    },
+    {
+      "id": "4376",
+      "sets": 3,
+      "reps": 5
+    }
+  ]
+}

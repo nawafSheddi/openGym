@@ -1,0 +1,28 @@
+{
+  "id": "20203",
+  "name": "kneeling palm lifts",
+  "bodyPart": "lower arms",
+  "equipment": "body weight",
+  "target": "forearms",
+  "secondaryMuscles": [
+    "wrist flexors",
+    "grip muscles",
+    "hands"
+  ],
+  "category": "mobility",
+  "description": "From hands and knees you lift the heels of your palms while the fingers stay planted. It strengthens the fingers and forearms for hand balancing.",
+  "instructions": [
+    "Kneel on all fours with your hands under your shoulders and fingers spread.",
+    "Press your fingertips and finger pads firmly into the floor.",
+    "Lift the heels of your palms off the floor so your weight moves onto your fingers.",
+    "Pause briefly at the top, then lower your palms with control.",
+    "Keep your arms straight and your shoulders over your hands."
+  ],
+  "muscleMap": {
+    "primaries": [
+      "forearm"
+    ],
+    "secondaries": []
+  },
+  "textSource": "opengym"
+}

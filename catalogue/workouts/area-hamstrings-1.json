@@ -1,0 +1,44 @@
+{
+  "id": "area-hamstrings-1",
+  "name": "Hamstrings: Mobility",
+  "kind": "area",
+  "group": "hamstrings",
+  "level": "beginner",
+  "goal": "mobility",
+  "minutes": 15,
+  "description": "Toe touches, seated and kneeling hamstring stretches and a standing fold toward a better pike and front split.",
+  "ex": [
+    {
+      "id": "3212",
+      "sets": 2,
+      "reps": 10
+    },
+    {
+      "id": "0692",
+      "sets": 2,
+      "mode": "time",
+      "sec": 45,
+      "side": true
+    },
+    {
+      "id": "10592",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30,
+      "side": true
+    },
+    {
+      "id": "0959",
+      "sets": 2,
+      "mode": "time",
+      "sec": 45
+    },
+    {
+      "id": "1406",
+      "sets": 2,
+      "mode": "time",
+      "sec": 30,
+      "side": true
+    }
+  ]
+}

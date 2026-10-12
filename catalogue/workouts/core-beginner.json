@@ -1,0 +1,51 @@
+{
+  "id": "core-beginner",
+  "name": "Core: Beginner",
+  "kind": "muscle",
+  "group": "core",
+  "level": "beginner",
+  "goal": "strength",
+  "minutes": 20,
+  "description": "Learn to brace: dead bugs, bird dogs, planks, side planks and a first hollow hold, with reverse crunches for the lower abs.",
+  "ex": [
+    {
+      "id": "0276",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6,
+      "side": true
+    },
+    {
+      "id": "0463",
+      "sets": 3,
+      "mode": "time",
+      "sec": 30
+    },
+    {
+      "id": "0715",
+      "sets": 2,
+      "mode": "time",
+      "sec": 20,
+      "side": true
+    },
+    {
+      "id": "1246",
+      "sets": 3,
+      "mode": "time",
+      "sec": 15
+    },
+    {
+      "id": "1241",
+      "sets": 2,
+      "reps": 10,
+      "repsMin": 6,
+      "side": true
+    },
+    {
+      "id": "0872",
+      "sets": 3,
+      "reps": 12,
+      "repsMin": 8
+    }
+  ]
+}

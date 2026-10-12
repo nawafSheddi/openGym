@@ -347,10 +347,10 @@ version's source under the same license.
 
 > [!IMPORTANT]
 > **The exercise media is not covered by that license.** The stills and animations are
-> © Aliaksandr Makatserchyk, [Gym visual](https://gymvisual.com/), licensed for use in openBody only:
+> © Aliaksandr Makatserchyk, [Gym visual](https://gymvisual.com/), licensed for use in openGym only (openBody, a non-commercial fork, keeps them unmodified under that allowance):
 > 180 px in this repository and on self-hosted servers, larger only inside the app packages. A
 > non-commercial fork may keep them unmodified with the notice; anything else needs your own licence
-> from gymvisual.com. The exercise text in `catalogue/` is openBody's and open to contributions.
+> from gymvisual.com. The exercise text in `catalogue/` is openGym's (AGPL) plus openBody's additions and open to contributions.
 
 **Contributing:** pull requests are signed off once with the [Contributor License Agreement](CLA.md):
 you keep the copyright in your work, openBody may use and relicense it (so the app can stay in the

@@ -1,0 +1,22 @@
+{
+  "id": "20014",
+  "name": "vertical flag hold",
+  "bodyPart": "shoulders",
+  "equipment": "body weight",
+  "target": "delts",
+  "secondaryMuscles": [
+    "obliques",
+    "lats",
+    "core"
+  ],
+  "category": "isometric",
+  "description": "A hold on a vertical pole with both arms straight and the body upright above the bottom hand. It builds the push and pull the human flag needs.",
+  "instructions": [
+    "Grip a vertical pole with your top hand overhand and bottom hand underhand, wider than shoulders.",
+    "Lock both arms straight.",
+    "Jump up so your hips stack over your bottom hand and your legs point at the sky.",
+    "Pull with the top arm and push with the bottom arm.",
+    "Hold, then step down and switch your grip."
+  ],
+  "textSource": "opengym"
+}

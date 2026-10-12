@@ -1,0 +1,49 @@
+{
+  "id": "full-body-advanced",
+  "name": "Full body: Advanced",
+  "kind": "muscle",
+  "group": "full-body",
+  "level": "advanced",
+  "goal": "strength",
+  "minutes": 60,
+  "description": "Muscle-ups, handstand push-ups, pistols, Nordic curls, weighted pull-ups and L-sits in one demanding session.",
+  "ex": [
+    {
+      "id": "0631",
+      "sets": 4,
+      "reps": 4,
+      "repsMin": 2
+    },
+    {
+      "id": "1759",
+      "sets": 3,
+      "reps": 6,
+      "repsMin": 4,
+      "side": true
+    },
+    {
+      "id": "0471",
+      "sets": 3,
+      "reps": 5,
+      "repsMin": 3
+    },
+    {
+      "id": "0841",
+      "sets": 3,
+      "reps": 5,
+      "repsMin": 3
+    },
+    {
+      "id": "7746",
+      "sets": 3,
+      "reps": 5,
+      "repsMin": 3
+    },
+    {
+      "id": "1402",
+      "sets": 3,
+      "mode": "time",
+      "sec": 20
+    }
+  ]
+}

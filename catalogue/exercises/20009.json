@@ -1,0 +1,22 @@
+{
+  "id": "20009",
+  "name": "handstand kick up",
+  "bodyPart": "shoulders",
+  "equipment": "body weight",
+  "target": "delts",
+  "secondaryMuscles": [
+    "triceps",
+    "core",
+    "wrists"
+  ],
+  "category": "calisthenics",
+  "description": "A controlled kick from standing into a balanced handstand without a wall. It trains entry, balance and safe exits.",
+  "instructions": [
+    "Stand with one foot forward and your arms reaching overhead.",
+    "Place your hands on the floor shoulder width apart, a stride ahead of your front foot.",
+    "Swing your back leg up and push off gently with the front leg.",
+    "Bring your legs together over your hips and press tall through your shoulders.",
+    "Balance as long as you can, then step down or turn out sideways to exit."
+  ],
+  "textSource": "opengym"
+}

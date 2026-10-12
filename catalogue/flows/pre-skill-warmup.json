@@ -1,0 +1,83 @@
+{
+  "id": "pre-skill-warmup",
+  "name": "Pre-skill warm-up",
+  "description": "Gets wrists, shoulders, core and hips ready for calisthenics skill work such as handstands and levers. Needs a stick and a pull-up bar.",
+  "areas": [
+    "wrists-forearms",
+    "shoulders",
+    "core",
+    "hips",
+    "thoracic"
+  ],
+  "level": "intermediate",
+  "transitionSec": 5,
+  "items": [
+    {
+      "exId": "3905",
+      "sec": 30,
+      "cue": "Start small and grow the circles."
+    },
+    {
+      "exId": "4607",
+      "sec": 45,
+      "cue": "Straight arms, control the whole range."
+    },
+    {
+      "exId": "1428",
+      "sec": 30,
+      "cue": "Slow, full circles both ways."
+    },
+    {
+      "exId": "20200",
+      "sec": 45,
+      "cue": "Spread the fingers and rock with control."
+    },
+    {
+      "exId": "20201",
+      "sec": 30,
+      "cue": "Fingers back, ease into the stretch."
+    },
+    {
+      "exId": "4117",
+      "sec": 45,
+      "cue": "Arms locked, move only the shoulder blades."
+    },
+    {
+      "exId": "0688",
+      "sec": 30,
+      "cue": "Pull the shoulders down from the ears, arms stay straight."
+    },
+    {
+      "exId": "4580",
+      "sec": 30,
+      "cue": "Move with your breath through the whole spine."
+    },
+    {
+      "exId": "1246",
+      "sec": 30,
+      "cue": "Low back pressed down, ribs in."
+    },
+    {
+      "exId": "1563",
+      "sec": 30,
+      "side": true,
+      "cue": "Swing loose and gradually higher."
+    },
+    {
+      "exId": "4633",
+      "sec": 30,
+      "side": true,
+      "cue": "Sink the hips, then rotate and reach."
+    },
+    {
+      "exId": "2988",
+      "sec": 45,
+      "cue": "Heels down, rock gently in the bottom."
+    },
+    {
+      "exId": "3469",
+      "sec": 30,
+      "cue": "Push the floor away, shoulders open."
+    }
+  ]
+}

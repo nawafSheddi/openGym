@@ -1,0 +1,29 @@
+{
+  "id": "20210",
+  "name": "wall straddle stretch",
+  "bodyPart": "upper legs",
+  "equipment": "body weight",
+  "target": "adductors",
+  "secondaryMuscles": [
+    "hamstrings",
+    "groin"
+  ],
+  "category": "stretching",
+  "description": "Lying on your back with your legs up a wall, you let them fall open into a wide straddle. Gravity does the work, so you can relax into a long inner thigh stretch.",
+  "instructions": [
+    "Lie on your back with your hips close to a wall and your legs straight up it.",
+    "Let your legs slide apart slowly into a wide V.",
+    "Keep your lower back and hips resting on the floor.",
+    "Relax your legs and let gravity deepen the stretch.",
+    "To finish, bend your knees and bring your legs together with your hands."
+  ],
+  "muscleMap": {
+    "primaries": [
+      "adductors"
+    ],
+    "secondaries": [
+      "hamstring"
+    ]
+  },
+  "textSource": "opengym"
+}

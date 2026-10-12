@@ -24,7 +24,13 @@ const TO = 'openBody'
 
 // Substrings that contain FROM but must survive verbatim. Each is swapped for a placeholder
 // before the rename and restored after, so a plain global replace cannot touch them.
-const PROTECTED = ['DuarteSantos8/openGym']
+const PROTECTED = [
+  'DuarteSantos8/openGym',
+  // Media licence statements: Gym visual licensed the exercise media to openGym, not openBody.
+  // openBody keeps it under the non-commercial fork allowance (NOTICE.md); renaming the licensee
+  // in these sentences would misstate the licence.
+  'for openGym only', 'in openGym only', 'licensed to openGym', 'within the openGym application'
+]
 
 // Directories never worth walking (dependencies, build output, licensed media).
 const SKIP_DIRS = new Set(['node_modules', 'dist', '.git', 'media', 'android', 'ios'])

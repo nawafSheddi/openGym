@@ -1,0 +1,45 @@
+{
+  "id": "area-lower-back-2",
+  "name": "Lower back: Strength endurance",
+  "kind": "area",
+  "group": "lower-back",
+  "level": "intermediate",
+  "goal": "strength",
+  "minutes": 20,
+  "description": "Supermans, arch holds, reverse back extensions and slow Jefferson curls build a back that tolerates long days and heavy training.",
+  "ex": [
+    {
+      "id": "3436",
+      "sets": 3,
+      "reps": 12
+    },
+    {
+      "id": "20400",
+      "sets": 3,
+      "mode": "time",
+      "sec": 30
+    },
+    {
+      "id": "4777",
+      "sets": 3,
+      "reps": 12,
+      "repsMin": 8
+    },
+    {
+      "id": "1241",
+      "sets": 3,
+      "reps": 10,
+      "side": true
+    },
+    {
+      "id": "10752",
+      "sets": 3,
+      "reps": 8
+    },
+    {
+      "id": "2471",
+      "sets": 3,
+      "reps": 15
+    }
+  ]
+}

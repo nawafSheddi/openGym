@@ -1,0 +1,23 @@
+{
+  "id": "20007",
+  "name": "advanced tuck planche",
+  "bodyPart": "upper arms",
+  "equipment": "body weight",
+  "target": "delts",
+  "secondaryMuscles": [
+    "wrists",
+    "core",
+    "triceps",
+    "upper back"
+  ],
+  "category": "isometric",
+  "description": "A planche hold with the knees bent but the hips raised and opened so the back is flat. It needs far more lean than the tuck planche.",
+  "instructions": [
+    "Get into a tuck planche with straight arms and hands turned slightly out.",
+    "Push your hips back and up until your back is flat and level.",
+    "Lean your shoulders well past your hands to stay balanced.",
+    "Push the floor away and round your upper back slightly.",
+    "Hold, then lower your feet with control."
+  ],
+  "textSource": "opengym"
+}

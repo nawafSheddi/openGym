@@ -1,0 +1,51 @@
+{
+  "id": "area-hips-2",
+  "name": "Hips: Strength",
+  "kind": "area",
+  "group": "hips",
+  "level": "intermediate",
+  "goal": "strength",
+  "minutes": 20,
+  "description": "Single-leg bridges, clamshells, split squats, Cossack squats and single-leg deadlifts for strong, stable hips.",
+  "ex": [
+    {
+      "id": "2475",
+      "sets": 3,
+      "reps": 12,
+      "side": true
+    },
+    {
+      "id": "4870",
+      "sets": 3,
+      "reps": 15,
+      "side": true
+    },
+    {
+      "id": "3743",
+      "sets": 3,
+      "reps": 10,
+      "repsMin": 6,
+      "side": true
+    },
+    {
+      "id": "2569",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 5,
+      "side": true
+    },
+    {
+      "id": "0703",
+      "sets": 3,
+      "reps": 8,
+      "side": true
+    },
+    {
+      "id": "3928",
+      "sets": 3,
+      "reps": 8,
+      "repsMin": 6,
+      "side": true
+    }
+  ]
+}
