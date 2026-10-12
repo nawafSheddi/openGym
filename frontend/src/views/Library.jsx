@@ -4,6 +4,8 @@ import { useStore } from '../store/useStore.js'
 import { EXDB, BODYPARTS, allExercises, equipmentOf, byCategory, searchExercises, similarExercises } from '../lib/exercises.js'
 import { MUSCLE_NAME } from '../lib/muscles.js'
 import { activeProfile, exAvailable } from '../lib/equipment.js'
+import { areasOf, areaById, areaFilterOptions } from '../lib/areas.js'
+import DiscoverNav from '../features/discover/DiscoverNav.jsx'
 import { bestWeightFor } from '../lib/history.js'
 import { fmtNum, exCount } from '../lib/format.js'
 import { t, tn, exerciseNameFor, exerciseNameClass } from '../lib/i18n.js'
@@ -23,9 +25,11 @@ export default function Library() {
   const [bp, setBp] = useState('')
   const [eq, setEq] = useState('')
   const [cat, setCat] = useState('')
+  // openBody: mobility area filter (lib/areas.js), same never-a-dead-end fallback as equipment
+  const [area, setArea] = useState('')
   const [showAll, setShowAll] = useState(false)   // ignore the active equipment profile for this session
   const [shown, setShown] = useState(40)
-  const bpStrip = useRef(null), eqStrip = useRef(null), catStrip = useRef(null)
+  const bpStrip = useRef(null), eqStrip = useRef(null), catStrip = useRef(null), areaStrip = useRef(null)
   const moreRef = useAutoMore(() => setShown(s => s + 40))
   const profile = activeProfile(S)
   // Your own exercises, counted the way the list below shows them (allExercises puts every
@@ -41,15 +45,21 @@ export default function Library() {
   const eqOn = eqOpts.includes(eq) ? eq : ''
   // Favourites float to the top of whatever the filters left (issue #6), the rest keeps its order;
   // while searching, the exercises you have logged or planned follow right after them.
-  const narrowedList = eqOn ? eqFiltered.filter(e => e.eq === eqOn) : eqFiltered
+  const eqList = eqOn ? eqFiltered.filter(e => e.eq === eqOn) : eqFiltered
+  // Area chips offer only areas present in what is left, and a choice the other filters narrowed
+  // away is ignored for now rather than emptying the list (as with equipment above).
+  const areaOpts = areaFilterOptions(eqList)
+  const areaOn = areaOpts.includes(area) ? area : ''
+  const narrowedList = areaOn ? eqList.filter(e => areasOf(e).includes(areaOn)) : eqList
   const usage = useMemo(() => (q.trim() ? usageOf(S) : null), [q, S.routines, S.workouts])
   const f = usage ? sortYoursFirst(narrowedList, S, usage) : sortFavouritesFirst(narrowedList, S)
   useRevealActiveChip(bpStrip, bp)
   useRevealActiveChip(eqStrip, eqOn)
   useRevealActiveChip(catStrip, catOn)
+  useRevealActiveChip(areaStrip, areaOn)
   // A live count at the end of the search field while a search or filter narrows the list
   // (idea and first version: GitLab !31) — how many are left, before scrolling to find out.
-  const narrowed = !!(q.trim() || bp || eqOn || catOn)
+  const narrowed = !!(q.trim() || bp || eqOn || catOn || areaOn)
   // Close but not exact (a typo too many, most of the words, a similar name), under the results
   // once they are all on screen, so a search almost never ends on "No match".
   // Worked out a beat behind the typing (useDeferredValue): the list itself never waits for it.
@@ -74,6 +84,7 @@ export default function Library() {
         ? tn('{1} animated exercises + 1 of your own', '{1} animated exercises + {0} of your own', ownCount, EXDB.length)
         : t('{0} exercises with animations', EXDB.length)}</div>
     </div>
+    <DiscoverNav current="/library" />
     <div className="search-row" style={{ marginBottom: 10 }}><div className={'search' + (narrowed ? ' has-count' : '') + (q ? ' has-clear' : '')}><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
       <input className="input" placeholder={t('Search…')} value={q} onChange={e => { setQ(e.target.value); setShown(40) }} />
       {narrowed && <span className="search-count" role="status" aria-label={exCount(f.length)}>{fmtNum(f.length)}</span>}
@@ -96,6 +107,11 @@ export default function Library() {
     {catOpts.length > 1 && <div className="chips" ref={catStrip} style={{ marginBottom: 8 }}>
       <button className={'chip nocap' + (!catOn ? ' on' : '')} onClick={() => { setCat(''); setShown(40) }}>{t('Any type')}</button>
       {catOpts.map(x => <button key={x} className={'chip' + (catOn === x ? ' on' : '')} onClick={() => { setCat(x); setShown(40) }}>{t(x)}</button>)}
+    </div>}
+    {areaOpts.length > 1 && <div className="chips" ref={areaStrip} style={{ marginBottom: 8 }}>
+      <button className={'chip nocap' + (!areaOn ? ' on' : '')} onClick={() => { setArea(''); setShown(40) }}>{t('Any area')}</button>
+      {/* area names are catalogue content (catalogue/areas.json), English like the workout names */}
+      {areaOpts.map(x => <button key={x} className={'chip nocap' + (areaOn === x ? ' on' : '')} onClick={() => { setArea(x); setShown(40) }}>{areaById(x)?.name || x}</button>)}
     </div>}
     {eqOpts.length > 1 && <div className="chips" ref={eqStrip} style={{ marginBottom: 12 }}>
       <button className={'chip nocap' + (!eqOn ? ' on' : '')} onClick={() => { setEq(''); setShown(40) }}>{t('Any equipment')}</button>

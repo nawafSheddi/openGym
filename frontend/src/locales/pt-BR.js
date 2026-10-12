@@ -1407,6 +1407,22 @@ export const PT_BR_OVERRIDES = {
   "Your skills. Your mobility. Your progress.": "Suas skills. Sua mobilidade. Seu progresso.",
   "Gym equipment settings": "Configurações de equipamento de academia",
   "Plates and dumbbells you own, for loaded exercises.": "As anilhas e halteres que você tem, para exercícios com carga.",
+  // --- openBody: explore & workouts ---
+  "Explore": "Explorar",
+  "Ready-made sessions by muscle group and body area.": "Sessões prontas por grupo muscular e região do corpo.",
+  "By area": "Por região",
+  "Any level": "Qualquer nível",
+  "Beginner": "Iniciante",
+  "Intermediate": "Intermediário",
+  "Advanced": "Avançado",
+  "Full body": "Corpo inteiro",
+  "In your plan": "No seu plano",
+  "Start now": "Começar agora",
+  "Add to plan": "Adicionar ao plano",
+  "Open in your plan": "Abrir no seu plano",
+  "Any area": "Qualquer região",
+  "{0} s": "{0} s",
+  "“{0}” is in your plan": "“{0}” está no seu plano",
 }
 
 export default { ...pt, ...PT_BR_OVERRIDES }

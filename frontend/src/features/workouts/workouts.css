@@ -1,0 +1,12 @@
+/* Explore → Workouts. Uses the design system's tokens only (index.css). */
+
+.wk-kind { margin-top: 2px; }
+.wk-group + .wk-group { margin-top: 6px; }
+
+/* the level is readable at a glance from the icon tile's tint */
+.wk-ico { color: var(--on-acc); }
+.wk-ico.wk-beginner { background: var(--acc); }
+.wk-ico.wk-intermediate { background: var(--blue); color: #fff; }
+.wk-ico.wk-advanced { background: var(--skill); color: #000; }
+/* light theme's amber is the darker #b45309: white reads there, black does not */
+:root[data-theme="light"] .wk-ico.wk-advanced { color: #fff; }

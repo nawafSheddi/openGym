@@ -1,0 +1,6 @@
+/* Explore section switcher (DiscoverNav.jsx). Design-system tokens only (index.css). */
+
+/* the Explore section switcher sits under the page header on every Explore screen */
+.discover-nav { margin: 0 0 12px; }
+/* icon and label on one line (a plain chip lays an <svg> out as a block above its text) */
+.discover-nav .chip { display: inline-flex; align-items: center; white-space: nowrap; }
