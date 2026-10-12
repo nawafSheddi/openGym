@@ -2344,4 +2344,11 @@ export default {
   "of {0}": "/ {0}",
   "{0} started": "已开始“{0}”",
   "{0} weeks": "{0} 周",
+  // --- openBody: stats ---
+  "Skills & mobility": "技巧与灵活性",
+  "Skills mastered": "已掌握技巧",
+  "Steps unlocked": "已解锁阶段",
+  "Hold time and mobility time, last 8 weeks": "静态保持与灵活性时间，最近 8 周",
+  "Holds: {0} min this week": "静态保持：本周 {0} 分钟",
+  "Mobility: {0} min this week": "灵活性：本周 {0} 分钟",
 }

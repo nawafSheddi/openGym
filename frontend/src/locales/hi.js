@@ -2344,4 +2344,11 @@ export default {
   "of {0}": "{0} में से",
   "{0} started": "{0} शुरू हुआ",
   "{0} weeks": "{0} सप्ताह",
+  // --- openBody: stats ---
+  "Skills & mobility": "स्किल्स और मोबिलिटी",
+  "Skills mastered": "महारत वाले स्किल्स",
+  "Steps unlocked": "अनलॉक हुए कदम",
+  "Hold time and mobility time, last 8 weeks": "होल्ड समय और मोबिलिटी समय, पिछले 8 हफ़्ते",
+  "Holds: {0} min this week": "होल्ड: इस हफ़्ते {0} मिनट",
+  "Mobility: {0} min this week": "मोबिलिटी: इस हफ़्ते {0} मिनट",
 }

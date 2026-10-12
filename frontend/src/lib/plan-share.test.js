@@ -69,6 +69,11 @@ describe('what survives a shared plan', () => {
     expect(cardio.side).toBeUndefined()
   })
 
+  it('carries a skill-ladder tag (openBody), and drops a malformed one', () => {
+    expect(roundTrip({ ladder: 'front-lever' }).ladder).toBe('front-lever')
+    expect(roundTrip({ ladder: '<script>' }).ladder).toBeUndefined()
+  })
+
   it('carries a drop-set prescription', () => {
     expect(roundTrip({ intensifier: { type: 'dropset', count: 2, pct: 20 } }).intensifier)
       .toEqual({ type: 'dropset', count: 2, pct: 20 })

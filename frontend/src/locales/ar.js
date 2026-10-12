@@ -2399,4 +2399,11 @@ export default {
   "of {0}": "من {0}",
   "{0} started": "بدأ {0}",
   "{0} weeks": "{0} أسابيع",
+  // --- openBody: stats ---
+  "Skills & mobility": "المهارات والمرونة",
+  "Skills mastered": "مهارات متقنة",
+  "Steps unlocked": "خطوات مفتوحة",
+  "Hold time and mobility time, last 8 weeks": "وقت الثبات ووقت المرونة، آخر 8 أسابيع",
+  "Holds: {0} min this week": "الثبات: {0} د هذا الأسبوع",
+  "Mobility: {0} min this week": "المرونة: {0} د هذا الأسبوع",
 }

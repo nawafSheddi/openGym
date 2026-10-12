@@ -2423,4 +2423,11 @@ export default {
   "of {0}": "{0}-এর মধ্যে",
   "{0} started": "{0} শুরু হয়েছে",
   "{0} weeks": "{0} সপ্তাহ",
+  // --- openBody: stats ---
+  "Skills & mobility": "স্কিল ও মোবিলিটি",
+  "Skills mastered": "আয়ত্ত স্কিল",
+  "Steps unlocked": "আনলক হওয়া ধাপ",
+  "Hold time and mobility time, last 8 weeks": "হোল্ড সময় ও মোবিলিটি সময়, শেষ ৮ সপ্তাহ",
+  "Holds: {0} min this week": "হোল্ড: এই সপ্তাহে {0} মিনিট",
+  "Mobility: {0} min this week": "মোবিলিটি: এই সপ্তাহে {0} মিনিট",
 }

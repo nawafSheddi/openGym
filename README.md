@@ -1,138 +1,64 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="openBody" width="720">
+<img src="frontend/public/icon.svg" alt="openBody" width="120">
 
-**A self-hosted gym and body-weight tracker you actually own.**
+# openBody
 
-Plan your week, run guided workouts, log every set and your body weight,<br>
-on your phone, synced across your devices, behind your own passkey login.
+**A self-hosted calisthenics and mobility tracker you actually own.**
 
-[![Discord](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Finvites%2Fe62jY6fwVb%3Fwith_counts%3Dtrue&query=%24.approximate_member_count&suffix=%20members&label=Discord&logo=discord&logoColor=white&color=5865F2&style=for-the-badge)](https://discord.gg/e62jY6fwVb)
-[![Online](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Finvites%2Fe62jY6fwVb%3Fwith_counts%3Dtrue&query=%24.approximate_presence_count&suffix=%20online&label=&logo=discord&logoColor=white&color=3BA55C&style=for-the-badge)](https://discord.gg/e62jY6fwVb)
-[![GitHub stars](https://img.shields.io/github/stars/DuarteSantos8/openGym?style=for-the-badge&logo=github&logoColor=white&color=24292f)](https://github.com/DuarteSantos8/openGym/stargazers)
+Climb skill ladders from tuck to full front lever, follow hands-free mobility flows,<br>
+measure your flexibility, and run ready-made programs, on your phone, behind your own passkey login.
 
-<a href="https://trendshift.io/repositories/88268?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-88268" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/88268" alt="DuarteSantos8%2FopenBody | Trendshift" width="250" height="55"/></a>
-<a href="https://trendshift.io/repositories/88268?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-88268" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/88268/weekly?language=JavaScript" alt="DuarteSantos8%2FopenBody | Trendshift" width="250" height="55"/></a>
-
-[![Release](https://img.shields.io/github/v/release/DuarteSantos8/openGym?style=flat-square)](https://github.com/DuarteSantos8/openGym/releases)
-[![Downloads](https://img.shields.io/github/downloads/DuarteSantos8/openGym/total?style=flat-square&label=downloads)](https://github.com/DuarteSantos8/openGym/releases)
-[![Tests](https://img.shields.io/github/actions/workflow/status/DuarteSantos8/openGym/test.yml?branch=main&label=tests&style=flat-square)](https://github.com/DuarteSantos8/openGym/actions/workflows/test.yml)
-[![Pipeline](https://gitlab.com/DuarteSantos8/opengym/badges/main/pipeline.svg?style=flat-square)](https://gitlab.com/DuarteSantos8/opengym/-/pipelines)
-[![Coverage](https://gitlab.com/DuarteSantos8/opengym/badges/main/coverage.svg?job=test:frontend&style=flat-square)](https://gitlab.com/DuarteSantos8/opengym/-/pipelines?ref=main)
-[![License: AGPL v3](https://img.shields.io/badge/license-AGPL--3.0-a3e635?style=flat-square)](LICENSE)
-
-[Website](https://opengym.ch) ·
-[Live demo](https://opengym.ch/demo/) ·
-[Android APK](https://github.com/DuarteSantos8/openGym/releases/latest) ·
-[Self-hosting guide](docs/SELF_HOSTING.md) ·
-[Roadmap](ROADMAP.md) ·
-[Changelog](CHANGELOG.md)
-
-<a href="https://buymeacoffee.com/duartesantos" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="45" width="163"></a>
-<a href="https://ko-fi.com/opengym" target="_blank"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support openBody on Ko-fi" height="45"></a>
+Forked from [openGym](https://github.com/DuarteSantos8/openGym) by Duarte Santos (AGPL-3.0) and refocused on bodyweight training.
 
 </div>
 
-<table align="center">
-<tr>
-<td align="center"><img src="assets/screenshots/home.png" alt="Home screen" width="230"><br><sub><b>Home</b> · today's workout and weight</sub></td>
-<td align="center"><img src="assets/screenshots/workout.png" alt="Workout screen" width="230"><br><sub><b>Guided workout</b> · demos and sets</sub></td>
-<td align="center"><img src="assets/screenshots/stats.png" alt="Stats screen" width="230"><br><sub><b>Stats</b> · heatmap, charts and PRs</sub></td>
-</tr>
-</table>
-
 ## Why openBody
 
-Most workout apps keep your data on their servers, push you towards a subscription, or vanish
-when the company does. openBody runs on your own box, keeps your data in a folder you control, and
-is yours to fork. It still behaves like a modern app: installable on the home screen, passkey
-sign-in, works offline, syncs between your phone and your laptop.
+openGym is an excellent self-hosted gym tracker. openBody keeps everything that makes it good: passkey login, your own server, offline PWA, sync, history, the fatigue body map, the progression engine and the importers. It retargets all of that at **calisthenics and mobility**:
 
-No account on someone else's server, no subscription, no ads, no telemetry. One
-`docker compose up` and it's running.
-
-The [in-browser demo](https://opengym.ch/demo/) is the real app with example data,
-if you want to try it before installing anything.
+- Gym equipment is hidden by default. New profiles start on a built-in **Calisthenics** equipment profile: body weight, bar, rings and suspension, bands, weighted vest and belt, and mobility props. "Show all equipment" still reaches the full 5,600-exercise catalogue.
+- Progress means **harder variations**, not just more weight. The skill ladders move your routine to the next variation once your log says you have earned it.
+- Mobility is training. Guided flows are logged like any workout, and flexibility tests chart your range of motion over time.
 
 ## Features
 
-**Planning**
+**Explore** (one tab, five sections)
 
-- A routine per weekday over a library of **over 5,600 exercises** with animated demos, searchable and
-  browsable by muscle on a body map. Filter by the equipment you own.
-- Four starter plans (Push/Pull/Legs, Upper/Lower, Full Body, 5×5) that load as ordinary,
-  editable routines.
-- Move a session to another day without touching the weekly plan. The week starts on Monday or
-  Sunday, your choice.
-- Or skip the weekdays altogether: a **rotation** (A, B, C, A, ...) where the next session is
-  simply the next one you haven't done, however the week went.
-- Supersets, warm-up sets, drop sets and rest-pause, timed exercises (planks, hangs, carries),
-  cardio by time and speed, rest time per exercise, planned deloads.
-- Your own exercises, with your own photo, GIF or short video. Location data is stripped on the
-  device before upload.
+- **Exercises**: the full catalogue with a new **Area** filter (hips, hamstrings, thoracic spine, shoulders, wrists, ankles…) next to body part, type and equipment.
+- **Workouts**: 40 ready-made sessions. Chest, back, shoulders, arms, core, legs and full body come at beginner, intermediate and advanced, plus mobility and strength-endurance sessions for every body area. **Start now**, or add one to your plan.
+- **Skills**: 12 skill ladders (front lever, back lever, planche, handstand, handstand push-up, muscle-up, pistol squat, human flag, L-sit, one-arm pull-up, one-arm push-up, dragon flag).
+  - Every step has a practice target and an unlock bar ("3 × 15 s, in 2 sessions").
+  - Your current step is **derived from your log**, never stored, and "I can already do this" sets a floor.
+  - A routine entry that follows a ladder moves to the next variation by itself.
+- **Mobility**: 12 guided flows (morning flow, hip opener, splits prep, pancake, wrist prep, shoulder and thoracic, cool-down…).
+  - A full-screen, hands-free player with a countdown ring, 3-2-1 beeps, a chime per hold and left/right sides.
+  - The screen stays awake, and a flow survives a reload or a sleeping phone.
+- **Tests**: 11 flexibility tests (toe touch, front and side split, pancake, shoulder flexion, bridge, knee to wall, deep squat hold, active straight-leg raise, back scratch, wrist extension).
+  - Each has benchmark bands from poor to elite, and a test-day wizard walks you through them.
+  - Each test has its own trend chart, and a **mobility map** on the body diagram shows the result.
 
-**Training**
+**Programs**: six built-in programs replace the barbell starter plans: Fundamentals, the r/bodyweightfitness **Recommended Routine**, Skills & Strength, Mobility 30, Splits in 60, and Hybrid.
+- Enrolling fills your weekly plan with ordinary routines, and never deletes your own.
+- Home shows the week you are in, your adherence, today's mobility flow (one tap to start) and when your next test day is due.
 
-- Guided sessions: today's workout starts itself, weights are pre-filled from last time, a rest
-  timer runs between sets, PRs are detected as you go. On a rest day it tells you when the next
-  session is.
-- A quiet workout screen: one menu per exercise, the set number as the set's own menu, card or
-  list view. Switches in Settings bring the old button rows back if you liked them.
-- Optional effort column as RIR or RPE, colour-coded, with a plain-language line per level.
-- Plate math for barbell, EZ bar, trap bar and Smith machine, worked out from the plates you own.
-- Bodyweight exercises know they carry no load: log reps, add a dip belt if you use one.
-- Per-side reps for lunges and single-arm work, the screen stays awake while you train, and a
-  rest-timer alert can flash the screen for loud gyms.
-- Swipe a set left to delete it (with Undo) or right to copy it. Pyramid sets with their own reps
-  and rest per set, and a scroll wheel for any rest time up to 15 minutes.
+**Everything openGym already did**: routines and weekly plans or rotations, supersets, warm-ups, per-side sets, RIR/RPE, the progression engine (now with calisthenics defaults: reps climb a range, holds add time), history, PRs, stats and the activity heatmap, body weight and measurements, progress photos, the muscle fatigue map, the optional AI coach (retargeted at calisthenics), an MCP server (with `list_skills_progress` and `list_assessments`), imports from FitNotes, Strong and Hevy, backups, and 20 languages.
 
-**Progress**
+**Stats** adds a "Skills & mobility" card: skills mastered, steps unlocked, your mobility band, and eight weeks of hold time vs mobility time.
 
-- Progression rules per routine or per exercise: linear, Greyskull LP, double progression through a
-  visible rep range, triple progression (reps, then sets, then load), or adding time. Each target explains why it is that number; missed reps never
-  add load, stalls trigger a deload.
-- Estimated 1RM per exercise with its own curve, Structural Balance ratios (Poliquin, Thibaudeau,
-  ATG), a year-long activity heatmap.
-- A muscle map in three modes: where your volume went, what is still recovering, and what has gone
-  untrained.
-- Body-weight chart against a goal line, and progress photos on a timeline with a before/after
-  slider.
-- Edit any saved workout after the fact, log one you did on paper, or move it to the right date.
-  Records are re-read from the corrected history.
+## Exercise media
 
-**Accounts and data**
-
-- Passkeys (Face ID, Touch ID, fingerprint) with per-profile data synced across devices. Password
-  sign-in can be switched on per instance; new devices pair with a one-time code or QR.
-- Two devices editing at once merge field by field instead of overwriting each other (see
-  [sync](#how-sync-works)).
-- Import from FitNotes, Strong, Hevy (CSV or API key) and Apple Health weight exports. Export
-  everything as one JSON file whenever you like.
-- Share a plan as a small file or print it as a PDF.
-- Optional admin dashboard with invite-only signup and an activity log.
-- 19 languages, including right-to-left Arabic and Traditional Chinese. Exercise names and
-  instructions are translated for most of them.
-
-**Optional extras, off by default**
-
-- An [AI coach](docs/AI_COACH.md) that drafts a week of routines and later suggests changes based on
-  what you logged. You approve every change. It runs on your server with your own provider key
-  (Anthropic, OpenAI, Gemini or any OpenAI-compatible endpoint, Ollama included).
-- An [MCP server](mcp/README.md) so an assistant like Claude Desktop can answer questions about your
-  training history. Read-only and local; not part of the Docker build.
-
-The full list of what changed release by release is in the [changelog](CHANGELOG.md).
+The 5,600 upstream exercises keep openGym's licensed media (see [License](#license) and `catalogue/media/NOTICE.md`). The 43 exercises openBody added use open media in `catalogue/media-open/`: public-domain photos from free-exercise-db, and original SVG illustrations. Every file is credited in `SOURCES.md`.
 
 ## Quick start
 
 You need [Docker](https://docs.docker.com/get-docker/) with Compose.
 
 ```bash
-git clone https://github.com/DuarteSantos8/openGym
-cd openBody
+git clone https://github.com/nawafSheddi/openGym openbody
+cd openbody
 cp .env.example .env
-docker compose pull      # prebuilt images, amd64 + arm64 (skip this to build from source)
-docker compose up -d
+docker compose up -d --build   # builds both images from this checkout
 ```
 
 Open <http://localhost:8080>, tap **Create profile**, and you're in. The exercise animations are
@@ -144,10 +70,9 @@ Traefik and nginx, and there are separate guides for
 [HTTPS on a LAN](docs/SELF_HOSTING_HTTPS.md) and [Kubernetes](docs/SELF_HOSTING_KUBERNETES.md).
 
 > [!NOTE]
-> Images are published from the same tag to `ghcr.io/duartesantos8/opengym-{api,web}`
-> (what `docker-compose.yml` pulls) and `registry.gitlab.com/duartesantos8/opengym/{api,web}`. Swap
-> the `image:` lines if you prefer GitLab's registry, or run `docker compose up -d --build` to build
-> locally. Either way you don't need Node on the host.
+> openBody publishes no prebuilt images: `docker-compose.yml` builds `openbody-api:local` and
+> `openbody-web:local` from your checkout (`pull_policy: build`). The `ghcr.io/duartesantos8/opengym-*`
+> images are upstream openGym, a different app. You don't need Node on the host.
 
 <details>
 <summary><b>Configuration reference</b> (all through <code>.env</code>)</summary>

@@ -217,6 +217,9 @@ function cleanEx(e) {
   if (e.side) o.side = true;
   // A superset tag is an id the app mints (sg-0-1, hs + uid()), so it is bounded like one.
   if (e.sg) o.sg = ident(e.sg);
+  // openBody: the skill ladder an entry follows (lib/ladder.js), so the Coach can see it and leave
+  // the exercise swap to the app. Bounded like any id the payload carries.
+  if (e.ladder) o.ladder = ident(e.ladder);
   return o;
 }
 /**

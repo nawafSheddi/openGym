@@ -120,6 +120,9 @@ function cleanEx(e) {
   if (e.restSec > 0) o.restSec = e.restSec
   if (e.warmupRestSec > 0) o.warmupRestSec = e.warmupRestSec   // the ramp's own rest travels with the work rest
   if (e.sg) o.sg = e.sg
+  // openBody: a laddered entry keeps following its skill ladder in the recipient's app
+  // (lib/ladder.js). A plain id string; an unknown skill id is simply ignored by the ladder.
+  if (typeof e.ladder === 'string' && /^[a-z0-9-]{1,40}$/.test(e.ladder)) o.ladder = e.ladder
   if (e.note) o.note = e.note
   const warm = cleanWarmupSets(e.warmupSets)
   if (warm) o.warmupSets = warm

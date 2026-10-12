@@ -2344,4 +2344,11 @@ export default {
   "of {0}": "/ {0}",
   "{0} started": "{0} başladı",
   "{0} weeks": "{0} hafta",
+  // --- openBody: stats ---
+  "Skills & mobility": "Beceriler ve mobilite",
+  "Skills mastered": "Ustalaşılan beceriler",
+  "Steps unlocked": "Açılan basamaklar",
+  "Hold time and mobility time, last 8 weeks": "Tutuş ve mobilite süresi, son 8 hafta",
+  "Holds: {0} min this week": "Tutuşlar: bu hafta {0} dk",
+  "Mobility: {0} min this week": "Mobilite: bu hafta {0} dk",
 }

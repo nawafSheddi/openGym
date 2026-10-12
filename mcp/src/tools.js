@@ -1,4 +1,4 @@
-/* The eight read-only tools. Each handler returns JSON; labels.js pre-substitutes any
+/* The read-only tools (openGym's nine plus openBody's skill and flexibility tools). Each handler returns JSON; labels.js pre-substitutes any
    {0}/{1} template the lib returns so the LLM gets final text, not template strings.
    ISO dates are validated on the way in; the handlers never see 'yesterday'. */
 import { z } from 'zod'
@@ -18,6 +18,9 @@ import {
 import { loadOfWorkouts, rankOf, levelsOf } from '../../frontend/src/lib/muscles.js'
 import { policyFor } from '../../frontend/src/lib/progression.js'
 import { buildSessionEntries, startsFromLast } from '../../frontend/src/lib/session-start.js'
+// openBody: skill ladders and flexibility tests, read with the app's own pure helpers
+import { SKILLS, skillStatus } from '../../frontend/src/lib/ladder.js'
+import { ASSESSMENTS, latest as latestResult, bandOf, testRank, resultsFor, areaRanks, BAND_ORDER } from '../../frontend/src/lib/assessments.js'
 
 /* ---------- helpers ---------- */
 
@@ -670,10 +673,76 @@ export const previewSession = {
   }
 }
 
+/* ---------- openBody: skill ladders ---------- */
+
+/** list_skills_progress — where the athlete stands on every skill ladder (derived from the log). */
+export const listSkillsProgress = {
+  name: 'list_skills_progress',
+  description: 'List the calisthenics skill ladders (front lever, planche, handstand, muscle-up, pistol squat, human flag, L-sit, one-arm pull-up/push-up, dragon flag…) with the step the athlete is on, the bar to unlock the next step, their best set on the current step, and whether the skill is mastered. Derived from the workout log the same way the app does. Use for "how close am I to my front lever?" questions.',
+  schema: {
+    skill: z.string().optional().describe('One skill id (e.g. "front-lever") to narrow the answer.')
+  },
+  handler: ({ skill } = {}) => {
+    const S = getState()
+    if (!S) return noState()
+    const list = skill ? SKILLS.filter(s => s.id === skill) : SKILLS
+    if (skill && !list.length) return { error: `unknown skill "${skill}"`, skills: SKILLS.map(s => s.id) }
+    const bar = (mode, b) => (mode === 'time' ? `${b.sets} x ${b.sec}s` : `${b.sets} x ${b.reps}`)
+    return {
+      skills: list.map(s => {
+        const st = skillStatus(S, s)
+        return {
+          id: s.id, name: s.name, family: s.family,
+          mastered: st.mastered,
+          step: st.index + 1, total_steps: st.total,
+          current: { label: st.step.label, exercise: exOr(st.step.exId).n, practice: bar(st.step.mode, st.step.target), unlock: bar(st.step.mode, st.step.unlock) + ` in ${st.step.unlock.sessions} sessions` },
+          progress: { sessions_met: st.progress.sessionsMet, sessions_needed: st.progress.sessionsNeeded, best: st.progress.best, unit: st.progress.unit },
+          next: st.next ? st.next.label : null,
+          manual_floor: Number.isInteger(S.skillOverrides?.[s.id])
+        }
+      })
+    }
+  }
+}
+
+/* ---------- openBody: flexibility tests ---------- */
+
+/** list_assessments — flexibility test results, their benchmark bands, and the per-area picture. */
+export const listAssessments = {
+  name: 'list_assessments',
+  description: 'List the flexibility / range-of-motion tests (toe touch, front and side split, pancake, shoulder flexion, bridge, knee to wall, deep squat hold, straight leg raise, back scratch, wrist extension) with the latest result, its benchmark band (poor/fair/good/great/elite; a left/right test is rated by its weaker side), and the result history. Also returns an average band per body area. Units: cm, deg or s as stored.',
+  schema: {
+    test: z.string().optional().describe('One test id (e.g. "toe-touch") to narrow the answer.')
+  },
+  handler: ({ test } = {}) => {
+    const S = getState()
+    if (!S) return noState()
+    const list = test ? ASSESSMENTS.filter(a => a.id === test) : ASSESSMENTS
+    if (test && !list.length) return { error: `unknown test "${test}"`, tests: ASSESSMENTS.map(a => a.id) }
+    const ranks = areaRanks(S)
+    return {
+      tests: list.map(a => {
+        const l = latestResult(S, a)
+        const rank = testRank(S, a)
+        return {
+          id: a.id, name: a.name, unit: a.unit, better: a.better, sided: a.sided,
+          latest: !l ? null : a.sided
+            ? { left: l.L ? { value: l.L.value, date: l.L.d, band: bandOf(a, l.L.value).label } : null, right: l.R ? { value: l.R.value, date: l.R.d, band: bandOf(a, l.R.value).label } : null }
+            : { value: l.value, date: l.d, band: bandOf(a, l.value).label },
+          band: rank == null ? null : BAND_ORDER[rank],
+          history: resultsFor(S, a.id).map(r => ({ date: r.d, value: r.value, ...(r.side ? { side: r.side } : {}) }))
+        }
+      }),
+      areas: Object.fromEntries(Object.entries(ranks).map(([area, r]) => [area, BAND_ORDER[Math.round(r)]]))
+    }
+  }
+}
+
 /* ---------- registration list ---------- */
 
 export const TOOLS = [
-  listRoutines, getRoutine, previewSession, getWeekPlan, listWorkouts, getWorkout, getBodyweight, estimate1rm, muscleBalance
+  listRoutines, getRoutine, previewSession, getWeekPlan, listWorkouts, getWorkout, getBodyweight, estimate1rm, muscleBalance,
+  listSkillsProgress, listAssessments
 ]
 
 function noState() {

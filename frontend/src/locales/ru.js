@@ -2348,4 +2348,11 @@ export default {
   "of {0}": "из {0}",
   "{0} started": "«{0}» начата",
   "{0} weeks": "{0} нед.",
+  // --- openBody: stats ---
+  "Skills & mobility": "Элементы и мобильность",
+  "Skills mastered": "Освоено элементов",
+  "Steps unlocked": "Открыто шагов",
+  "Hold time and mobility time, last 8 weeks": "Время удержаний и мобильности, последние 8 недель",
+  "Holds: {0} min this week": "Удержания: {0} мин на этой неделе",
+  "Mobility: {0} min this week": "Мобильность: {0} мин на этой неделе",
 }

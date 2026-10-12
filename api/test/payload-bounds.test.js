@@ -191,13 +191,14 @@ test('the plan and the log a real app writes pass through exactly as before', ()
   S.routines[0].ex[0].inc = 2.5;
   S.routines[0].ex[0].repsMin = 8;
   S.routines[0].ex[0].repsMax = 12;
+  S.routines[0].ex[1].ladder = 'l-sit';   // openBody: a laddered entry carries its skill id
   const p = payload.build(S, { handle: 'h'.repeat(16), kind: 'review' });
   assert.deepEqual(p.plan, {
     routines: [{
       id: 'r1', name: 'Full body A', emoji: '💪', prog: 'linear',
       ex: [
         { id: '0001', name: p.plan.routines[0].ex[0].name, sets: 3, mode: 'reps', reps: 10, weight: 20, prog: 'linear', inc: 2.5, repsMin: 8, repsMax: 12, sg: 'sg-0-1' },
-        { id: '0007', name: p.plan.routines[0].ex[1].name, sets: 3, mode: 'time', sec: 45, sg: 'sg-0-1' }
+        { id: '0007', name: p.plan.routines[0].ex[1].name, sets: 3, mode: 'time', sec: 45, sg: 'sg-0-1', ladder: 'l-sit' }
       ]
     }],
     week: { 1: ['r1'], 3: ['r1'], 5: ['r1'] }

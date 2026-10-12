@@ -1,0 +1,17 @@
+/* Stats → Skills & mobility. Design-system tokens only (index.css). */
+.cs-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 6px 0 14px; }
+.cs-tile { text-align: start; background: var(--surface-2); border-radius: var(--r); padding: 10px; min-width: 0; }
+.cs-tile .l { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--label-2); }
+.cs-tile .l .icn { font-size: 13px; color: var(--acc); }
+.cs-tile .v { font-size: 22px; font-weight: 600; margin-top: 4px; }
+.cs-tile .v .dim { font-size: 15px; font-weight: 400; }
+
+/* 8 weeks, two bars per week: holds (accent) and mobility (amber) */
+.cs-chart { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; height: 90px; align-items: end; }
+.cs-week { display: flex; gap: 2px; align-items: flex-end; height: 100%; justify-content: center; }
+.cs-bar { width: 40%; max-width: 12px; min-height: 2px; border-radius: 3px 3px 0 0; }
+.cs-bar.hold, .cs-legend i.hold { background: var(--acc); }
+.cs-bar.mob, .cs-legend i.mob { background: var(--skill); }
+.cs-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; color: var(--label-2); }
+.cs-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.cs-legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }

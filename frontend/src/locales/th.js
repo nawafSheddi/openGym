@@ -2355,4 +2355,11 @@ export default {
   "of {0}": "จาก {0}",
   "{0} started": "เริ่ม {0} แล้ว",
   "{0} weeks": "{0} สัปดาห์",
+  // --- openBody: stats ---
+  "Skills & mobility": "ทักษะและความคล่องตัว",
+  "Skills mastered": "ทักษะที่เชี่ยวชาญ",
+  "Steps unlocked": "ขั้นที่ปลดล็อก",
+  "Hold time and mobility time, last 8 weeks": "เวลาค้างท่าและเวลาความคล่องตัว 8 สัปดาห์ล่าสุด",
+  "Holds: {0} min this week": "ค้างท่า: {0} นาทีในสัปดาห์นี้",
+  "Mobility: {0} min this week": "ความคล่องตัว: {0} นาทีในสัปดาห์นี้",
 }

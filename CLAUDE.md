@@ -4,10 +4,39 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-openGym is a self-hosted gym & body-weight tracker PWA. Two containers (`api` + `web`) plus a
-`./data` folder the user owns — no third-party account, no telemetry. Passkey (WebAuthn) login,
-installable as a home-screen app, optional Capacitor shells for standalone Android/iOS builds.
-License: AGPL-3.0-or-later.
+openBody is a self-hosted **calisthenics and mobility** tracker PWA, a divergent fork of openGym
+(github.com/DuarteSantos8/openGym, AGPL-3.0). Two containers (`api` + `web`) plus a `./data` folder
+the user owns: no third-party account, no telemetry. Passkey (WebAuthn) login, installable as a
+home-screen app. Capacitor shells for Android/iOS exist but are not maintained in this fork.
+Design spec and plan: `docs/superpowers/specs/2026-10-13-openbody-design.md`,
+`docs/superpowers/plans/2026-10-13-openbody.md`. Changelogs: `changelogs/`. Lessons: `lessons-learned/`.
+
+## openBody on top of openGym (read this first)
+
+- **Content is data** in `catalogue/`: `skills/` (12 ladders), `workouts/` (40), `flows/` (12 guided
+  mobility flows), `assessments/` (11 flexibility tests), `programs/` (6), `areas.json` (11 mobility
+  areas), new exercises with ids >= 20000. `scripts/catalogue/validate-content.mjs` checks every
+  reference; `build.mjs` compiles it to `frontend/src/lib/content/*.js`. Run
+  `node scripts/catalogue/validate.mjs && node scripts/catalogue/build.mjs` after any content edit.
+- **New pure logic** (each with a test beside it): `lib/ladder.js` (skill step derived from the
+  log; `applyLadders` swaps a routine entry to the next variation; runs at session start and
+  finish), `lib/flow-player.js` (timestamp-based flow state machine, persisted in `S.activeFlow`),
+  `lib/assessments.js` (bands, trends, mobility map), `lib/programs.js` (enroll → ordinary routines
+  + `S.week` days, never deletes routines), `lib/workouts.js`, `lib/areas.js`, `lib/cali-stats.js`.
+- **New screens** are vertical slices in `frontend/src/features/<name>/` (discover, workouts,
+  skills, flows, assessments, programs, stats). The Explore tab hosts them via `DiscoverNav`.
+- **New state keys are absent-safe** (old openGym states load unchanged): `skillOverrides`,
+  `assessments`, `program`, `activeFlow`, `showGymKit`. New-profile defaults go in `freshState()`,
+  never in `DEF` (Calisthenics equipment profile, teal accent, check-in off).
+- **Every UI string** goes through a literal `t()` and must exist in all 18 locale packs: add a
+  translated batch with `node frontend/scripts/add-strings.mjs <batch.json> --section "..."`.
+- **Brand**: `frontend/src/config/brand.js`. Re-run `node scripts/rebrand.mjs <paths>` after
+  cherry-picking upstream code (it protects upstream links and the media-licence wording).
+- **Media**: `catalogue/media/` is Gym visual's, licensed to openGym (non-commercial fork keeps it
+  unmodified). Never edit it or feed it to AI tools. New exercises use `catalogue/media-open/`
+  (credited in `SOURCES.md`), served under the same `/exercise-media/` paths.
+- Docker builds local `openbody-*:local` images (`pull_policy: build`); upstream ghcr.io images
+  are a different app.
 
 ## Project layout
 

@@ -2341,4 +2341,11 @@ export default {
   "of {0}": "з {0}",
   "{0} started": "«{0}» розпочато",
   "{0} weeks": "{0} тиж.",
+  // --- openBody: stats ---
+  "Skills & mobility": "Елементи й мобільність",
+  "Skills mastered": "Освоєно елементів",
+  "Steps unlocked": "Відкрито кроків",
+  "Hold time and mobility time, last 8 weeks": "Час утримань і мобільності, останні 8 тижнів",
+  "Holds: {0} min this week": "Утримання: {0} хв цього тижня",
+  "Mobility: {0} min this week": "Мобільність: {0} хв цього тижня",
 }

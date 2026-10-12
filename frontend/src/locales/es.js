@@ -2344,4 +2344,11 @@ export default {
   "of {0}": "de {0}",
   "{0} started": "{0} empezado",
   "{0} weeks": "{0} semanas",
+  // --- openBody: stats ---
+  "Skills & mobility": "Habilidades y movilidad",
+  "Skills mastered": "Habilidades dominadas",
+  "Steps unlocked": "Pasos desbloqueados",
+  "Hold time and mobility time, last 8 weeks": "Tiempo de sostén y de movilidad, últimas 8 semanas",
+  "Holds: {0} min this week": "Sostenes: {0} min esta semana",
+  "Mobility: {0} min this week": "Movilidad: {0} min esta semana",
 }

@@ -2344,4 +2344,11 @@ export default {
   "of {0}": "/ {0}",
   "{0} started": "{0} 시작됨",
   "{0} weeks": "{0}주",
+  // --- openBody: stats ---
+  "Skills & mobility": "스킬 & 모빌리티",
+  "Skills mastered": "마스터한 스킬",
+  "Steps unlocked": "해제한 단계",
+  "Hold time and mobility time, last 8 weeks": "유지 시간과 모빌리티 시간, 최근 8주",
+  "Holds: {0} min this week": "유지: 이번 주 {0}분",
+  "Mobility: {0} min this week": "모빌리티: 이번 주 {0}분",
 }

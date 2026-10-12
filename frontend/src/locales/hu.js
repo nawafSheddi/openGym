@@ -2347,4 +2347,11 @@ export default {
   "of {0}": "/ {0}",
   "{0} started": "{0} elindítva",
   "{0} weeks": "{0} hét",
+  // --- openBody: stats ---
+  "Skills & mobility": "Elemek és mobilitás",
+  "Skills mastered": "Elsajátított elemek",
+  "Steps unlocked": "Feloldott lépcsők",
+  "Hold time and mobility time, last 8 weeks": "Tartási és mobilitási idő, az utolsó 8 hét",
+  "Holds: {0} min this week": "Tartások: {0} perc a héten",
+  "Mobility: {0} min this week": "Mobilitás: {0} perc a héten",
 }
