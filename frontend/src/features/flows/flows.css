@@ -1,6 +1,7 @@
 /* Explore → Mobility (flow list) and the guided-flow player. Design-system tokens only. */
 
-.fl-ico { background: var(--acc-soft); color: var(--acc); }
+/* .lrow-i-qualified: index.css loads after this file, so a lone .fl-ico would lose to .lrow-i */
+.lrow-i.fl-ico { background: var(--acc-soft); color: var(--acc); }
 .fl-resume { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; color: var(--acc); cursor: pointer; }
 .fl-resume .tt { color: var(--label); font-weight: 600; }
 .fl-resume .ss { color: var(--label-2); font-size: 14px; }

@@ -1,5 +1,6 @@
 /* Programs: the chooser and Home's program card. Design-system tokens only (index.css). */
-.pg-ico { background: var(--acc-soft); color: var(--acc); }
+/* .lrow-i-qualified: index.css loads after this file, so a lone .pg-ico would lose to .lrow-i */
+.lrow-i.pg-ico { background: var(--acc-soft); color: var(--acc); }
 .pg-card { margin-bottom: 12px; }
 .pg-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0 8px; }
 .pg-big { font-size: 22px; font-weight: 600; }

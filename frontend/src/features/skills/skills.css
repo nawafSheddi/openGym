@@ -28,7 +28,8 @@
 .sk-progress { color: var(--acc); font-weight: 600; }
 .sk-cue { display: flex; gap: 5px; align-items: flex-start; margin-top: 3px; }
 .sk-cue .icn { flex: none; margin-top: 2px; color: var(--skill); }
-.sk-claim { margin-top: 6px; font-size: 12px; padding: 3px 10px; }
+/* .chip-qualified: index.css loads after this file, so a lone .sk-claim would lose to .chip */
+.chip.sk-claim { margin-top: 6px; font-size: 12px; padding: 3px 10px; }
 
 /* ladder page header: back button, then the title beside it (the base .hdr spreads its children) */
 .hdr.sk-hdr { justify-content: flex-start; gap: 10px; }
