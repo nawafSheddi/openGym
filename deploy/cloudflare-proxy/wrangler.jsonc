@@ -14,7 +14,7 @@
   "routes": [{ "pattern": "body.nawaf.solutions", "custom_domain": true }],
   "vars": {
     // The app's own address on the hosting platform (bare hostname, not a URL). Not a secret.
-    "ORIGIN_HOST": "REPLACE_WITH_APP.cranl.net"
+    "ORIGIN_HOST": "openbody-chec8a.cranl.net"
   },
   "observability": { "enabled": true }
 }

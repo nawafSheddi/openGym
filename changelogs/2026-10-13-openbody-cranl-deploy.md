@@ -47,3 +47,13 @@ openBody can now run on CranL, a container PaaS, as a single container, at a hos
   - A malformed `BASE_PATH` still refuses to start.
 - **Browser:** passkey sign-up through the container (`register/verify` 200). After a container restart, `/api/me` still returns the signed-in profile.
 - **Suites:** the new tests pass 6/6 and 6/6.
+
+## Live deployment (2026-10-13)
+- **CranL app `openbody`** (free plan, `netherlands-1`) at `https://openbody-chec8a.cranl.net`:
+  - built from `nawafSheddi/openGym` `main` with `Dockerfile.cranl`, port 8080;
+  - env `RP_ID`/`ORIGIN` = `body.nawaf.solutions`, `FIRST_USER_ADMIN=1`;
+  - persistent volume `openbody-data` at `/data`, attached by a second deploy, since CranL only attaches volumes on the next deploy.
+- **The first app was deleted and recreated** (no data was lost). It had been created with `dockerfile_path=deploy/cranl/Dockerfile`, which the API can't change afterwards. It stays soft-deleted for 7 days.
+- **Worker `openbody-proxy`** deployed with wrangler 4.143.0, on the custom domain `body.nawaf.solutions`. Cloudflare created the DNS record and certificate.
+  - `https://body.nawaf.solutions/api/health` answers `{"ok":true}` through Cloudflare.
+  - The page loads as a secure context with passkeys available.
