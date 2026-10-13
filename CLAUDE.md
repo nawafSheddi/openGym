@@ -20,14 +20,17 @@ Design spec and plan: `docs/superpowers/specs/2026-10-13-openbody-design.md`,
   `node scripts/catalogue/validate.mjs && node scripts/catalogue/build.mjs` after any content edit.
 - **New pure logic** (each with a test beside it): `lib/ladder.js` (skill step derived from the
   log; `applyLadders` swaps a routine entry to the next variation; runs at session start and
-  finish), `lib/flow-player.js` (timestamp-based flow state machine, persisted in `S.activeFlow`),
+  finish), `lib/flow-player.js` (timestamp-based flow state machine; the running flow is
+  device-local in `features/flows/flow-store.js`, never in `S`, so a second tab/device can't log it twice),
   `lib/assessments.js` (bands, trends, mobility map), `lib/programs.js` (enroll → ordinary routines
   + `S.week` days, never deletes routines), `lib/workouts.js`, `lib/areas.js`, `lib/cali-stats.js`.
 - **New screens** are vertical slices in `frontend/src/features/<name>/` (discover, workouts,
   skills, flows, assessments, programs, stats). The Explore tab hosts them via `DiscoverNav`.
 - **New state keys are absent-safe** (old openGym states load unchanged): `skillOverrides`,
-  `assessments`, `program`, `activeFlow`, `showGymKit`. New-profile defaults go in `freshState()`,
-  never in `DEF` (Calisthenics equipment profile, teal accent, check-in off).
+  `assessments`, `program`, `showGymKit`. New-profile defaults go in `freshState()`,
+  never in `DEF` (Calisthenics equipment profile, teal accent, check-in off). Every new synced
+  key needs merge rules in `lib/sync-merge.js` mirrored in `api/sync-stamps.js` (`assessments`:
+  union by id + tombstones; `skillOverrides`: stamped map).
 - **Every UI string** goes through a literal `t()` and must exist in all 18 locale packs: add a
   translated batch with `node frontend/scripts/add-strings.mjs <batch.json> --section "..."`.
 - **Brand**: `frontend/src/config/brand.js`. Re-run `node scripts/rebrand.mjs <paths>` after
