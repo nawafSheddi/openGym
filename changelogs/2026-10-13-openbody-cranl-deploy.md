@@ -57,3 +57,7 @@ openBody can now run on CranL, a container PaaS, as a single container, at a hos
 - **Worker `openbody-proxy`** deployed with wrangler 4.143.0, on the custom domain `body.nawaf.solutions`. Cloudflare created the DNS record and certificate.
   - `https://body.nawaf.solutions/api/health` answers `{"ok":true}` through Cloudflare.
   - The page loads as a secure context with passkeys available.
+- **Go-live:**
+  - The owner created their passkey profile from their phone (`users: 1`), becoming admin via `FIRST_USER_ADMIN`.
+  - `INVITE_ONLY=1` was then set with a restart. `/api/config` reports `invite_only: true`, and a sign-up without a code gets `403 "a valid invite code is required"`.
+- **Persistence:** after a full redeploy into a new container, the server still had `users: 1` and invite-only on. The `/data` volume keeps accounts, passkeys and the cookie secret.
