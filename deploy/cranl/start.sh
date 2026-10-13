@@ -1,5 +1,5 @@
 #!/bin/sh
-# Supervisor for the single-container openBody image (deploy/cranl/Dockerfile): starts the api and
+# Supervisor for the single-container openBody image (Dockerfile.cranl): starts the api and
 # nginx, forwards a stop to both, and exits non-zero the moment either one dies on its own, so the
 # platform restarts the whole container instead of leaving half an app running (nginx answering
 # pages while every /api call fails). PID 1 is tini, which reaps orphans and forwards signals here.

@@ -1,6 +1,6 @@
 # nginx-unprivileged started as uid 101 inside a root container cannot open its logs
 
-**Date:** 2026-10-13 (building the one-container CranL image, `deploy/cranl/Dockerfile`)
+**Date:** 2026-10-13 (building the one-container CranL image, `Dockerfile.cranl`)
 
 ## What happened
 - **The setup.** The combined image runs as root, because the api needs to write the `/data` volume and the Coach drops privileges. The first `start.sh` launched nginx as uid 101 through `su-exec`, to keep the web image's "nginx never root" property.

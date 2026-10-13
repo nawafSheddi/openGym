@@ -5,7 +5,7 @@ This guide runs openBody on [CranL](https://cranl.com), a container PaaS, with n
 ```
 browser ──https──▶ Cloudflare Worker ──https──▶ <app>.cranl.net ──▶ nginx :8080 ──▶ api 127.0.0.1:3001 ──▶ /data (volume)
                    body.example.com             (CranL edge)        └────────── one container ──────────┘
-                   (deploy/cloudflare-proxy)                          (deploy/cranl/Dockerfile)
+                   (deploy/cloudflare-proxy)                          (Dockerfile.cranl)
 ```
 
 ## Why it is shaped like this
@@ -16,7 +16,7 @@ browser ──https──▶ Cloudflare Worker ──https──▶ <app>.cranl.
   - the CSRF check wants `Sec-Fetch-Site: same-origin`;
   - passkeys are bound to `RP_ID`.
 
-  nginx reaches the api over plain http. Docker Compose provides that with two containers on a private network. CranL runs one container per app and documents no private network between apps. So [`deploy/cranl/Dockerfile`](../deploy/cranl/Dockerfile) builds the web app and the api into one image, the same shape as the single pod in [`kubernetes/`](../kubernetes/).
+  nginx reaches the api over plain http. Docker Compose provides that with two containers on a private network. CranL runs one container per app and documents no private network between apps. So [`Dockerfile.cranl`](../Dockerfile.cranl) builds the web app and the api into one image, the same shape as the single pod in [`kubernetes/`](../kubernetes/).
 - **Inside the image.** [`deploy/cranl/start.sh`](../deploy/cranl/start.sh) starts both processes under `tini`. If either one dies, it stops the container with exit 1 so CranL restarts it whole.
 - **A Worker in front.** CranL's free plan has no custom domains, and passkeys need a stable hostname of your own. A tiny Cloudflare Worker on a *Custom Domain*, [`deploy/cloudflare-proxy`](../deploy/cloudflare-proxy/), forwards every request to the app's `*.cranl.net` address and returns the answer untouched. Deploying it creates the DNS record and certificate for you. On a paid CranL plan you could instead add the domain to the app directly and skip the Worker.
 
@@ -27,7 +27,7 @@ Install the [CranL CLI](https://docs.cranl.com) and sign in with `cranl login`. 
 | Setting | Value |
 |---|---|
 | Source | your fork's Git URL (public) or a connected GitHub repo, branch `main` |
-| Build | `dockerfile`, with Dockerfile path `deploy/cranl/Dockerfile` and build path `/` (the repo root is the build context) |
+| Build | `dockerfile`, with Dockerfile path `Dockerfile.cranl` and build path `/` (the repo root is the build context) |
 | Port | `8080` |
 | Region | any your plan allows (free: `netherlands-1`) |
 | Volume | a persistent directory at **`/data`** |

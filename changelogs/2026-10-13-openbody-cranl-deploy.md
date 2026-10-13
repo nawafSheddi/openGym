@@ -7,7 +7,8 @@ openBody can now run on CranL, a container PaaS, as a single container, at a hos
 - **A Worker in front.** Passkeys need a stable hostname of the owner's, and the free plan only gives `*.cranl.net`.
 
 ## What changed
-- **`deploy/cranl/Dockerfile`**: one image with the web app (nginx, frontend, exercise media) and the api. It is the same layout as the single pod in `kubernetes/`.
+- **`Dockerfile.cranl`**: one image with the web app (nginx, frontend, exercise media) and the api. It is the same layout as the single pod in `kubernetes/`.
+  - **It sits at the repo root,** not under `deploy/cranl/`. CranL's builder (Dokploy) has no build-context setting and builds from the Dockerfile's own folder. The first real deploy, from `deploy/cranl/Dockerfile`, failed with every repo path "not found".
   - **Stages:** a frontend build stage identical to the web image's, an api production-install stage, and the `nginx-unprivileged` runtime with the `node` binary from `node:22-alpine`. A build-time `node --version` guards against a libc mismatch between the two images.
   - **api files** are copied by glob (`api/*.js`), so a new module can't be left out.
   - **No BuildKit-only syntax.**
@@ -35,7 +36,7 @@ openBody can now run on CranL, a container PaaS, as a single container, at a hos
 
 ## Verification (local, Docker)
 - **Build and boot:**
-  - `docker build -f deploy/cranl/Dockerfile .` works (726 MB unpacked). The log reads `nginx on :8080, api on 127.0.0.1:3001`.
+  - `docker build -f Dockerfile.cranl .` works (726 MB unpacked). The log reads `nginx on :8080, api on 127.0.0.1:3001`.
   - `/api/health` answers `{"ok":true,"writable":true}`, the page returns 200, and both media sets are served (open SVGs with the sandboxing CSP).
   - Processes: tini → supervisor → `node server.js` (root) + nginx master (root) + 4 workers (`nginx`).
 - **Lifecycle:**

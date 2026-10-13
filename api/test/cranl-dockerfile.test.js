@@ -1,4 +1,4 @@
-/* deploy/cranl/Dockerfile builds the web app and the api into ONE image (for platforms with one
+/* Dockerfile.cranl builds the web app and the api into ONE image (for platforms with one
    container per app and no private network, docs/SELF_HOSTING_CRANL.md). It re-states parts of
    web/Dockerfile and api/Dockerfile, so a change made to those alone would silently leave the
    combined image behind — a missing media folder, an nginx that can't start unprivileged, a new
@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const read = f => fs.readFileSync(path.join(ROOT, f), 'utf8');
-const combined = read('deploy/cranl/Dockerfile');
+const combined = read('Dockerfile.cranl');
 const web = read('web/Dockerfile');
 const START = path.join(ROOT, 'deploy/cranl/start.sh');
 
@@ -37,7 +37,7 @@ test('every media and web-app COPY in web/Dockerfile is in the combined image to
   for (const l of wanted) {
     // The combined file names its frontend stage web-build rather than build.
     const expected = l.replace('--from=build ', '--from=web-build ');
-    assert.ok(lines(combined).includes(expected), `missing from deploy/cranl/Dockerfile: ${expected}`);
+    assert.ok(lines(combined).includes(expected), `missing from Dockerfile.cranl: ${expected}`);
   }
   assert.ok(lines(combined).some(l => l.startsWith('COPY web/05-check-base-path.sh /docker-entrypoint.d/')),
     'the BASE_PATH guard runs here too');

@@ -8,8 +8,11 @@
 # the same shape as kubernetes/deployment.yaml's single pod. See docs/SELF_HOSTING_CRANL.md.
 #
 # Build context: the REPO ROOT (the frontend build also needs api/coach/core, and the media lives in
-# catalogue/):  docker build -f deploy/cranl/Dockerfile -t openbody-cranl .
-# On CranL: build=dockerfile, dockerfile_path=deploy/cranl/Dockerfile, build_path=/, port=8080, and
+# catalogue/):  docker build -f Dockerfile.cranl -t openbody-cranl .
+# That is why this file sits at the root and not under deploy/cranl/: CranL's builder (Dokploy)
+# has no build-context setting and uses the Dockerfile's own folder as the context — from
+# deploy/cranl/ every repo path was "not found" on the first deploy.
+# On CranL: build=dockerfile, dockerfile_path=Dockerfile.cranl, build_path=/, port=8080, and
 # a persistent volume at /data (it holds every account, passkey, workout and the cookie secret).
 #
 # Kept in step with web/Dockerfile and api/Dockerfile by api/test/cranl-dockerfile.test.js.
