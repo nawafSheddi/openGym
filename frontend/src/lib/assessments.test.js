@@ -3,8 +3,10 @@
 import { describe, it, expect } from 'vitest'
 import {
   ASSESSMENTS, assessmentById, BAND_ORDER, bandOf, inRange, resultsFor, latest, trend,
-  testRank, areaRanks, mobilityLoad, lastTestDate, isDue, improved, toDisplay, fromDisplay, displayUnit
+  testRank, areaRanks, mobilityLoad, lastTestDate, isDue, improved, toDisplay, fromDisplay, displayUnit,
+  MOBILITY_THRESHOLDS
 } from './assessments.js'
+import { levelsOf } from './muscles.js'
 
 // A higher-is-better test in cm and a lower-is-better sided test.
 const TOE = { id: 'toe', name: 'Toe touch', unit: 'cm', better: 'higher', sided: false, range: [-40, 40], areas: ['hamstrings'],
@@ -83,6 +85,13 @@ describe('mobility map', () => {
     expect(load['hip-flexors']).toBe(5)
     expect(load.quadriceps).toBe(5)
     expect(load.chest).toBeUndefined()
+  })
+  it('gives every band its own map level, so the map can paint the legend colours (poor l1 … elite l5)', () => {
+    // one muscle per band rank: load = rank + 1
+    const load = { calves: 1, hamstring: 2, gluteal: 3, 'lower-back': 4, quadriceps: 5 }
+    expect(levelsOf(load, MOBILITY_THRESHOLDS)).toMatchObject({ calves: 1, hamstring: 2, gluteal: 3, 'lower-back': 4, quadriceps: 5, chest: 0 })
+    // an area averaging between two bands shows the lower one (3.5 → great's level 4, not elite)
+    expect(levelsOf({ hamstring: 4.5 }, MOBILITY_THRESHOLDS).hamstring).toBe(4)
   })
 })
 

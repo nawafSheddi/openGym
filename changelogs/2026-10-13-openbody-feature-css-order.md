@@ -26,13 +26,28 @@ On the flexibility Tests screen and the Stats card, **every band chip (Poor … 
 - **Method:** every screen was screenshotted. A runtime audit also copied every feature rule to the end of the page and diffed computed styles, so anything overridden in production shows up.
 - **Result:** before the fix the audit found 8 rule groups overridden. After it, every screen at both sizes and both themes shows 0 overridden styles and no horizontal scroll.
 
-## Found, not changed (design decisions for the owner)
-- **Band chip contrast** (WCAG AA needs 4.5:1 for this small text):
-  - Light: Poor 2.79, Fair 1.9, Great 3.1, Elite 4.01. Good passes at 19.0.
-  - Dark: Poor 4.06. The rest pass.
-- **Fair and Elite look the same in dark:** `--orange` #ff9f0a and `--skill` #f59e0b.
-- **The mobility map doesn't match its legend.** The map shades tested areas in accent-teal strengths, but the legend chips are red / orange / yellow / teal / amber.
-- **Stats "Mobility: 0 min this week"** shows beside a full-height bar when only seconds were logged. Bars are scaled to the week's maximum, and the label rounds to minutes.
+## Band colours: contrast, Fair vs Elite, map vs legend (owner chose "darker text, map matches")
+Once the chips showed their colours, three problems surfaced:
+- **Contrast below WCAG AA (4.5:1):**
+  - Light: Poor 2.79, Fair 1.9, Great 3.1, Elite 4.01.
+  - Dark: Poor 4.06.
+- **Fair and Elite looked alike in dark:** `--orange` #ff9f0a vs `--skill` #f59e0b.
+- **The map didn't match its legend.** The map shaded every area in accent teal while the legend showed five hues.
+
+Fixes:
+- **One set of band tokens** (`--band-poor` … `--band-elite`) in `assessments.css` drives the chips, the legend and the map.
+  - Poor red, Fair orange, Good yellow, Great accent, **Elite purple**. Elite was the skill amber.
+- **Chip text** is `color-mix(hue 50%, --label)`: darker on light, lighter on dark.
+  - Light now measures 5.07–8.59, dark 7.18–8.92.
+- **The mobility map paints each area in its band's hue**:
+  - `MOBILITY_THRESHOLDS` now gives each band its own level (poor l1 … elite l5). Great and Elite used to share l4.
+  - `levelsOf` lets an absolute scale reach level 5. No other caller asks for more than 4, so the other body maps are unchanged.
+- **Tests:**
+  - `levelsOf` reaches 5 and stays capped (`muscles.test.js`).
+  - Each band maps to its own level (`assessments.test.js`).
+
+## Found, not changed
+- **Stats "Mobility: 0 min this week"** shows beside a full-height bar when only seconds were logged. Bars are scaled to the week's maximum, and the label rounds to minutes. A "<1 min" label would need a new translated string.
 
 ## Verification
-frontend 5202/5202 (5200 + 2 new) · runtime CSS audit clean on 8 screens × 2 sizes × 2 themes.
+frontend 5204/5204 (5200 + 4 new) · runtime CSS audit clean on 8 screens × 2 sizes × 2 themes · band chip contrast measured on the Docker build in both themes (above).

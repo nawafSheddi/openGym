@@ -85,8 +85,9 @@ export function mobilityLoad(S, tests = ASSESSMENTS) {
   }
   return out
 }
-// poor → shade 1 … great/elite → shade 4 (the body map has five shades, 0 = untested)
-export const MOBILITY_THRESHOLDS = [{ at: 1, level: 1 }, { at: 2, level: 2 }, { at: 3, level: 3 }, { at: 4, level: 4 }]
+// One body-map level per band: poor → l1 … elite → l5 (0 = untested). Each level is painted in
+// its band's colour (features/assessments/assessments.css), the same one the legend chips use.
+export const MOBILITY_THRESHOLDS = [1, 2, 3, 4, 5].map(n => ({ at: n, level: n }))
 
 /** The date of the most recent test result, or null. */
 export function lastTestDate(S) {

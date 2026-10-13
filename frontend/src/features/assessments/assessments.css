@@ -8,13 +8,40 @@
    feature class ties on specificity and loses on order — the band chips all rendered grey. */
 .lrow-i.as-ico { background: var(--acc-soft); color: var(--acc); }
 
-/* band chips, worst to best: red, orange, yellow, accent, amber (the skill colour = top tier) */
-.tag.as-band { font-weight: 600; }
-.tag.as-poor  { background: color-mix(in srgb, var(--red) 18%, transparent);    color: var(--red); }
-.tag.as-fair  { background: color-mix(in srgb, var(--orange) 18%, transparent); color: var(--orange); }
-.tag.as-good  { background: color-mix(in srgb, var(--yellow) 22%, transparent); color: var(--label); }
-.tag.as-great { background: var(--acc-soft); color: var(--acc); }
-.tag.as-elite { background: var(--skill-soft); color: var(--skill); }
+/* The five benchmark bands, worst to best: one hue each, shared by the band chips, the map's
+   legend and the mobility map itself, so the legend always tells the truth. Elite is purple,
+   not the skill amber: amber sat next to Fair's orange and the two read as one colour. */
+:root {
+  --band-poor: var(--red);
+  --band-fair: var(--orange);
+  --band-good: var(--yellow);
+  --band-great: var(--acc);
+  --band-elite: var(--purple);
+}
+
+/* Band chips: an 18% tint of the band's hue behind text mixed halfway to the label colour.
+   Mixing toward --label darkens the ink on light and lightens it on dark, which keeps every
+   band at WCAG AA (≥ 4.5:1, worst case Good on light at 5.1:1) in both themes; the pure hues
+   alone measured as low as 1.9:1 (Fair on white). */
+.tag.as-band {
+  font-weight: 600;
+  background: color-mix(in srgb, var(--band) 18%, transparent);
+  color: color-mix(in srgb, var(--band) 50%, var(--label));
+}
+.tag.as-poor  { --band: var(--band-poor); }
+.tag.as-fair  { --band: var(--band-fair); }
+.tag.as-good  { --band: var(--band-good); }
+.tag.as-great { --band: var(--band-great); }
+.tag.as-elite { --band: var(--band-elite); }
+
+/* The mobility map paints each tested area in its band's hue (levels 1–5 = poor … elite, see
+   MOBILITY_THRESHOLDS), overriding the body map's default accent ramp. Full-strength fills, as
+   the fatigue view does with --yellow/--orange: these are shapes, not text. */
+.as-map .bm-m.l1 { fill: var(--band-poor); }
+.as-map .bm-m.l2 { fill: var(--band-fair); }
+.as-map .bm-m.l3 { fill: var(--band-good); }
+.as-map .bm-m.l4 { fill: var(--band-great); }
+.as-map .bm-m.l5 { fill: var(--band-elite); }
 
 .small.as-steps { margin: 6px 0 12px; padding-inline-start: 18px; line-height: 1.45; color: var(--label-2); }
 .as-steps li + li { margin-top: 3px; }

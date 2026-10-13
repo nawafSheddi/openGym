@@ -270,6 +270,14 @@ describe('muscle balance windows and ranking', () => {
     expect(levelsOf(load)).toMatchObject({ deltoids: 4, chest: 4, biceps: 2, abs: 0 })
   })
 
+  it('lets an absolute scale reach level 5, and keeps relative levels and higher rules capped', () => {
+    const five = [1, 2, 3, 4, 5].map(n => ({ at: n, level: n }))
+    expect(levelsOf({ chest: 5, biceps: 4 }, five)).toMatchObject({ chest: 5, biceps: 4 })
+    // a rule asking for more than 5 is clamped; the relative scale never leaves 0–4
+    expect(levelsOf({ chest: 1 }, [{ at: 1, level: 9 }]).chest).toBe(5)
+    expect(Math.max(...Object.values(levelsOf({ chest: 100, biceps: 1 })))).toBe(4)
+  })
+
   it('keeps catalogue precedence and deleted-custom snapshot weights', () => {
     const known = { id: '0025', muscleGroups: ['quadriceps'], sets: [{ done: true }] }
     const deleted = { id: 'deleted', muscleSnapshot: { muscleWeights: { chest: 1 } }, sets: [{ done: true }] }

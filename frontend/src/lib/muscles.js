@@ -332,7 +332,9 @@ export const loadOfActive = active =>
  * and the last matching rule wins. An exclusive rule matches values strictly greater than
  * `at`; otherwise the boundary is inclusive. Values below the first matching rule are l0.
  * Absolute rules let recovery views keep fixed semantic bands instead of renormalizing to the
- * strongest muscle on screen.
+ * strongest muscle on screen. An absolute scale may go up to level 5 (openBody: the mobility
+ * map's five benchmark bands, styled `.l5` in features/assessments); the relative scale and
+ * every other caller stay on 0–4.
  */
 export function levelsOf(load, thresholds) {
   if (thresholds) {
@@ -342,7 +344,7 @@ export function levelsOf(load, thresholds) {
       let level = 0
       for (const rule of thresholds) {
         const matches = rule.exclusive ? value > rule.at : value >= rule.at
-        if (matches) level = Math.max(0, Math.min(4, rule.level))
+        if (matches) level = Math.max(0, Math.min(5, rule.level))
       }
       lv[m] = level
     })
