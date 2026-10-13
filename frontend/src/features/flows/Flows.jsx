@@ -3,7 +3,6 @@
 // Flow names, cues and area names are catalogue content (English, spec §1).
 import { useNavigate } from 'react-router-dom'
 import { t } from '../../lib/i18n.js'
-import { useStore } from '../../store/useStore.js'
 import { useUI } from '../../store/useUI.js'
 import { FLOWS, flowById, totalSeconds } from '../../lib/flow-player.js'
 import { areaById } from '../../lib/areas.js'
@@ -16,6 +15,7 @@ import { tappable } from '../../lib/use-sheet-keyboard.js'
 import DiscoverNav from '../discover/DiscoverNav.jsx'
 import { levelLabel, minutesLabel } from '../workouts/labels.js'
 import { startFlowPlayer } from './flow-actions.js'
+import { useFlowStore } from './flow-store.js'
 import './flows.css'
 
 // The areas a flow works, at most three, so a full-body flow's card stays two lines.
@@ -47,7 +47,7 @@ export const flowSheet = flow => useUI.getState().openSheet(close => <FlowSheet 
 
 export default function Flows() {
   const nav = useNavigate()
-  const active = useStore(s => s.S.activeFlow)
+  const active = useFlowStore(s => s.flow)
   const running = active && flowById(active.flowId)
   return <>
     <div className="hdr"><div><h1>{t('Mobility')}</h1>

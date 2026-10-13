@@ -82,6 +82,7 @@ describe('checkContent', () => {
     c = valid(); delete c.assessments[0].bands[1].below; has(c, /below/)
     c = valid(); c.assessments[0].bands[4].below = 99; has(c, /last band/)
     c = valid(); c.assessments[0].range = [10, 0]; has(c, /range/)
+    c = valid(); c.assessments[0].bands[3].label = 'good'; has(c, /exactly once/)   // 'great' missing, 'good' twice
   })
 
   test('program schedules name real routines and flows on real weekdays; ladders point at real skills and entries', () => {

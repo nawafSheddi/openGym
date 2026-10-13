@@ -2348,4 +2348,6 @@ export default {
   "Hold time and mobility time, last 8 weeks": "Час утримань і мобільності, останні 8 тижнів",
   "Holds: {0} min this week": "Утримання: {0} хв цього тижня",
   "Mobility: {0} min this week": "Мобільність: {0} хв цього тижня",
+  // --- openBody: review fixes ---
+  "A workout is in progress. Finish or discard it first.": "Тренування вже триває. Спершу заверши його або скасуй.",
 }

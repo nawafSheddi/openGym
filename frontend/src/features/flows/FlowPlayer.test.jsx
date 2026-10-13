@@ -14,7 +14,8 @@ vi.mock('../../lib/nav.js', () => ({ nav: vi.fn(), closeThenNav: vi.fn(), navToW
 
 import { useStore, DEF } from '../../store/useStore.js'
 import FlowPlayer from './FlowPlayer.jsx'
-import { flowById, init, tick, next } from '../../lib/flow-player.js'
+import { flowById, init, tick, next, isPaused } from '../../lib/flow-player.js'
+import { getActiveFlow, setActiveFlow } from './flow-store.js'
 
 const mounted = []
 function render() {
@@ -29,6 +30,7 @@ afterEach(() => {
   act(() => { mounted.splice(0).forEach(r => r.unmount()) })
   document.body.innerHTML = ''
   useStore.setState({ S: JSON.parse(JSON.stringify(DEF)) })
+  setActiveFlow(null)
 })
 
 describe('FlowPlayer', () => {
@@ -36,7 +38,8 @@ describe('FlowPlayer', () => {
 
   it('renders the current hold of a running flow', () => {
     const now = Date.now()
-    useStore.setState({ S: { ...JSON.parse(JSON.stringify(DEF)), workouts: [], activeFlow: tick(init(flow, now - 7000), now) } })
+    useStore.setState({ S: { ...JSON.parse(JSON.stringify(DEF)), workouts: [] } })
+    setActiveFlow(tick(init(flow, now - 7000), now))
     const host = render()
     expect(host.querySelector('.fl-player')).not.toBeNull()
     expect(host.querySelector('.fl-secs').textContent).toMatch(/^\d+$/)
@@ -48,15 +51,40 @@ describe('FlowPlayer', () => {
     let st = tick(init(flow, now - 12000), now)
     for (let k = 0; k < 100 && st.phase !== 'done'; k++) st = next(st, now)
     expect(st.phase).toBe('done')
-    useStore.setState({ S: { ...JSON.parse(JSON.stringify(DEF)), workouts: [], activeFlow: st } })
+    useStore.setState({ S: { ...JSON.parse(JSON.stringify(DEF)), workouts: [] } })
+    setActiveFlow(st)
     let host
     expect(() => { host = render() }).not.toThrow()
     expect(host.querySelector('.fl-done')).not.toBeNull()
     const S = useStore.getState().S
-    expect(S.activeFlow).toBe(null)
+    expect(getActiveFlow()).toBe(null)
     expect(S.workouts.filter(w => w.flow === 'wrist-prep')).toHaveLength(1)
     // a re-render does not log it again
     act(() => { mounted[0].render(<FlowPlayer />) })
     expect(useStore.getState().S.workouts).toHaveLength(1)
+  })
+})
+
+describe('FlowPlayer: holds only count while someone is watching', () => {
+  const flow = flowById('wrist-prep')
+
+  it('reopening a flow a day later settles it paused instead of logging every hold', () => {
+    const now = Date.now()
+    useStore.setState({ S: { ...JSON.parse(JSON.stringify(DEF)), workouts: [] } })
+    setActiveFlow(tick(init(flow, now - 86400000), now - 86400000 + 9000))   // left a day ago, 4 s into hold 1
+    const host = render()
+    expect(host.querySelector('.fl-done')).toBe(null)
+    expect(isPaused(getActiveFlow())).toBe(true)
+    expect(getActiveFlow().held.filter(Boolean)).toHaveLength(1)            // only the hold that was running
+    expect(useStore.getState().S.workouts).toHaveLength(0)
+  })
+
+  it('leaving the player pauses the flow', () => {
+    const now = Date.now()
+    useStore.setState({ S: { ...JSON.parse(JSON.stringify(DEF)), workouts: [] } })
+    setActiveFlow(tick(init(flow, now - 7000), now))
+    render()
+    act(() => { mounted.splice(0).forEach(r => r.unmount()) })
+    expect(isPaused(getActiveFlow())).toBe(true)
   })
 })

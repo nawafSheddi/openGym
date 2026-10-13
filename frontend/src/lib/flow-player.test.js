@@ -2,7 +2,7 @@
 // Time is computed from timestamps, never from counted ticks, so a phone that sleeps, a tab that
 // is backgrounded or a reload mid-hold resumes exactly where the clock says.
 import { describe, it, expect } from 'vitest'
-import { FLOWS, flowById, expandItems, init, tick, next, prev, pause, resume, remaining, current, isDone, totalSeconds, flowSession } from './flow-player.js'
+import { FLOWS, flowById, expandItems, init, tick, next, prev, pause, resume, remaining, current, isDone, totalSeconds, flowSession, settle, isPaused } from './flow-player.js'
 
 const S = 1000   // ms per second, for readable times
 const FLOW = {
@@ -152,5 +152,26 @@ describe('flowSession', () => {
     const a = flowSession(st, FLOW, { id: 'w', d: 'x' })
     expect(a.entries[0].sets[0]).toEqual({ sec: 15, done: true })
     expect(a.entries[0].sets[1]).toEqual({ sec: 0, done: false })
+  })
+})
+
+describe('settle (no logging holds nobody watched)', () => {
+  it('leaves a flow alone when it comes back within the grace period', () => {
+    const st = tick(init(FLOW, T0), T0 + 10 * S)               // in the first hold (ends T0+35s)
+    expect(settle(st, T0 + 40 * S, 60 * S)).toBe(st)            // 5 s late: fine, tick catches up
+  })
+  it('freezes a flow returned to long after its phase ended, at that phase end, paused', () => {
+    const st = tick(init(FLOW, T0), T0 + 10 * S)
+    const s2 = settle(st, T0 + 86400 * S, 60 * S)               // a day later
+    expect(isPaused(s2)).toBe(true)
+    expect(s2.held).toEqual([30])                                // only the hold that was running
+    expect(current(s2)).toMatchObject({ index: 1, phase: 'transition' })
+    expect(tick(s2, T0 + 90000 * S)).toBe(s2)                   // and it stays frozen
+  })
+  it('does nothing to a paused or finished flow', () => {
+    const p = pause(init(FLOW, T0), T0)
+    expect(settle(p, T0 + 99999 * S)).toBe(p)
+    const d = tick(init(FLOW, T0), T0 + 999 * S)
+    expect(settle(d, T0 + 99999 * S)).toBe(d)
   })
 })

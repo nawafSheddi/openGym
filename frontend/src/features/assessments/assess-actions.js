@@ -11,7 +11,7 @@ import { inRange } from '../../lib/assessments.js'
 export function saveResults(entries, d = todayISO()) {
   const rows = entries
     .filter(e => e && e.test && inRange(e.test, e.value))
-    .map(e => ({ id: uid(), testId: e.test.id, d, value: e.value, ...(e.side ? { side: e.side } : {}) }))
+    .map(e => ({ id: uid(), testId: e.test.id, d, value: e.value, ...(e.side ? { side: e.side } : {}), _ts: Date.now() }))
   if (rows.length) useStore.getState().update(s => { s.assessments = [...(s.assessments || []), ...rows] })
   return rows.length
 }

@@ -2351,4 +2351,6 @@ export default {
   "Hold time and mobility time, last 8 weeks": "유지 시간과 모빌리티 시간, 최근 8주",
   "Holds: {0} min this week": "유지: 이번 주 {0}분",
   "Mobility: {0} min this week": "모빌리티: 이번 주 {0}분",
+  // --- openBody: review fixes ---
+  "A workout is in progress. Finish or discard it first.": "진행 중인 운동이 있어요. 먼저 끝내거나 취소하세요.",
 }

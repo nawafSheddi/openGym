@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url'
 // openBody content checks. Circular with this file (it reads MUSCLES from here), which is safe:
 // nothing in it runs at module load, only inside checkContent/loadContent.
 import { checkContent, loadContent } from './validate-content.mjs'
+import { svgProblems } from './media-fields.mjs'
 
 const list = s => s.split(',').map(x => x.trim()).filter(Boolean)
 
@@ -106,6 +107,11 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const dir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../catalogue')
   const { exercises, problems } = validateCatalogue(dir)
   // openBody content (skills, workouts, flows, assessments, programs, areas): validate-content.mjs
+  // openBody: open media must be safe to serve same-origin (no script, nothing external)
+  const openDir = path.join(dir, 'media-open')
+  if (fs.existsSync(openDir)) for (const f of fs.readdirSync(openDir).filter(f => f.endsWith('.svg'))) {
+    for (const why of svgProblems(fs.readFileSync(path.join(openDir, f), 'utf8'))) problems.push(`catalogue/media-open/${f}: unsafe SVG: ${why}`)
+  }
   const loaded = loadContent(dir)
   const checked = checkContent(loaded.content, exercises)
   problems.push(...loaded.problems, ...checked.problems)

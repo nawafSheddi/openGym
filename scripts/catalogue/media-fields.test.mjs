@@ -1,7 +1,7 @@
 // Run: node --test scripts/catalogue/media-fields.test.mjs
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { mediaFields, indexOpenFiles } from './media-fields.mjs'
+import { mediaFields, indexOpenFiles, svgProblems } from './media-fields.mjs'
 
 const licensed = new Set(['0025'])
 
@@ -27,4 +27,14 @@ test('indexOpenFiles keeps image files only and prefers svg, then webp, png, jpg
   assert.equal(m.get('20002'), '20002.webp')
   assert.equal(m.has('20003'), false)
   assert.equal(m.size, 2)
+})
+
+test('svgProblems passes a plain drawing and flags anything scriptable or external', () => {
+  assert.deepEqual(svgProblems('<svg viewBox="0 0 360 360"><rect width="360" height="360" fill="#fff"/><path d="M1 1h4"/></svg>'), [])
+  assert.ok(svgProblems('<svg><script>alert(1)</script></svg>').length)
+  assert.ok(svgProblems('<svg onload="x()"></svg>').length)
+  assert.ok(svgProblems('<svg><a href="javascript:x"/></svg>').length)
+  assert.ok(svgProblems('<svg><foreignObject/></svg>').length)
+  assert.ok(svgProblems('<svg><image href="https://evil.example/x.png"/></svg>').length)
+  assert.deepEqual(svgProblems('<svg><use href="#a"/></svg>'), [])
 })

@@ -4,10 +4,17 @@
  * or from the synced state, and a client can put megabytes in either. The Coach runs on the
  * instance's own key, so an unbounded field is a bill someone else pays. These tests feed the
  * builder far more than any screen allows, through both doors, and check what comes out. */
-import test from 'node:test';
+import test, { mock } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { tempData, sampleState } from './helpers.mjs';
+
+// openBody fix for an upstream time bomb: the fixture's history (test/helpers.mjs) is dated
+// July 2026, and the coach payload keeps a rolling 12-week window from *today*, so these tests
+// started failing on 2026-10-13 on pristine upstream too. Pin the date inside that window (Date
+// only; timers stay real) so they test the code, not the calendar.
+mock.timers.enable({ apis: ['Date'], now: new Date('2026-08-15T12:00:00Z') });
+
 
 tempData();
 const payload = await import('../coach/core/payload.js');

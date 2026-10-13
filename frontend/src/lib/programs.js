@@ -15,7 +15,7 @@
 // store update), like applyLadders.
 import PROGRAM_LIST from './content/programs.js'
 import { defaultPolicy } from './workouts.js'
-import { ladderedEntry } from './ladder.js'
+import { onCurrentStep } from './ladder.js'
 import { uid } from './format.js'
 
 export const PROGRAMS = PROGRAM_LIST
@@ -26,8 +26,9 @@ const srcOf = (program, key) => PROGRAM_SRC + program.id + ':' + key
 
 /**
  * The program as new routines plus its schedule, not yet in state. Laddered entries (the
- * program's `ladders` map) are tagged with their skill and moved onto the skill's CURRENT step
- * for this person (lib/ladder.js), so a program never starts you below where your log says you are.
+ * program's `ladders` map) are tagged with their skill and put on the skill's CURRENT step for
+ * this person (lib/ladder.js onCurrentStep): never below where the log says you are, and never
+ * above it either, whatever exercise the program's content wrote in that slot.
  */
 export function buildProgram(S, program, newId = uid) {
   const idOf = {}
@@ -37,7 +38,7 @@ export function buildProgram(S, program, newId = uid) {
     const ex = r.ex.map((e, i) => {
       const entry = { ...e, weight: 0, prog: e.prog || defaultPolicy(e) }
       const skill = r.ladders?.[i] ?? r.ladders?.[String(i)]
-      return skill ? ladderedEntry(S, { ...entry, ladder: skill }) : entry
+      return skill ? onCurrentStep(S, { ...entry, ladder: skill }) : entry
     })
     return { id, name: r.name, emoji: r.emoji, src: srcOf(program, r.key), ex }
   })
@@ -66,6 +67,14 @@ export function enroll(S, program, { today, newId = uid } = {}) {
     if (have) idMap[r.id] = have.id
     else { S.routines.push(r); idMap[r.id] = r.id }
   })
+  // Switching programs: the previous program's routines come off the weekdays this one does not
+  // use, so its sessions stop appearing as "today". The routines themselves stay (yours now).
+  const ownSrc = PROGRAM_SRC + program.id + ':'
+  const otherProgram = new Set(S.routines.filter(r => typeof r.src === 'string' && r.src.startsWith(PROGRAM_SRC) && !r.src.startsWith(ownSrc)).map(r => r.id))
+  if (otherProgram.size) for (const d of Object.keys(S.week)) {
+    const left = [].concat(S.week[d] || []).filter(id => !otherProgram.has(id))
+    if (left.length) S.week[d] = left; else delete S.week[d]
+  }
   built.schedule.forEach(({ day, routineId }) => { S.week[day] = [idMap[routineId]] })
   S.program = { id: program.id, startedAt: today }
   return S
@@ -80,9 +89,16 @@ const at = iso => new Date(iso + 'T12:00:00').getTime()
 const isoOf = ms => { const d = new Date(ms); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}` }
 const weekdayOf = iso => new Date(iso + 'T12:00:00').getDay()
 
+/**
+ * Whole calendar days from one local-noon timestamp to another. Rounded, not floored: across a
+ * daylight-saving change noon-to-noon is 23 or 25 hours, and flooring 23 h read a whole week as
+ * six days (code review, 2026-10-13: program week off by one around the spring change).
+ */
+export const daysBetween = (fromMs, toMs) => Math.round((toMs - fromMs) / dayMs)
+
 /** `{ week, weeks, done }`: the program week `today` falls in (1-based, capped), done after the end. */
 export function programWeek(S, program, today) {
-  const days = Math.floor((at(today) - at(S.program.startedAt)) / dayMs)
+  const days = daysBetween(at(S.program.startedAt), at(today))
   const week = Math.floor(Math.max(0, days) / 7) + 1
   return { week: Math.min(week, program.weeks), weeks: program.weeks, done: week > program.weeks }
 }

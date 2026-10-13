@@ -39,3 +39,21 @@ export function indexOpenFiles(names) {
   }
   return best
 }
+
+/**
+ * Problems that make an SVG unsafe to serve from the app's own origin: anything that can run
+ * script or pull in outside content. An exercise picture needs none of it (code review,
+ * 2026-10-13: an SVG opened directly would run with the app's localStorage). [] = safe.
+ */
+export function svgProblems(text) {
+  const p = []
+  if (/<script\b/i.test(text)) p.push('<script>')
+  if (/\son[a-z]+\s*=/i.test(text)) p.push('event-handler attribute (on…=)')
+  if (/javascript:/i.test(text)) p.push('javascript: URL')
+  if (/<foreignObject\b/i.test(text)) p.push('<foreignObject>')
+  if (/<(iframe|embed|object)\b/i.test(text)) p.push('embedded document')
+  // only in-document references (#id) and data: images; no external or relative files
+  if (/\b(?:xlink:)?href\s*=\s*["'](?!#|data:image\/)/i.test(text)) p.push('external href')
+  if (/@import|url\(\s*["']?(?!#|data:)/i.test(text)) p.push('external CSS reference')
+  return p
+}

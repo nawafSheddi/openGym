@@ -2351,4 +2351,6 @@ export default {
   "Hold time and mobility time, last 8 weeks": "Tempo di tenuta e di mobilità, ultime 8 settimane",
   "Holds: {0} min this week": "Tenute: {0} min questa settimana",
   "Mobility: {0} min this week": "Mobilità: {0} min questa settimana",
+  // --- openBody: review fixes ---
+  "A workout is in progress. Finish or discard it first.": "C’è un allenamento in corso. Prima finiscilo o scartalo.",
 }

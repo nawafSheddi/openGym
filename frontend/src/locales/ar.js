@@ -2406,4 +2406,6 @@ export default {
   "Hold time and mobility time, last 8 weeks": "وقت الثبات ووقت المرونة، آخر 8 أسابيع",
   "Holds: {0} min this week": "الثبات: {0} د هذا الأسبوع",
   "Mobility: {0} min this week": "المرونة: {0} د هذا الأسبوع",
+  // --- openBody: review fixes ---
+  "A workout is in progress. Finish or discard it first.": "هناك تمرين جارٍ. أنهِه أو تجاهله أولاً.",
 }

@@ -19,7 +19,7 @@ import { loadOfWorkouts, rankOf, levelsOf } from '../../frontend/src/lib/muscles
 import { policyFor } from '../../frontend/src/lib/progression.js'
 import { buildSessionEntries, startsFromLast } from '../../frontend/src/lib/session-start.js'
 // openBody: skill ladders and flexibility tests, read with the app's own pure helpers
-import { SKILLS, skillStatus } from '../../frontend/src/lib/ladder.js'
+import { SKILLS, skillStatus, overrideOf } from '../../frontend/src/lib/ladder.js'
 import { ASSESSMENTS, latest as latestResult, bandOf, testRank, resultsFor, areaRanks, BAND_ORDER } from '../../frontend/src/lib/assessments.js'
 
 /* ---------- helpers ---------- */
@@ -698,7 +698,7 @@ export const listSkillsProgress = {
           current: { label: st.step.label, exercise: exOr(st.step.exId).n, practice: bar(st.step.mode, st.step.target), unlock: bar(st.step.mode, st.step.unlock) + ` in ${st.step.unlock.sessions} sessions` },
           progress: { sessions_met: st.progress.sessionsMet, sessions_needed: st.progress.sessionsNeeded, best: st.progress.best, unit: st.progress.unit },
           next: st.next ? st.next.label : null,
-          manual_floor: Number.isInteger(S.skillOverrides?.[s.id])
+          manual_floor: overrideOf(S, s.id) != null
         }
       })
     }

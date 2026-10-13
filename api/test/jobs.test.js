@@ -5,10 +5,17 @@
    PR 1 stopped at transport and held its answer as `unvalidated`. This PR closes that seam, so
    the assertions below are about what now comes out the other end: a checked bundle, a checked
    change-set, and the two ways a job can fail the validator rather than the parser. */
-import test from 'node:test';
+import test, { mock } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { tempData, writeState, sampleState } from './helpers.mjs';
+
+// openBody fix for an upstream time bomb: the fixture's history (test/helpers.mjs) is dated
+// July 2026, and the coach payload keeps a rolling 12-week window from *today*, so these tests
+// started failing on 2026-10-13 on pristine upstream too. Pin the date inside that window (Date
+// only; timers stay real) so they test the code, not the calendar.
+mock.timers.enable({ apis: ['Date'], now: new Date('2026-08-15T12:00:00Z') });
+
 
 const DIR = tempData();
 const cfg = await import('../coach/config.js');

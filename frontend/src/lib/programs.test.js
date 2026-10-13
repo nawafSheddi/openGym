@@ -2,9 +2,11 @@
 // days without ever deleting what you had, laddered entries start on your current step, and the
 // program's week, adherence and today's flow are derived from the log.
 import { describe, it, expect } from 'vitest'
-import { PROGRAMS, programById, buildProgram, takenDays, enroll, programWeek, todaysFlow, adherence, leaveProgram, PROGRAM_SRC } from './programs.js'
+import { SKILLS } from './ladder.js'
+import { PROGRAMS, programById, daysBetween, buildProgram, takenDays, enroll, programWeek, todaysFlow, adherence, leaveProgram, PROGRAM_SRC } from './programs.js'
 
 let n = 0
+const SKILLS_BY_ID = Object.fromEntries(SKILLS.map(s => [s.id, s]))
 const ids = () => 'r' + (++n)
 const PROG = {
   id: 'p', name: 'Test program', level: 'beginner', weeks: 4, description: 'x', assessEveryWeeks: 2,
@@ -46,6 +48,19 @@ describe('buildProgram', () => {
   })
 })
 
+describe('real programs start laddered slots on the current step', () => {
+  it('Skills & Strength puts a fresh user on the first step of every ladder it uses (not the strict muscle-up)', () => {
+    const p = programById('skills-strength')
+    const { routines } = buildProgram({ workouts: [] }, p, ids)
+    const laddered = routines.flatMap(r => r.ex).filter(e => e.ladder)
+    expect(laddered.length).toBeGreaterThan(0)
+    for (const e of laddered) {
+      const first = SKILLS_BY_ID[e.ladder].steps[0].exId
+      expect(e.id, e.ladder).toBe(first)
+    }
+  })
+})
+
 describe('takenDays', () => {
   it('lists the program weekdays already holding one of your existing routines', () => {
     const S = { routines: [{ id: 'mine' }], week: { 1: ['mine'], 3: ['ghost'], 4: ['mine'] } }
@@ -75,12 +90,32 @@ describe('enroll (on a draft state, as inside a store update)', () => {
     enroll(S, PROG, { today: '2026-10-12', newId: ids })
     expect(Object.keys(S.week).sort()).toEqual(['1', '3', '5'])
   })
+  it('switching programs takes the previous program’s routines off its weekdays, keeping yours', () => {
+    n = 0
+    const S = { routines: [{ id: 'mine', name: 'Mine', ex: [] }], week: { 0: ['mine'] }, workouts: [] }
+    enroll(S, PROG, { today: '2026-10-12', newId: ids })                       // Mon, Wed, Fri
+    const OTHER = { ...PROG, id: 'q', schedule: [[2, 'a'], [4, 'a']] }           // Tue, Thu only
+    enroll(S, OTHER, { today: '2026-10-19', newId: ids })
+    expect(Object.keys(S.week).sort()).toEqual(['0', '2', '4'])
+    expect(S.week[0]).toEqual(['mine'])
+    expect(S.routines.filter(r => r.src?.startsWith(PROGRAM_SRC + 'p:'))).toHaveLength(2)   // still there
+  })
+
   it('leaving keeps the routines and the plan, only the program goes', () => {
     const S = { routines: [], workouts: [] }
     enroll(S, PROG, { today: '2026-10-12', newId: ids })
     leaveProgram(S)
     expect(S.program).toBe(null)
     expect(S.routines).toHaveLength(2)
+  })
+})
+
+describe('daysBetween', () => {
+  it('rounds across daylight-saving changes (23 h and 25 h noon-to-noon are one day)', () => {
+    const H = 3600000
+    expect(daysBetween(0, 7 * 24 * H - H)).toBe(7)   // a week that contains the spring change
+    expect(daysBetween(0, 24 * H + H)).toBe(1)        // the autumn change
+    expect(daysBetween(0, 0)).toBe(0)
   })
 })
 

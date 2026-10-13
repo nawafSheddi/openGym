@@ -1,7 +1,7 @@
 // openBody skill ladders (lib/ladder.js): where you stand on each skill, derived from what you
 // logged, and how a routine entry that follows a ladder moves up to the next variation.
 import { describe, it, expect } from 'vitest'
-import { SKILLS, skillById, sessionMeets, metSessions, currentStep, unlockProgress, ladderedEntry, applyLadders, entryDefaults, skillStatus } from './ladder.js'
+import { SKILLS, skillById, sessionMeets, metSessions, currentStep, unlockProgress, ladderedEntry, applyLadders, entryDefaults, skillStatus, onCurrentStep } from './ladder.js'
 
 // A small ladder: reps step → hold step → harder hold step.
 const SKILL = {
@@ -36,6 +36,24 @@ describe('sessionMeets', () => {
     expect(sessionMeets({ id: 'B', sets: [...holds(15, 15), { sec: 30, done: false }] }, step)).toBe(false)
     expect(sessionMeets({ id: 'B', sets: [...holds(15, 15), { sec: 30, done: true, phase: 'warmup' }] }, step)).toBe(false)
   })
+  it('scores a per-side set by its weaker side (reps logged as one set with L and R)', () => {
+    const side = (l, r) => ({ r: l + r, done: true, sides: { L: { r: l, done: true }, R: { r: r, done: true } } })
+    const step = SKILL.steps[0]   // unlock 3 x 12
+    expect(sessionMeets({ id: 'A', sets: [side(12, 12), side(13, 12), side(12, 14)] }, step)).toBe(true)
+    // 6 + 6 = 12 total is NOT 12 per side
+    expect(sessionMeets({ id: 'A', sets: [side(6, 6), side(6, 6), side(6, 6)] }, step)).toBe(false)
+    // one side short in one set
+    expect(sessionMeets({ id: 'A', sets: [side(12, 12), side(12, 11), side(12, 12)] }, step)).toBe(false)
+  })
+
+  it('pairs timed L/R rows into one set scored by the weaker side', () => {
+    const step = SKILL.steps[1]   // unlock 3 x 15 s
+    const lr = (l, r) => [{ sec: l, done: true, side: 'L' }, { sec: r, done: true, side: 'R' }]
+    expect(sessionMeets({ id: 'B', sets: [...lr(15, 16), ...lr(15, 15), ...lr(20, 15)] }, step)).toBe(true)
+    // three good left holds and short right holds do not make three sets
+    expect(sessionMeets({ id: 'B', sets: [...lr(45, 10), ...lr(45, 10), ...lr(45, 10)] }, step)).toBe(false)
+  })
+
   it('reads reps for a reps step', () => {
     expect(sessionMeets({ id: 'A', sets: reps(12, 12, 13) }, SKILL.steps[0])).toBe(true)
     expect(sessionMeets({ id: 'A', sets: reps(12, 11, 13) }, SKILL.steps[0])).toBe(false)
@@ -70,8 +88,9 @@ describe('currentStep', () => {
     expect(currentStep(S, SKILL)).toEqual({ index: 2, mastered: true })
   })
 
-  it('honours a manual override as a floor, clamped to the ladder', () => {
-    expect(currentStep({ workouts: [], skillOverrides: { 'test-lever': 1 } }, SKILL).index).toBe(1)
+  it('honours a manual override as a floor, clamped to the ladder; past the last step = mastered', () => {
+    expect(currentStep({ workouts: [], skillOverrides: { 'test-lever': 1 } }, SKILL)).toEqual({ index: 1, mastered: false })
+    expect(currentStep({ workouts: [], skillOverrides: { 'test-lever': 3 } }, SKILL)).toEqual({ index: 2, mastered: true })
     expect(currentStep({ workouts: [], skillOverrides: { 'test-lever': 99 } }, SKILL).index).toBe(2)
     expect(currentStep({ workouts: [], skillOverrides: { 'test-lever': -4 } }, SKILL).index).toBe(0)
     expect(currentStep({ workouts: [], skillOverrides: { 'test-lever': 'x' } }, SKILL).index).toBe(0)
@@ -105,9 +124,19 @@ describe('ladderedEntry / applyLadders', () => {
     expect(ladderedEntry({ workouts: [] }, hard, skills)).toBe(hard)
   })
 
-  it('puts a placeholder exercise (not on the ladder) onto the current step', () => {
-    const placeholder = { id: 'Q', sets: 3, reps: 6, weight: 0, ladder: 'test-lever' }
-    expect(ladderedEntry({ workouts: [] }, placeholder, skills)).toMatchObject({ id: 'A', reps: 8, prog: 'double' })
+  it('leaves an exercise that is not on the ladder alone (the user replaced it; it is their choice)', () => {
+    const replaced = { id: 'Q', sets: 3, reps: 6, weight: 0, ladder: 'test-lever' }
+    expect(ladderedEntry({ workouts: [] }, replaced, skills)).toBe(replaced)
+  })
+
+  it('doubles the rep target on a promotion onto a per-side entry (reps are logged as an L+R total)', () => {
+    const S = { workouts: [wk('2026-10-01', 'X0', reps(12, 12, 12)), wk('2026-10-03', 'X0', reps(12, 12, 12))] }
+    const sk = [{ id: 'uni', steps: [
+      { exId: 'X0', mode: 'reps', target: { sets: 3, reps: 8 }, unlock: { sets: 3, reps: 12, sessions: 2 } },
+      { exId: 'X1', mode: 'reps', target: { sets: 3, reps: 5 }, unlock: { sets: 3, reps: 10, sessions: 2 } }] }]
+    // logged per side as plain rows here (no sides object), which the test bar reads as is
+    const next = ladderedEntry(S, { id: 'X0', sets: 3, reps: 8, weight: 0, ladder: 'uni', side: true }, sk)
+    expect(next).toMatchObject({ id: 'X1', reps: 10, side: true })
   })
 
   it('ignores entries without a ladder, or with an unknown one', () => {
@@ -132,6 +161,21 @@ describe('ladderedEntry / applyLadders', () => {
     expect(S.routines[0].ex[0].id).toBe('B')
     expect(S.routines[0].ex[1].id).toBe('Z')
     expect(applyLadders(S, skills)).toBe(0)   // idempotent
+  })
+})
+
+describe('onCurrentStep (program enrollment)', () => {
+  it('puts any laddered entry on the current step, from below or above it', () => {
+    const below = onCurrentStep({ workouts: [], skillOverrides: { 'test-lever': 1 } }, { id: 'A', sets: 3, reps: 8, ladder: 'test-lever' }, [SKILL])
+    expect(below).toMatchObject({ id: 'B', mode: 'time', ladder: 'test-lever' })
+    const above = onCurrentStep({ workouts: [] }, { id: 'C', sets: 3, mode: 'time', sec: 3, ladder: 'test-lever' }, [SKILL])
+    expect(above).toMatchObject({ id: 'A', reps: 8, ladder: 'test-lever' })
+    const placeholder = onCurrentStep({ workouts: [] }, { id: 'Q', sets: 3, reps: 6, ladder: 'test-lever', side: true }, [SKILL])
+    expect(placeholder).toMatchObject({ id: 'A', reps: 16, side: true })
+  })
+  it('returns an entry with an unknown ladder unchanged', () => {
+    const e = { id: 'A', ladder: 'nope' }
+    expect(onCurrentStep({ workouts: [] }, e, [SKILL])).toBe(e)
   })
 })
 

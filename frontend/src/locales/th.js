@@ -2362,4 +2362,6 @@ export default {
   "Hold time and mobility time, last 8 weeks": "เวลาค้างท่าและเวลาความคล่องตัว 8 สัปดาห์ล่าสุด",
   "Holds: {0} min this week": "ค้างท่า: {0} นาทีในสัปดาห์นี้",
   "Mobility: {0} min this week": "ความคล่องตัว: {0} นาทีในสัปดาห์นี้",
+  // --- openBody: review fixes ---
+  "A workout is in progress. Finish or discard it first.": "มีการออกกำลังกายที่กำลังทำอยู่ จบหรือยกเลิกก่อน",
 }

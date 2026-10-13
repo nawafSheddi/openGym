@@ -2430,4 +2430,6 @@ export default {
   "Hold time and mobility time, last 8 weeks": "হোল্ড সময় ও মোবিলিটি সময়, শেষ ৮ সপ্তাহ",
   "Holds: {0} min this week": "হোল্ড: এই সপ্তাহে {0} মিনিট",
   "Mobility: {0} min this week": "মোবিলিটি: এই সপ্তাহে {0} মিনিট",
+  // --- openBody: review fixes ---
+  "A workout is in progress. Finish or discard it first.": "একটি ওয়ার্কআউট চলছে। আগে সেটা শেষ বা বাতিল করো।",
 }

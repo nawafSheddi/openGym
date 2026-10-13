@@ -2351,4 +2351,6 @@ export default {
   "Hold time and mobility time, last 8 weeks": "Tutuş ve mobilite süresi, son 8 hafta",
   "Holds: {0} min this week": "Tutuşlar: bu hafta {0} dk",
   "Mobility: {0} min this week": "Mobilite: bu hafta {0} dk",
+  // --- openBody: review fixes ---
+  "A workout is in progress. Finish or discard it first.": "Devam eden bir antrenman var. Önce bitir ya da iptal et.",
 }

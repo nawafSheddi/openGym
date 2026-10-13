@@ -4,10 +4,17 @@
  * not read off the capped job log. A scheduled review covers a batch of workouts once, on the
  * workout's own clock rather than the phone's local date, and an answer the model was paid
  * for counts as that review even when it was unusable. */
-import test from 'node:test';
+import test, { mock } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { tempData, writeState, sampleState } from './helpers.mjs';
+
+// openBody fix for an upstream time bomb: the fixture's history (test/helpers.mjs) is dated
+// July 2026, and the coach payload keeps a rolling 12-week window from *today*, so these tests
+// started failing on 2026-10-13 on pristine upstream too. Pin the date inside that window (Date
+// only; timers stay real) so they test the code, not the calendar.
+mock.timers.enable({ apis: ['Date'], now: new Date('2026-08-15T12:00:00Z') });
+
 
 const DIR = tempData();
 const cfg = await import('../coach/config.js');

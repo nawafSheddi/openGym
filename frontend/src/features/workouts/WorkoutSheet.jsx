@@ -35,9 +35,24 @@ export function ensureWorkoutRoutine(w) {
   return r.id
 }
 
+/**
+ * Start a ready-made workout now. A workout already running is never replaced (beginWorkout
+ * overwrites S.active, and every set logged in it would be gone): it goes back to that one
+ * instead, the way Home's Start does. Returns true when a new session was started.
+ */
+export function startWorkoutNow(w, close) {
+  if (useStore.getState().S.active) {
+    useUI.getState().toast(t('A workout is in progress. Finish or discard it first.'))
+    closeThenNav(close, '/workout')
+    return false
+  }
+  const rid = ensureWorkoutRoutine(w); close(); startFlow([rid])
+  return true
+}
+
 function WorkoutSheet({ w, close }) {
   const saved = useStore(s => workoutRoutineOf(s.S, w.id))
-  const start = () => { const rid = ensureWorkoutRoutine(w); close(); startFlow([rid]) }
+  const start = () => startWorkoutNow(w, close)
   const addToPlan = () => {
     const rid = ensureWorkoutRoutine(w)
     useUI.getState().toast(t('“{0}” is in your plan', w.name))

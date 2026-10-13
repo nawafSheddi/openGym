@@ -172,6 +172,9 @@ export function checkContent(input, exercises) {
     if (!Array.isArray(a.instructions) || a.instructions.length < 2 || a.instructions.some(s => !isText(s))) say(file, '"instructions" needs at least two steps')
     const b = a.bands
     if (!Array.isArray(b) || b.length < 2) { say(file, '"bands" needs at least two bands'); continue }
+    // the app shows all five (Tests screen band scale), so every label is there exactly once
+    const labels = b.map(x => x.label)
+    if (BAND_LABELS.some(l => labels.filter(x => x === l).length !== 1)) say(file, `"bands" must use each label exactly once: ${BAND_LABELS.join(', ')}`)
     b.forEach((band, i) => {
       if (!BAND_LABELS.includes(band.label)) say(file, `bands[${i}]: "label" must be one of: ${BAND_LABELS.join(', ')}`)
       const last = i === b.length - 1

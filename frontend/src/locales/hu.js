@@ -2354,4 +2354,6 @@ export default {
   "Hold time and mobility time, last 8 weeks": "Tartási és mobilitási idő, az utolsó 8 hét",
   "Holds: {0} min this week": "Tartások: {0} perc a héten",
   "Mobility: {0} min this week": "Mobilitás: {0} perc a héten",
+  // --- openBody: review fixes ---
+  "A workout is in progress. Finish or discard it first.": "Folyamatban van egy edzés. Előbb fejezd be vagy dobd el.",
 }

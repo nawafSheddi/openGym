@@ -8,7 +8,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { t } from '../../lib/i18n.js'
 import { useStore } from '../../store/useStore.js'
 import { useUI } from '../../store/useUI.js'
-import { skillById, skillStatus, unlockProgress, entryDefaults } from '../../lib/ladder.js'
+import { skillById, skillStatus, unlockProgress, entryDefaults, overrideOf, overrideEntry } from '../../lib/ladder.js'
 import { EXIDX } from '../../lib/exercises.js'
 import { uid } from '../../lib/format.js'
 import { Thumb } from '../../components/Media.jsx'
@@ -22,11 +22,8 @@ import './skills.css'
 
 /** Set (or clear, with null) the manual floor for one skill. Absent-safe on old states. */
 export function setSkillOverride(skillId, index) {
-  useStore.getState().update(s => {
-    s.skillOverrides = { ...(s.skillOverrides || {}) }
-    if (index == null) delete s.skillOverrides[skillId]
-    else s.skillOverrides[skillId] = index
-  })
+  // a stamped entry, also for a clear, so the two-device merge keeps the latest choice per skill
+  useStore.getState().update(s => { s.skillOverrides = { ...(s.skillOverrides || {}), [skillId]: overrideEntry(index) } })
 }
 
 /**
@@ -78,7 +75,7 @@ export default function SkillTree() {
   const skill = skillById(id)
   if (!skill) return <div className="empty"><div className="ico"><Icon name="magnifier" /></div>{t('No match')}</div>
   const st = skillStatus(S, skill)
-  const overridden = Number.isInteger(S.skillOverrides?.[skill.id])
+  const overridden = overrideOf(S, skill.id) != null
 
   return <>
     <div className="hdr sk-hdr">
@@ -106,7 +103,9 @@ export default function SkillTree() {
               {step.cue && state !== 'locked' && <div className="ss sk-cue"><Icon name="lightbulb" /> {step.cue}</div>}
             </div>
           </div>
-          {state === 'locked' && <button className="chip nocap sk-claim" onClick={() => setSkillOverride(skill.id, i)}>{t('I can already do this')}</button>}
+          {/* "I can already do this" = this step is behind me: the floor becomes the NEXT step
+              (past the last one = mastered). Offered on the current step and every locked one. */}
+          {state !== 'done' && <button className="chip nocap sk-claim" onClick={() => setSkillOverride(skill.id, i + 1)}>{t('I can already do this')}</button>}
         </li>
       })}
     </ol>

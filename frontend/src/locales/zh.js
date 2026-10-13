@@ -2351,4 +2351,6 @@ export default {
   "Hold time and mobility time, last 8 weeks": "静态保持与灵活性时间，最近 8 周",
   "Holds: {0} min this week": "静态保持：本周 {0} 分钟",
   "Mobility: {0} min this week": "灵活性：本周 {0} 分钟",
+  // --- openBody: review fixes ---
+  "A workout is in progress. Finish or discard it first.": "有一个训练正在进行。请先完成或放弃它。",
 }

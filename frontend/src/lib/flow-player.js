@@ -2,7 +2,8 @@
 // get-ready between holds, does both sides of a unilateral stretch, and logs what you held.
 //
 // The player is a PURE state machine over plain, JSON-serialisable state, so the screen can keep
-// it in the persisted store (S.activeFlow) and pick it up after a reload or a sleeping phone.
+// it persisted on the device (features/flows/flow-store.js) and pick it up after a reload or a
+// sleeping phone.
 // Time is never counted in ticks. Every phase stores when it started (`phaseStart`, epoch ms),
 // and `tick(state, now)` works out from the clock which phase we are in. A screen that fires
 // tick every 250 ms, once a minute or once after waking up all land on the same state. While
@@ -146,4 +147,18 @@ export function flowSession(st, flow, { id, d }) {
   })
   entries.forEach(e => { delete e._items })
   return { id, d, start: st.startedAt, routineIds: [], name: flow.name, flow: flow.id, bw: null, cur: 0, entries }
+}
+
+/**
+ * Stop the clock from running on unwatched. The player is timestamp-based so it can catch up
+ * after a short screen lock; but a flow left open and returned to an hour (or a day) later must
+ * not log every remaining hold as done (code review, 2026-10-13). When `now` is more than
+ * `graceMs` past the end of the current phase, the flow is completed up to that phase's end and
+ * paused there; otherwise it is returned unchanged for tick() to catch up as usual.
+ */
+export function settle(st, now, graceMs = 120000) {
+  if (st.phase === 'done' || st.pausedAt != null) return st
+  const end = st.phaseStart + durOf(st)
+  if (now <= end + graceMs) return st
+  return pause(st, end)
 }

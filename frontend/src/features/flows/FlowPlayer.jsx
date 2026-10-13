@@ -1,17 +1,19 @@
 // The hands-free guided-flow player (/flow). Big countdown ring, the hold's picture and cue, the
 // side for unilateral holds, what comes next, and three controls: back, pause, skip.
 //
-// State: S.activeFlow (lib/flow-player.js, timestamp-based). This screen only renders it against
-// a clock that ticks every 200 ms, and writes it back to the store when the phase actually
-// changes, so a flow is not a stream of store writes and syncs. Leaving the screen does not
-// stop the flow (the Mobility screen offers Resume); finishing logs it as a workout.
+// State: the device-local running flow (flow-store.js; lib/flow-player.js, timestamp-based). This
+// screen renders it against a clock that ticks every 200 ms and writes it back only when the
+// phase changes. Holds are only credited while someone is watching (code review, 2026-10-13):
+// leaving the screen pauses the flow, a page hidden for longer than GRACE_MS freezes it at the
+// moment it was hidden, and a flow reopened long after its phase ended is settled, not replayed.
+// Finishing logs it as a workout, exactly once.
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { t } from '../../lib/i18n.js'
 import { exerciseNameFor } from '../../lib/i18n.js'
 import { useStore } from '../../store/useStore.js'
 import { useUI } from '../../store/useUI.js'
-import { flowById, tick, next, prev, pause, resume, remaining, current, isDone, isPaused } from '../../lib/flow-player.js'
+import { flowById, tick, next, prev, pause, resume, remaining, current, isDone, isPaused, settle } from '../../lib/flow-player.js'
 import { EXIDX } from '../../lib/exercises.js'
 import { useWakeLock } from '../../lib/wakelock.js'
 import { beep, chime, unlock, vibrate } from '../../lib/sound.js'
@@ -19,29 +21,36 @@ import Media from '../../components/Media.jsx'
 import { Button } from '../../components/ui.jsx'
 import Icon from '../../components/Icon.jsx'
 import { saveFlowState, finishFlow, discardFlow } from './flow-actions.js'
+import { useFlowStore, getActiveFlow } from './flow-store.js'
 import './flows.css'
 
 const RING = 2 * Math.PI * 54   // circumference of the countdown ring (r = 54 in a 120 box)
+// How long the page may be hidden (screen locked mid-stretch) and still count as "still going".
+const GRACE_MS = 120000
 // Catalogue names are stored lowercase and capitalised by CSS where they stand alone; inside a
 // sentence ("Next: …") only the name's first letter is raised.
 const cap = s => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s)
 
-// End early: keep what was held, throw it away, or carry on.
-function EndSheet({ st, flow, close, onEnded }) {
-  const anyHeld = (st.held || []).some(s => s > 0)
+// End early: keep what was held, throw it away, or carry on. The flow is paused while this is
+// open (see `end` below), and every button acts on the latest state, not on a snapshot.
+function EndSheet({ flow, close, onEnded, onKeepGoing }) {
+  const st = getActiveFlow()
+  const anyHeld = !!st && (st.held || []).some(s => s > 0)
   return <>
     <h3>{t('End this flow?')}</h3>
     <div style={{ display: 'grid', gap: 8, marginTop: 8 }}>
-      {anyHeld && <Button variant="primary" icon="check" onClick={() => { close(); onEnded(finishFlow(st, flow)) }}>{t('Save and end')}</Button>}
+      {anyHeld && <Button variant="primary" icon="check" onClick={() => {
+        close(); const cur = getActiveFlow(); onEnded(cur ? finishFlow(cur, flow) : null)
+      }}>{t('Save and end')}</Button>}
       <Button icon="trash" onClick={() => { close(); discardFlow(); onEnded(null) }}>{t('Discard')}</Button>
-      <Button onClick={close}>{t('Keep going')}</Button>
+      <Button onClick={() => { close(); onKeepGoing() }}>{t('Keep going')}</Button>
     </div>
   </>
 }
 
 export default function FlowPlayer() {
   const nav = useNavigate()
-  const st = useStore(s => s.S.activeFlow)
+  const st = useFlowStore(s => s.flow)
   const sound = useStore(s => s.S.sound)
   const restSound = useStore(s => s.S.restSound)
   const [now, setNow] = useState(() => Date.now())
@@ -54,7 +63,28 @@ export default function FlowPlayer() {
   useWakeLock(!!st && !isDone(st) && !isPaused(st))
 
   // The player is one screen: start it at the top, controls in reach, nothing to scroll to.
-  useEffect(() => { window.scrollTo(0, 0) }, [])
+  // Opening it settles a flow left long ago (no holds credited for time nobody was here), and
+  // leaving it pauses the flow, so Resume picks it up where you stopped watching.
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    const s0 = getActiveFlow()
+    if (s0) { const s1 = settle(s0, Date.now(), GRACE_MS); if (s1 !== s0) saveFlowState(s1) }
+    return () => { const s = getActiveFlow(); if (s && !isDone(s)) saveFlowState(pause(s, Date.now())) }
+  }, [])
+
+  // A page hidden for longer than the grace period (phone in a pocket, app switched) freezes the
+  // flow at the moment it was hidden; a short screen lock mid-stretch keeps it running.
+  useEffect(() => {
+    let hiddenAt = null
+    const onVis = () => {
+      if (document.visibilityState === 'hidden') { hiddenAt = Date.now(); return }
+      const s = getActiveFlow()
+      if (hiddenAt != null && s && !isDone(s) && Date.now() - hiddenAt > GRACE_MS) saveFlowState(pause(s, hiddenAt))
+      hiddenAt = null
+    }
+    document.addEventListener('visibilitychange', onVis)
+    return () => document.removeEventListener('visibilitychange', onVis)
+  }, [])
 
   // The clock. 200 ms keeps the seconds display honest without burning the battery.
   useEffect(() => {
@@ -62,7 +92,9 @@ export default function FlowPlayer() {
     return () => clearInterval(id)
   }, [])
 
-  const live = st && flow ? tick(st, now) : null
+  // settle() before tick(): a flow reopened long after its phase ended must not be ticked to the
+  // end (and logged) in the very first render, before the mount effect has had a chance to settle it.
+  const live = st && flow ? tick(settle(st, now, GRACE_MS), now) : null
 
   // Phase changes: persist, and signal them (sound + vibration). Finishing logs the workout.
   useEffect(() => {
@@ -119,12 +151,17 @@ export default function FlowPlayer() {
   const act = fn => {
     unlock(sound)
     const at = Date.now()
-    const latest = useStore.getState().S.activeFlow
+    const latest = getActiveFlow()
     if (latest) saveFlowState(fn(tick(latest, at), at))
     setNow(at)
   }
-  const end = () => useUI.getState().openSheet(close => <EndSheet st={live} flow={flow} close={close}
-    onEnded={w => (w ? setDone({ name: flow.name, saved: true }) : nav('/flows'))} />)
+  // Pause first, so the last hold cannot run out (and log the flow) while the question is open.
+  const end = () => {
+    act(pause)
+    useUI.getState().openSheet(close => <EndSheet flow={flow} close={close}
+      onKeepGoing={() => act(resume)}
+      onEnded={w => { finishedRef.current = true; if (w) setDone({ name: flow.name, saved: true }); else nav('/flows') }} />)
+  }
 
   return <div className={'fl-player' + (phase === 'transition' ? ' get-ready' : '') + (paused ? ' paused' : '')}>
     <div className="fl-top">

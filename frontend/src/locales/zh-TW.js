@@ -2344,4 +2344,6 @@ export default {
   "Hold time and mobility time, last 8 weeks": "靜態維持與活動度時間，最近 8 週",
   "Holds: {0} min this week": "靜態維持：本週 {0} 分鐘",
   "Mobility: {0} min this week": "活動度：本週 {0} 分鐘",
+  // --- openBody: review fixes ---
+  "A workout is in progress. Finish or discard it first.": "有一個訓練正在進行。請先完成或放棄它。",
 }
