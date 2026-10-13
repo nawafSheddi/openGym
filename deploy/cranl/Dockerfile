@@ -1,0 +1,114 @@
+# openBody as ONE container: nginx (the web app, exercise media, /api proxy) and the api together.
+#
+# Why one container: openBody must be served from a single origin (the frontend calls a relative
+# /api, cookies are host-only, the CSRF check wants Sec-Fetch-Site: same-origin, passkeys are bound
+# to RP_ID), and nginx reaches the api over plain http. docker-compose gets that from two containers
+# on one private network; a platform that runs one container per app and has no private network
+# between apps (CranL) cannot, so both processes share this image and nginx proxies to 127.0.0.1 —
+# the same shape as kubernetes/deployment.yaml's single pod. See docs/SELF_HOSTING_CRANL.md.
+#
+# Build context: the REPO ROOT (the frontend build also needs api/coach/core, and the media lives in
+# catalogue/):  docker build -f deploy/cranl/Dockerfile -t openbody-cranl .
+# On CranL: build=dockerfile, dockerfile_path=deploy/cranl/Dockerfile, build_path=/, port=8080, and
+# a persistent volume at /data (it holds every account, passkey, workout and the cookie secret).
+#
+# Kept in step with web/Dockerfile and api/Dockerfile by api/test/cranl-dockerfile.test.js.
+# No BuildKit-only syntax (no --platform, no COPY --chmod): the platform's builder is unknown.
+
+# ---- 1. Frontend build (same commands as web/Dockerfile's build stage) -------------------------
+FROM node:22-alpine AS web-build
+WORKDIR /app/frontend
+COPY frontend/package.json frontend/package-lock.json* ./
+# Lifecycle scripts off, as in web/Dockerfile: the build needs none of them.
+RUN npm ci --ignore-scripts
+# The frontend imports the Coach's shared rule core from the api tree.
+COPY api/coach/core/ /app/api/coach/core/
+COPY frontend/ ./
+ARG APP_BUILD=""
+RUN APP_BUILD="$APP_BUILD" npm run build
+
+# ---- 2. api production dependencies (what api/Dockerfile's `default` target installs) ----------
+# Also the source of the node binary for the runtime stage below.
+FROM node:22-alpine AS api-build
+WORKDIR /app
+COPY api/package.json api/package-lock.json* ./
+# --omit=optional leaves out the Claude Agent SDK: like the default api image, this one runs the
+# Coach without the agent-mode CLI.
+RUN npm ci --omit=dev --omit=optional && npm cache clean --force
+
+# ---- 3. Runtime: the web image's nginx, plus node and the api ---------------------------------
+FROM nginxinc/nginx-unprivileged:alpine
+# Root here, deliberately (web/Dockerfile ends on USER 101): the api runs as root, as in
+# api/Dockerfile, so it can write a platform volume whose ownership is unknown and so the Coach can
+# drop privileges to `coach` (api/coach/adapters/spawn.js).
+#
+# nginx follows the classic model instead of the base image's all-unprivileged one: the master
+# process runs as root and the workers — the processes that handle requests — as `nginx` (uid 101,
+# the `user nginx;` line added below). An nginx started entirely as uid 101 inside a root container
+# cannot open its logs: the image links them to /dev/stdout and /dev/stderr, which belong to root
+# (found on the first local run: "open() /var/log/nginx/error.log failed (13: Permission denied)").
+USER root
+# tini: PID 1 that forwards signals and reaps zombies.
+# libstdc++/libgcc: what the node binary copied below links against.
+# The sed/chown/grep block is web/Dockerfile's, verbatim (the test checks the two stay identical):
+# pid and temp paths under /tmp. Only the final sed differs: it puts the workers' `user` back.
+RUN apk upgrade --no-cache \
+ && apk add --no-cache tini libstdc++ libgcc \
+ && sed -i '/^[[:space:]]*user[[:space:]]/d' /etc/nginx/nginx.conf \
+ && sed -i 's,\(/var\)\{0\,1\}/run/nginx.pid,/tmp/nginx.pid,' /etc/nginx/nginx.conf \
+ && if ! grep -q 'client_body_temp_path' /etc/nginx/nginx.conf; then \
+      sed -i "/^http {/a \    proxy_temp_path /tmp/proxy_temp;\n    client_body_temp_path /tmp/client_temp;\n    fastcgi_temp_path /tmp/fastcgi_temp;\n    uwsgi_temp_path /tmp/uwsgi_temp;\n    scgi_temp_path /tmp/scgi_temp;\n" /etc/nginx/nginx.conf; \
+    fi \
+ && chown -R nginx:root /var/cache/nginx /etc/nginx \
+ && chmod -R g+w /var/cache/nginx /etc/nginx \
+ && grep -Eq '^[[:space:]]*pid[[:space:]]+/tmp/nginx\.pid;' /etc/nginx/nginx.conf \
+ && ! grep -Eq '^[[:space:]]*user[[:space:]]' /etc/nginx/nginx.conf \
+ && sed -i '1i user nginx;' /etc/nginx/nginx.conf \
+ && grep -Eq '^user nginx;' /etc/nginx/nginx.conf \
+ && adduser -D -H -s /sbin/nologin coach
+
+# The node runtime, from the same official image the api is built and tested with. Both images are
+# Alpine (musl); `node --version` fails the BUILD, not a boot in production, if they ever drift.
+COPY --from=api-build /usr/local/bin/node /usr/local/bin/node
+RUN node --version
+
+# The api. A glob, not api/Dockerfile's hand-kept list, so a new root module can never be left out;
+# package.json comes along for "type": "module" (server.js is ESM). Tests live in api/test/ and are
+# not matched.
+WORKDIR /app
+COPY --from=api-build /app/node_modules ./node_modules
+COPY api/package.json api/*.js ./
+COPY api/coach ./coach
+
+# The web app, exactly as web/Dockerfile lays it out.
+COPY web/nginx.conf.template /etc/nginx/templates/default.conf.template
+COPY web/05-check-base-path.sh /docker-entrypoint.d/
+COPY --from=web-build /app/frontend/dist /usr/share/nginx/html
+COPY catalogue/media/ /usr/share/nginx/html/exercise-media/
+COPY catalogue/media-open/ /usr/share/nginx/html/exercise-media/still/
+COPY catalogue/media-open/ /usr/share/nginx/html/exercise-media/clip/
+
+COPY deploy/cranl/start.sh /usr/local/bin/openbody-start
+RUN chmod 755 /docker-entrypoint.d/05-check-base-path.sh /usr/local/bin/openbody-start
+
+ENV NODE_ENV=production
+# All state: secret, db.json, state-<uid>.json, vapid.json, audit.log, uploads/. Mount a volume.
+ENV DATA_DIR=/data
+# nginx → api inside this container. An IP literal, so the template's `resolver` line is inert.
+ENV BACKEND=127.0.0.1
+ENV RESOLVER=127.0.0.11
+ENV CF_CONNECTING_IP=""
+ENV BASE_PATH=""
+ENV MEDIA_UPLOAD_MAX=48m
+# PORT and NGINX_PORT are deliberately NOT set: start.sh picks them (a platform-injected PORT is
+# nginx's listen port; the api moves to API_PORT, 3001 by default).
+EXPOSE 8080
+
+# The nginx base image stops with SIGQUIT; start.sh traps it too, but TERM is the conventional ask.
+STOPSIGNAL SIGTERM
+# Through nginx, so a pass proves both processes answer. start.sh writes the port it chose.
+HEALTHCHECK --interval=1m --timeout=5s --start-period=30s --retries=3 \
+  CMD wget -q -O /dev/null "http://127.0.0.1:$(cat /tmp/openbody-listen-port 2>/dev/null || echo 8080)/api/health" || exit 1
+
+ENTRYPOINT ["/sbin/tini", "--"]
+CMD ["/usr/local/bin/openbody-start"]

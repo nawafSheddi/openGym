@@ -5,3 +5,4 @@ data
 .env
 .git
 *.log
+deploy/cloudflare-proxy/.wrangler

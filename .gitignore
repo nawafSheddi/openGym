@@ -30,3 +30,6 @@ frontend/bundle-size.json
 
 # Local planning notes
 docs/superpowers/plans/
+
+# wrangler state for the custom-domain proxy (deploy/cloudflare-proxy)
+deploy/cloudflare-proxy/.wrangler/

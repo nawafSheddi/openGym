@@ -14,6 +14,7 @@ on:
       - 'website/api.html'
       - 'api/coach/prompts/**'
       - '.github/workflows/test.yml'
+      - 'deploy/**'
   push:
     branches: [main, coach]
     paths:
@@ -26,6 +27,7 @@ on:
       - 'website/api.html'
       - 'api/coach/prompts/**'
       - '.github/workflows/test.yml'
+      - 'deploy/**'
   workflow_dispatch:
 
 permissions:
@@ -103,6 +105,9 @@ jobs:
         working-directory: api
       - run: npm test
         working-directory: api
+      # The custom-domain proxy in front of a CranL-hosted instance (docs/SELF_HOSTING_CRANL.md):
+      # only the host may change on the way to the origin. No dependencies, so no install.
+      - run: node --test deploy/cloudflare-proxy/worker.test.js
       # The api's copy of the exercise catalogue is generated and committed. A dataset change
       # that forgets to regenerate it would otherwise only surface as "the Coach can't find
       # that exercise" on somebody's instance.

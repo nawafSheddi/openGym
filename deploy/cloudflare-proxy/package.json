@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "name": "openbody-cloudflare-proxy",
+  "description": "Custom-domain front door for an openBody instance hosted elsewhere (docs/SELF_HOSTING_CRANL.md). No dependencies: wrangler runs via npx.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test worker.test.js"
+  }
+}

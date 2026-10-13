@@ -1,0 +1,20 @@
+// The custom-domain front door for openBody (worker.js; docs/SELF_HOSTING_CRANL.md).
+// Deploy:  npx wrangler@4.143.0 deploy   (from this directory, after `wrangler login`)
+// Deploying creates the DNS record and certificate for the custom domain below; it fails if a
+// CNAME already exists for that hostname.
+{
+  "$schema": "https://unpkg.com/wrangler@4.143.0/config-schema.json",
+  "name": "openbody-proxy",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-01",
+  // The only way in is the owner's domain: no *.workers.dev address, no preview URLs (each would
+  // be another origin the passkeys don't belong to).
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "body.nawaf.solutions", "custom_domain": true }],
+  "vars": {
+    // The app's own address on the hosting platform (bare hostname, not a URL). Not a secret.
+    "ORIGIN_HOST": "REPLACE_WITH_APP.cranl.net"
+  },
+  "observability": { "enabled": true }
+}

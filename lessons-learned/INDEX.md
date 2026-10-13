@@ -6,3 +6,4 @@
 - 2026-10-13 · [Synced state and fixture dates](2026-10-13-synced-state-and-fixture-dates.md): every new state key needs explicit sync semantics mirrored in api/sync-stamps.js; literal-date tests must pin the clock
 - 2026-10-13 · [Automated browsers can create a passkey but not sign in with one](2026-10-13-automated-browsers-and-passkey-signin.md): pair a scripted second device via /api/pair instead of retrying WebAuthn sign-in
 - 2026-10-13 · [Feature CSS loads before index.css](2026-10-13-feature-css-loads-before-index-css.md): qualify feature rules with the base class they share an element with (`.tag.as-poor`); audit computed styles, not screenshots
+- 2026-10-13 · [nginx-unprivileged in a root container](2026-10-13-nginx-unprivileged-in-a-root-container.md): its logs are the container stdio; run the master as root with `user nginx;` workers, never su-exec the whole nginx
